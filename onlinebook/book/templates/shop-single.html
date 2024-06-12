@@ -1,0 +1,2505 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+  <!-- Custom page title-->
+  <div class="page-title-overlap bg-dark pt-4">
+    <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+      <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+        <nav aria-label="breadcrumb">
+          <ol
+            class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start"
+          >
+            <li class="breadcrumb-item">
+              <a class="text-nowrap" href="/"
+                ><i class="ci-home"></i>Home</a
+              >
+            </li>
+            <li class="breadcrumb-item text-nowrap">
+              <a href="/shop">Shop</a>
+            </li>
+            <li
+              aria-current="page"
+              class="breadcrumb-item text-nowrap active"
+            >
+              Product Page v.2
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+        <h1 class="h3 text-light mb-2">{{ book.title }}</h1>
+        <h1 class="h3 text-light mb-2"><small>Author: {{ book.author }}</small></h1>
+        <div>
+         
+          <div class="star-rating"> 
+           
+          
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true"></i>
+            <i class="star-rating-icon ci-star-filled active"></i
+            ><i class="star-rating-icon ci-star"></i>
+          </div>
+          <span
+            class="d-inline-block fs-sm text-white opacity-70 align-middle mt-1 ms-1"
+            >74 Reviews</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="bg-light shadow-lg rounded-3">
+
+      <!-- Tabs-->
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a
+            aria-selected="true"
+            class="nav-link py-4 px-sm-4 active"
+            data-bs-toggle="tab"
+            href="#general"
+            role="tab"
+            >General <span class="d-none d-sm-inline">Info</span></a
+          >
+        </li>
+
+     
+
+        <li class="nav-item" role="presentation">
+          <a
+            aria-selected="false"
+            class="nav-link py-4 px-sm-4"
+            data-bs-toggle="tab"
+            href="#reviews"
+            role="tab"
+            tabindex="-1"
+            >Reviews <span class="fs-sm opacity-60">(74)</span></a
+          >
+        </li>
+      </ul>
+
+      <div class="px-4 pt-lg-3 pb-3 mb-5">
+        <div class="tab-content px-lg-3">
+          <!-- General info tab-->
+          <div
+            class="tab-pane fade show active"
+            id="general"
+            role="tabpanel"
+          >
+            <div class="row">
+              <!-- Product gallery-->
+              <div class="col-lg-7 pe-lg-0">
+                <div class="product-gallery">
+
+                  <div class="product-gallery-preview order-sm-2">
+                    
+                   
+                    <div
+                      class="product-gallery-preview-item active"
+                      id="first"
+                    >
+                      <img
+                        alt="{{ book.title }}"
+                        class="image-zoom"
+                        data-zoom="img/shop/single/gallery/05.jpg"
+                        src="{{ book.image.url }}" 
+                        style="width: 50%; height: auto;" 
+                      />
+                      <div class="image-zoom-pane"></div>
+                    </div>
+
+
+                    
+
+                  </div>
+
+                  <div class="product-gallery-thumblist order-sm-1">
+                    <a
+                      class="product-gallery-thumblist-item active"
+                      href="#first"
+                      ><img alt="Product thumb" src="{{ book.image.url }}" /></a
+                    >
+
+                    <a
+                      class="product-gallery-thumblist-item video-item"
+                      data-lg-id="9737530d-fdc3-49ab-be2e-54de6b699bd6"
+                      href="#"
+                    >
+                      <div class="product-gallery-thumblist-item-text">
+                        <i class="ci-video"></i>Video
+                      </div></a
+                    >
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- Product details-->
+              <div class="col-lg-5 pt-4 pt-lg-0">
+                <div class="product-details ms-auto pb-3">
+                  <h5>{{ book.title }}</h5>
+                  <div class="h3 fw-normal text-accent mb-3 me-1">
+                    ${{ book.price }}<small></small>
+                  </div>
+                  <div class="fs-sm mb-4">
+                    <span class="text-heading fw-medium me-1"></span
+                    ><span class="text-muted" id="colorOption"
+                      ></span
+                    >
+                  </div>
+                  <div class="position-relative me-n4 mb-3">
+                    <div class="form-check form-option form-check-inline mb-2">
+                      <input
+                        checked=""
+                        class="form-check-input"
+                        data-bs-label="colorOption"
+                        id="color1"
+                        name="color"
+                        type="radio"
+                        value="Dark blue/Orange"
+                      />
+                      <label
+                        class="form-option-label rounded-circle"
+                        for="color1"
+                        ><span
+                          class="form-option-color rounded-circle"
+                          style="background-color: #f25540"
+                        ></span
+                      ></label>
+                    </div>
+                    <div
+                      class="form-check form-option form-check-inline mb-2"
+                    >
+                      <input
+                        class="form-check-input"
+                        data-bs-label="colorOption"
+                        id="color2"
+                        name="color"
+                        type="radio"
+                        value="Dark blue/Green"
+                      />
+                      <label
+                        class="form-option-label rounded-circle"
+                        for="color2"
+                        ><span
+                          class="form-option-color rounded-circle"
+                          style="background-color: #65805b"
+                        ></span
+                      ></label>
+                    </div>
+                    <div
+                      class="form-check form-option form-check-inline mb-2"
+                    >
+                      <input
+                        class="form-check-input"
+                        data-bs-label="colorOption"
+                        id="color3"
+                        name="color"
+                        type="radio"
+                        value="Dark blue/White"
+                      />
+                      <label
+                        class="form-option-label rounded-circle"
+                        for="color3"
+                        ><span
+                          class="form-option-color rounded-circle"
+                          style="background-color: #f5f5f5"
+                        ></span
+                      ></label>
+                    </div>
+                    <div
+                      class="form-check form-option form-check-inline mb-2"
+                    >
+                      <input
+                        class="form-check-input"
+                        data-bs-label="colorOption"
+                        id="color4"
+                        name="color"
+                        type="radio"
+                        value="Dark blue/Black"
+                      />
+                      <label
+                        class="form-option-label rounded-circle"
+                        for="color4"
+                        ><span
+                          class="form-option-color rounded-circle"
+                          style="background-color: #333"
+                        ></span
+                      ></label>
+                    </div>
+                    <div class="product-badge product-available mt-n1">
+                      <i class="ci-security-check"></i>Product available
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center pt-2 pb-4">
+                    <select class="form-select me-3" style="width: 5rem">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
+
+                    
+
+                    <a
+                        class="btn btn-primary btn-shadow me-2"
+                        href="/add_to_cart/{{ book.slug }}/">
+                        
+                        <i class="ci-cart fs-lg me-sm-2"></i>
+                        <span class="d-none d-sm-inline">Add to Cart</span>
+                  </a>
+
+
+
+                  </div>
+
+
+                  <div class="d-flex mb-4">
+                    <div class="w-100 me-3">
+                      <button
+                        class="btn btn-secondary d-block w-100"
+                        type="button"
+                      >
+                        <i class="ci-heart fs-lg me-2"></i
+                        ><span class="d-none d-sm-inline">Add to </span
+                        >Wishlist
+                      </button>
+                    </div>
+                    <div class="w-100">
+                      <button
+                        class="btn btn-secondary d-block w-100"
+                        type="button"
+                      >
+                        <i class="ci-compare fs-lg me-2"></i>Compare
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Product panels-->
+                  <div class="accordion mb-4" id="productPanels">
+                    <div class="accordion-item">
+                      <h3 class="accordion-header">
+                        <a
+                          aria-controls="shippingOptions"
+                          aria-expanded="true"
+                          class="accordion-button"
+                          data-bs-toggle="collapse"
+                          href="#shippingOptions"
+                          role="button"
+                          ><i
+                            class="ci-delivery text-muted lead align-middle mt-n1 me-2"
+                          ></i
+                          >Book info</a
+                        >
+                      </h3>
+                      <div
+                        class="accordion-collapse collapse show"
+                        data-bs-parent="#productPanels"
+                        id="shippingOptions"
+                      >
+                        <div class="accordion-body fs-sm">
+
+                          <div class="d-flex justify-content-between border-bottom pb-2">
+                            <div>
+                              <div class="fw-semibold text-dark">
+                                Book Page
+                              </div>
+                              <div class="fs-sm text-muted">{{ book.pages }}pages</div>
+                            </div>
+                            <div>${{ book.price }}</div>
+                          </div>
+
+                          <div class="d-flex justify-content-between border-bottom py-2">
+                            <div>
+                              <div class="fw-semibold text-dark">
+                                Book Category
+                              </div>
+                              <div class="fs-sm text-muted">{{ book.category }}</div>
+                            </div>
+                            <div>${{ book.price }}</div>
+                          </div>
+
+                          <div class="d-flex justify-content-between pt-2">
+                            <div>
+                              <div class="fw-semibold text-dark">
+                                About the Author
+                              </div>
+                              <div class="fs-sm text-muted">—</div>
+                            </div>
+                            <div></div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h3 class="accordion-header">
+                        <a
+                          aria-controls="localStore"
+                          aria-expanded="true"
+                          class="accordion-button collapsed"
+                          data-bs-toggle="collapse"
+                          href="#localStore"
+                          role="button"
+                          ><i
+                            class="ci-location text-muted fs-lg align-middle mt-n1 me-2"
+                          ></i
+                          >Find in local store</a
+                        >
+                      </h3>
+                      <div
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#productPanels"
+                        id="localStore"
+                      >
+                        <div class="accordion-body">
+                          <select class="form-select">
+                            <option value="">Select your country</option>
+                            <option value="Argentina">Argentina</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="France">France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Spain">Spain</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="USA">USA</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Sharing-->
+                  <label
+                    class="form-label d-inline-block align-middle my-2 me-3"
+                    >Share:</label
+                  ><a class="btn-share btn-twitter me-2 my-2" href="#"
+                    ><i class="ci-twitter"></i>Twitter</a
+                  ><a class="btn-share btn-instagram me-2 my-2" href="#"
+                    ><i class="ci-instagram"></i>Instagram</a
+                  ><a class="btn-share btn-facebook my-2" href="#"
+                    ><i class=" btn-share fa fa-facebook" aria-hidden="true"></i>
+
+                    Facebook</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <!-- Reviews tab-->
+          <div class="tab-pane fade" id="reviews" role="tabpanel">
+            <div
+              class="d-md-flex justify-content-between align-items-start pb-4 mb-4 border-bottom"
+            >
+              <div class="d-flex align-items-center me-md-3">
+                <img alt="Product thumb" src="{% static 'admin/img/05.jpg' %}" width="90" />
+                <div class="ps-3">
+                  <h6 class="fs-base mb-2">Smartwatch Youth Edition</h6>
+                  <div class="h4 fw-normal text-accent">
+                    $124.<small>99</small>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center pt-3">
+                <select class="form-select me-2" style="width: 5rem">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+
+              <a
+                class="btn btn-primary btn-shadow me-2"
+                href="/shop"
+              >
+                <i class="ci-cart fs-lg me-sm-2"></i>
+                <span class="d-none d-sm-inline">car</span>
+              </a>
+               
+
+
+                <div class="me-2">
+                  <button
+                    aria-label="Add to Wishlist"
+                    class="btn btn-secondary btn-icon"
+                    data-bs-original-title="Add to Wishlist"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-heart fs-lg"></i>
+                  </button>
+                </div>
+                <div>
+                  <button
+                    aria-label="Compare"
+                    class="btn btn-secondary btn-icon"
+                    data-bs-original-title="Compare"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-compare fs-lg"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Reviews-->
+            <div class="row pt-2 pb-3">
+              <div class="col-lg-4 col-md-5">
+                <h2 class="h3 mb-4">74 Reviews</h2>
+                <div class="star-rating me-2">
+                  <i class="ci-star-filled fs-sm text-accent me-1"></i
+                  ><i class="ci-star-filled fs-sm text-accent me-1"></i
+                  ><i class="ci-star-filled fs-sm text-accent me-1"></i
+                  ><i class="ci-star-filled fs-sm text-accent me-1"></i
+                  ><i class="ci-star fs-sm text-muted me-1"></i>
+                </div>
+                <span class="d-inline-block align-middle"
+                  >4.1 Overall rating</span
+                >
+                <p class="pt-3 fs-sm text-muted">
+                  58 out of 74 (77%)<br />Customers recommended this product
+                </p>
+              </div>
+              <div class="col-lg-8 col-md-7">
+                <div class="d-flex align-items-center mb-2">
+                  <div class="text-nowrap me-3">
+                    <span class="d-inline-block align-middle text-muted"
+                      >5</span
+                    ><i class="ci-star-filled fs-xs ms-1"></i>
+                  </div>
+                  <div class="w-100">
+                    <div class="progress" style="height: 4px">
+                      <div
+                        aria-valuemax="100"
+                        aria-valuemin="0"
+                        aria-valuenow="60"
+                        class="progress-bar bg-success"
+                        role="progressbar"
+                        style="width: 60%"
+                      ></div>
+                    </div>
+                  </div>
+                  <span class="text-muted ms-3">43</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                  <div class="text-nowrap me-3">
+                    <span class="d-inline-block align-middle text-muted"
+                      >4</span
+                    ><i class="ci-star-filled fs-xs ms-1"></i>
+                  </div>
+                  <div class="w-100">
+                    <div class="progress" style="height: 4px">
+                      <div
+                        aria-valuemax="100"
+                        aria-valuemin="0"
+                        aria-valuenow="27"
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 27%; background-color: #a7e453"
+                      ></div>
+                    </div>
+                  </div>
+                  <span class="text-muted ms-3">16</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                  <div class="text-nowrap me-3">
+                    <span class="d-inline-block align-middle text-muted"
+                      >3</span
+                    ><i class="ci-star-filled fs-xs ms-1"></i>
+                  </div>
+                  <div class="w-100">
+                    <div class="progress" style="height: 4px">
+                      <div
+                        aria-valuemax="100"
+                        aria-valuemin="0"
+                        aria-valuenow="17"
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 17%; background-color: #ffda75"
+                      ></div>
+                    </div>
+                  </div>
+                  <span class="text-muted ms-3">9</span>
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                  <div class="text-nowrap me-3">
+                    <span class="d-inline-block align-middle text-muted"
+                      >2</span
+                    ><i class="ci-star-filled fs-xs ms-1"></i>
+                  </div>
+                  <div class="w-100">
+                    <div class="progress" style="height: 4px">
+                      <div
+                        aria-valuemax="100"
+                        aria-valuemin="0"
+                        aria-valuenow="9"
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: 9%; background-color: #fea569"
+                      ></div>
+                    </div>
+                  </div>
+                  <span class="text-muted ms-3">4</span>
+                </div>
+                <div class="d-flex align-items-center">
+                  <div class="text-nowrap me-3">
+                    <span class="d-inline-block align-middle text-muted"
+                      >1</span
+                    ><i class="ci-star-filled fs-xs ms-1"></i>
+                  </div>
+                  <div class="w-100">
+                    <div class="progress" style="height: 4px">
+                      <div
+                        aria-valuemax="100"
+                        aria-valuemin="0"
+                        aria-valuenow="4"
+                        class="progress-bar bg-danger"
+                        role="progressbar"
+                        style="width: 4%"
+                      ></div>
+                    </div>
+                  </div>
+                  <span class="text-muted ms-3">2</span>
+                </div>
+              </div>
+            </div>
+            <hr class="mt-4 mb-3" />
+            <div class="row py-4">
+              <!-- Reviews list-->
+              <div class="col-md-7">
+                <div class="d-flex justify-content-end pb-4">
+                  <div class="d-flex flex-nowrap align-items-center">
+                    <label
+                      class="fs-sm text-muted text-nowrap me-2 d-none d-sm-block"
+                      for="sort-reviews"
+                      >Sort by:</label
+                    >
+                    <select
+                      class="form-select form-select-sm"
+                      id="sort-reviews"
+                    >
+                      <option>Newest</option>
+                      <option>Oldest</option>
+                      <option>Popular</option>
+                      <option>High rating</option>
+                      <option>Low rating</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- Review-->
+                <div class="product-review pb-4 mb-4 border-bottom">
+                  <div class="d-flex mb-3">
+                    <div class="d-flex align-items-center me-4 pe-2">
+                      <img
+                        alt="Rafael Marquez"
+                        class="rounded-circle"
+                        src="{% static 'admin/img/01.jpg' %}"
+                        width="50"
+                      />
+                      <div class="ps-3">
+                        <h6 class="fs-sm mb-0">Rafael Marquez</h6>
+                        <span class="fs-ms text-muted">June 28, 2019</span>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i class="star-rating-icon ci-star"></i>
+                      </div>
+                      <div class="fs-ms text-muted">
+                        83% of users found this review helpful
+                      </div>
+                    </div>
+                  </div>
+                  <p class="fs-md mb-2">
+                    Nam libero tempore, cum soluta nobis est eligendi optio
+                    cumque nihil impedit quo minus id quod maxime placeat
+                    facere possimus, omnis voluptas assumenda est...
+                  </p>
+                  <ul class="list-unstyled fs-ms pt-1">
+                    <li class="mb-1">
+                      <span class="fw-medium">Pros: </span>Consequuntur
+                      magni, voluptatem sequi, tempora
+                    </li>
+                    <li class="mb-1">
+                      <span class="fw-medium">Cons: </span>Architecto
+                      beatae, quis autem
+                    </li>
+                  </ul>
+                  <div class="text-nowrap">
+                    <button class="btn-like" type="button">15</button>
+                    <button class="btn-dislike" type="button">3</button>
+                  </div>
+                </div>
+                <!-- Review-->
+                <div class="product-review pb-4 mb-4 border-bottom">
+                  <div class="d-flex mb-3">
+                    <div class="d-flex align-items-center me-4 pe-2">
+                      <img
+                        alt="Barbara Palson"
+                        class="rounded-circle"
+                        src="{% static 'admin/img/02.jpg' %}"
+                        width="50"
+                      />
+                      <div class="ps-3">
+                        <h6 class="fs-sm mb-0">Barbara Palson</h6>
+                        <span class="fs-ms text-muted">May 17, 2019</span>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i>
+                      </div>
+                      <div class="fs-ms text-muted">
+                        99% of users found this review helpful
+                      </div>
+                    </div>
+                  </div>
+                  <p class="fs-md mb-2">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. Ut enim ad minim veniam, quis nostrud
+                    exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat.
+                  </p>
+                  <ul class="list-unstyled fs-ms pt-1">
+                    <li class="mb-1">
+                      <span class="fw-medium">Pros: </span>Consequuntur
+                      magni, voluptatem sequi, tempora
+                    </li>
+                    <li class="mb-1">
+                      <span class="fw-medium">Cons: </span>Architecto
+                      beatae, quis autem
+                    </li>
+                  </ul>
+                  <div class="text-nowrap">
+                    <button class="btn-like" type="button">34</button>
+                    <button class="btn-dislike" type="button">1</button>
+                  </div>
+                </div>
+                <!-- Review-->
+                <div class="product-review pb-4 mb-4 border-bottom">
+                  <div class="d-flex mb-3">
+                    <div class="d-flex align-items-center me-4 pe-2">
+                      <img
+                        alt="Daniel Adams"
+                        class="rounded-circle"
+                        src="{% static 'admin/img/03.jpg' %}"
+                        width="50"
+                      />
+                      <div class="ps-3">
+                        <h6 class="fs-sm mb-0">Daniel Adams</h6>
+                        <span class="fs-ms text-muted">May 8, 2019</span>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i class="star-rating-icon ci-star"></i
+                        ><i class="star-rating-icon ci-star"></i>
+                      </div>
+                      <div class="fs-ms text-muted">
+                        75% of users found this review helpful
+                      </div>
+                    </div>
+                  </div>
+                  <p class="fs-md mb-2">
+                    Sed ut perspiciatis unde omnis iste natus error sit
+                    voluptatem accusantium doloremque laudantium, totam rem
+                    aperiam, eaque ipsa quae ab illo inventore veritatis et
+                    quasi architecto beatae vitae dicta sunt explicabo. Nemo
+                    enim ipsam voluptatem.
+                  </p>
+                  <ul class="list-unstyled fs-ms pt-1">
+                    <li class="mb-1">
+                      <span class="fw-medium">Pros: </span>Consequuntur
+                      magni, voluptatem sequi
+                    </li>
+                    <li class="mb-1">
+                      <span class="fw-medium">Cons: </span>Architecto
+                      beatae, quis autem, voluptatem sequ
+                    </li>
+                  </ul>
+                  <div class="text-nowrap">
+                    <button class="btn-like" type="button">26</button>
+                    <button class="btn-dislike" type="button">9</button>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button class="btn btn-outline-accent" type="button">
+                    <i class="ci-reload me-2"></i>Load more reviews
+                  </button>
+                </div>
+              </div>
+              <!-- Leave review form-->
+              <div class="col-md-5 mt-2 pt-4 mt-md-0 pt-md-0">
+                <div
+                  class="bg-secondary py-grid-gutter px-grid-gutter rounded-3"
+                >
+                  <h3 class="h4 pb-2">Write a review</h3>
+                  <form
+                    class="needs-validation"
+                    method="post"
+                    novalidate=""
+                  >
+                    <div class="mb-3">
+                      <label class="form-label" for="review-name"
+                        >Your name<span class="text-danger">*</span></label
+                      >
+                      <input
+                        class="form-control"
+                        id="review-name"
+                        required=""
+                        type="text"
+                      />
+                      <div class="invalid-feedback">
+                        Please enter your name!
+                      </div>
+                      <small class="form-text text-muted"
+                        >Will be displayed on the comment.</small
+                      >
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label" for="review-email"
+                        >Your email<span class="text-danger">*</span></label
+                      >
+                      <input
+                        class="form-control"
+                        id="review-email"
+                        required=""
+                        type="email"
+                      />
+                      <div class="invalid-feedback">
+                        Please provide valid email address!
+                      </div>
+                      <small class="form-text text-muted"
+                        >Authentication only - we won't spam you.</small
+                      >
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label" for="review-rating"
+                        >Rating<span class="text-danger">*</span></label
+                      >
+                      <select
+                        class="form-select"
+                        id="review-rating"
+                        required=""
+                      >
+                        <option value="">Choose rating</option>
+                        <option value="5">5 stars</option>
+                        <option value="4">4 stars</option>
+                        <option value="3">3 stars</option>
+                        <option value="2">2 stars</option>
+                        <option value="1">1 star</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Please choose rating!
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label" for="review-text"
+                        >Review<span class="text-danger">*</span></label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="review-text"
+                        required=""
+                        rows="6"
+                      ></textarea>
+                      <div class="invalid-feedback">
+                        Please write a review!
+                      </div>
+                      <small class="form-text text-muted"
+                        >Your review must be at least 50 characters.</small
+                      >
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label" for="review-pros"
+                        >Pros</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="review-pros"
+                        placeholder="Separated by commas"
+                        rows="2"
+                      ></textarea>
+                    </div>
+                    <div class="mb-4">
+                      <label class="form-label" for="review-cons"
+                        >Cons</label
+                      >
+                      <textarea
+                        class="form-control"
+                        id="review-cons"
+                        placeholder="Separated by commas"
+                        rows="2"
+                      ></textarea>
+                    </div>
+                    <button
+                      class="btn btn-primary btn-shadow d-block w-100"
+                      type="submit"
+                    >
+                      Submit a Review
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Product description-->
+  <div class="container pt-lg-3 pb-4 pb-sm-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h2 class="h3 pb-2">About {{ book.title }}</h2>
+        <p>{{ book.description }}</p>
+      </div>
+    </div>
+  </div>
+  <hr class="mb-5" />
+
+  <!-- Product carousel (You may also like)-->
+  {% comment %} <div class="container pt-lg-2 pb-5 mb-md-3">
+
+    <h2 class="h3 text-center pb-4">You may also like</h2>
+    <div class="tns-carousel tns-controls-static tns-controls-outside">
+      <div class="tns-outer" id="tns1-ow">
+        <div
+          aria-label="Carousel Navigation"
+          class="tns-controls"
+          tabindex="0"
+        >
+          <button
+            aria-controls="tns1"
+            data-controls="prev"
+            tabindex="-1"
+            type="button"
+          >
+            <i class="ci-arrow-left"></i></button
+          ><button
+            aria-controls="tns1"
+            data-controls="next"
+            tabindex="-1"
+            type="button"
+          >
+            <i class="ci-arrow-right"></i>
+          </button>
+        </div>
+        <div
+          aria-atomic="true"
+          aria-live="polite"
+          class="tns-liveregion tns-visually-hidden"
+        >
+          slide <span class="current">9 to 11</span> of 5
+        </div>
+        <div class="tns-ovh" id="tns1-mw">
+          <div class="tns-inner" id="tns1-iw">
+            <div
+              class="tns-carousel-inner tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal"
+              data-carousel-options='{"items": 2, "controls": true, "nav": false, "responsive": {"0":{"items":1},"500":{"items":2, "gutter": 18},"768":{"items":3, "gutter": 20}, "1100":{"items":4, "gutter": 30}}}'
+              id="tns1"
+              style="
+                transition-duration: 0s;
+                transform: translate3d(-38.0952%, 0px, 0px);
+              "
+            >
+              <div
+                aria-hidden="true"
+                class="tns-item tns-slide-cloned"
+                tabindex="-1"
+              >
+                <div class="card product-card card-static">
+                  <button
+                    aria-label="Add to wishlist"
+                    class="btn-wishlist btn-sm"
+                    data-bs-original-title="Add to wishlist"
+                    data-bs-placement="left"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-heart"></i></button
+                  ><a class="card-img-top d-block overflow-hidden" href="#"
+                    ><img alt="Product" src="{% static 'admin/img/64.jpg' %}"
+                  /></a>
+                  <div class="card-body py-2">
+                    <a class="product-meta d-block fs-xs pb-1" href="#"
+                      >Smartwatches</a
+                    >
+                    <h3 class="product-title fs-sm">
+                      <a href="#">Smart Watch Series 5, Aluminium</a>
+                    </h3>
+                    <div class="d-flex justify-content-between">
+                      <div class="product-price text-accent">
+                        $349.<small>99</small>
+                      </div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i class="star-rating-icon ci-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="tns-item tns-slide-cloned"
+                tabindex="-1"
+              >
+                <div class="card product-card card-static">
+                  <button
+                    aria-label="Add to wishlist"
+                    class="btn-wishlist btn-sm"
+                    data-bs-original-title="Add to wishlist"
+                    data-bs-placement="left"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-heart"></i></button
+                  ><a class="card-img-top d-block overflow-hidden" href="#"
+                    ><img alt="Product" src="{% static 'admin/img/68.jpg' %}"
+                  /></a>
+                  <div class="card-body py-2">
+                    <a class="product-meta d-block fs-xs pb-1" href="#"
+                      >Smartwatches</a
+                    >
+                    <h3 class="product-title fs-sm">
+                      <a href="#">Health &amp; Fitness Smartwatch</a>
+                    </h3>
+                    <div class="d-flex justify-content-between">
+                      <div class="product-price text-accent">
+                        $118.<small>00</small>
+                      </div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="tns-item tns-slide-cloned"
+                tabindex="-1"
+              >
+                <div class="card product-card card-static">
+                  <button
+                    aria-label="Add to wishlist"
+                    class="btn-wishlist btn-sm"
+                    data-bs-original-title="Add to wishlist"
+                    data-bs-placement="left"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-heart"></i></button
+                  ><a class="card-img-top d-block overflow-hidden" href="#"
+                    ><img alt="Product" src="{% static 'admin/img/69.jpg' %}"
+                  /></a>
+                  <div class="card-body py-2">
+                    <a class="product-meta d-block fs-xs pb-1" href="#"
+                      >Smartwatches</a
+                    >
+                    <h3 class="product-title fs-sm">
+                      <a href="#">Heart Rate &amp; Activity Tracker</a>
+                    </h3>
+                    <div class="d-flex justify-content-between">
+                      <div class="product-price text-accent">
+                        $25.<small>00</small>
+                      </div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i class="star-rating-icon ci-star-half active"></i
+                        ><i class="star-rating-icon ci-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="tns-item tns-slide-cloned"
+                tabindex="-1"
+              >
+                <div class="card product-card card-static">
+                  <button
+                    aria-label="Add to wishlist"
+                    class="btn-wishlist btn-sm"
+                    data-bs-original-title="Add to wishlist"
+                    data-bs-placement="left"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-heart"></i></button
+                  ><a class="card-img-top d-block overflow-hidden" href="#"
+                    ><img alt="Product" src="{% static 'admin/img/66.jpg' %}"
+                  /></a>
+                  <div class="card-body py-2">
+                    <a class="product-meta d-block fs-xs pb-1" href="#"
+                      >Smartwatches</a
+                    >
+                    <h3 class="product-title fs-sm">
+                      <a href="#">Health &amp; Fitness Smartwatch</a>
+                    </h3>
+                    <div class="d-flex justify-content-between">
+                      <div class="product-price">
+                        <span class="text-accent"
+                          >$250.<small>00</small></span
+                        >
+                      </div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i class="star-rating-icon ci-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="tns-item tns-slide-cloned"
+                tabindex="-1"
+              >
+                <div class="card product-card card-static">
+                  <button
+                    aria-label="Add to wishlist"
+                    class="btn-wishlist btn-sm"
+                    data-bs-original-title="Add to wishlist"
+                    data-bs-placement="left"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-heart"></i></button
+                  ><a class="card-img-top d-block overflow-hidden" href="#"
+                    ><img alt="Product" src="{% static 'admin/img/67.jpg' %}"
+                  /></a>
+                  <div class="card-body py-2">
+                    <a class="product-meta d-block fs-xs pb-1" href="#"
+                      >Smartwatches</a
+                    >
+                    <h3 class="product-title fs-sm">
+                      <a href="#">Heart Rate &amp; Activity Tracker</a>
+                    </h3>
+                    <div class="d-flex justify-content-between">
+                      <div class="product-price text-accent">
+                        $26.<small>99</small>
+                      </div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i class="star-rating-icon ci-star-half active"></i
+                        ><i class="star-rating-icon ci-star"></i
+                        ><i class="star-rating-icon ci-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="tns-item tns-slide-cloned"
+                tabindex="-1"
+              >
+                <div class="card product-card card-static">
+                  <button
+                    aria-label="Add to wishlist"
+                    class="btn-wishlist btn-sm"
+                    data-bs-original-title="Add to wishlist"
+                    data-bs-placement="left"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-heart"></i></button
+                  ><a class="card-img-top d-block overflow-hidden" href="#"
+                    ><img alt="Product" src="{% static 'admin/img/64.jpg' %}"
+                  /></a>
+                  <div class="card-body py-2">
+                    <a class="product-meta d-block fs-xs pb-1" href="#"
+                      >Smartwatches</a
+                    >
+                    <h3 class="product-title fs-sm">
+                      <a href="#">Smart Watch Series 5, Aluminium</a>
+                    </h3>
+                    <div class="d-flex justify-content-between">
+                      <div class="product-price text-accent">
+                        $349.<small>99</small>
+                      </div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i class="star-rating-icon ci-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="tns-item tns-slide-cloned"
+                tabindex="-1"
+              >
+                <div class="card product-card card-static">
+                  <button
+                    aria-label="Add to wishlist"
+                    class="btn-wishlist btn-sm"
+                    data-bs-original-title="Add to wishlist"
+                    data-bs-placement="left"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-heart"></i></button
+                  ><a class="card-img-top d-block overflow-hidden" href="#"
+                    ><img alt="Product" src="{% static 'admin/img/68.jpg' %}"
+                  /></a>
+                  <div class="card-body py-2">
+                    <a class="product-meta d-block fs-xs pb-1" href="#"
+                      >Smartwatches</a
+                    >
+                    <h3 class="product-title fs-sm">
+                      <a href="#">Health &amp; Fitness Smartwatch</a>
+                    </h3>
+                    <div class="d-flex justify-content-between">
+                      <div class="product-price text-accent">
+                        $118.<small>00</small>
+                      </div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="tns-item tns-slide-cloned"
+                tabindex="-1"
+              >
+                <div class="card product-card card-static">
+                  <button
+                    aria-label="Add to wishlist"
+                    class="btn-wishlist btn-sm"
+                    data-bs-original-title="Add to wishlist"
+                    data-bs-placement="left"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-heart"></i></button
+                  ><a class="card-img-top d-block overflow-hidden" href="#"
+                    ><img alt="Product" src="{% static 'admin/img/69.jpg' %}"
+                  /></a>
+                  <div class="card-body py-2">
+                    <a class="product-meta d-block fs-xs pb-1" href="#"
+                      >Smartwatches</a
+                    >
+                    <h3 class="product-title fs-sm">
+                      <a href="#">Heart Rate &amp; Activity Tracker</a>
+                    </h3>
+                    <div class="d-flex justify-content-between">
+                      <div class="product-price text-accent">
+                        $25.<small>00</small>
+                      </div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i class="star-rating-icon ci-star-half active"></i
+                        ><i class="star-rating-icon ci-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Product-->
+              <div class="tns-item tns-slide-active" id="tns1-item0">
+                <div class="card product-card card-static">
+                  <button
+                    aria-label="Add to wishlist"
+                    class="btn-wishlist btn-sm"
+                    data-bs-original-title="Add to wishlist"
+                    data-bs-placement="left"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-heart"></i></button
+                  ><a class="card-img-top d-block overflow-hidden" href="#"
+                    ><img alt="Product" src="{% static 'admin/img/66.jpg' %}"
+                  /></a>
+                  <div class="card-body py-2">
+                    <a class="product-meta d-block fs-xs pb-1" href="#"
+                      >Smartwatches</a
+                    >
+                    <h3 class="product-title fs-sm">
+                      <a href="#">Health &amp; Fitness Smartwatch</a>
+                    </h3>
+                    <div class="d-flex justify-content-between">
+                      <div class="product-price">
+                        <span class="text-accent"
+                          >$250.<small>00</small></span
+                        >
+                      </div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i class="star-rating-icon ci-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Product-->
+              <div class="tns-item tns-slide-active" id="tns1-item1">
+                <div class="card product-card card-static">
+                  <button
+                    aria-label="Add to wishlist"
+                    class="btn-wishlist btn-sm"
+                    data-bs-original-title="Add to wishlist"
+                    data-bs-placement="left"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-heart"></i></button
+                  ><a class="card-img-top d-block overflow-hidden" href="#"
+                    ><img alt="Product" src="{% static 'admin/img/67.jpg' %}"
+                  /></a>
+                  <div class="card-body py-2">
+                    <a class="product-meta d-block fs-xs pb-1" href="#"
+                      >Smartwatches</a
+                    >
+                    <h3 class="product-title fs-sm">
+                      <a href="#">Heart Rate &amp; Activity Tracker</a>
+                    </h3>
+                    <div class="d-flex justify-content-between">
+                      <div class="product-price text-accent">
+                        $26.<small>99</small>
+                      </div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i class="star-rating-icon ci-star-half active"></i
+                        ><i class="star-rating-icon ci-star"></i
+                        ><i class="star-rating-icon ci-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Product-->
+              <div class="tns-item tns-slide-active" id="tns1-item2">
+                <div class="card product-card card-static">
+                  <button
+                    aria-label="Add to wishlist"
+                    class="btn-wishlist btn-sm"
+                    data-bs-original-title="Add to wishlist"
+                    data-bs-placement="left"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-heart"></i></button
+                  ><a class="card-img-top d-block overflow-hidden" href="#"
+                    ><img alt="Product" src="{% static 'admin/img/64.jpg' %}"
+                  /></a>
+                  <div class="card-body py-2">
+                    <a class="product-meta d-block fs-xs pb-1" href="#"
+                      >Smartwatches</a
+                    >
+                    <h3 class="product-title fs-sm">
+                      <a href="#">Smart Watch Series 5, Aluminium</a>
+                    </h3>
+                    <div class="d-flex justify-content-between">
+                      <div class="product-price text-accent">
+                        $349.<small>99</small>
+                      </div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i class="star-rating-icon ci-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Product-->
+              <div
+                aria-hidden="true"
+                class="tns-item"
+                id="tns1-item3"
+                tabindex="-1"
+              >
+                <div class="card product-card card-static">
+                  <button
+                    aria-label="Add to wishlist"
+                    class="btn-wishlist btn-sm"
+                    data-bs-original-title="Add to wishlist"
+                    data-bs-placement="left"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-heart"></i></button
+                  ><a class="card-img-top d-block overflow-hidden" href="#"
+                    ><img alt="Product" src="{% static 'admin/img/68.jpg' %}"
+                  /></a>
+                  <div class="card-body py-2">
+                    <a class="product-meta d-block fs-xs pb-1" href="#"
+                      >Smartwatches</a
+                    >
+                    <h3 class="product-title fs-sm">
+                      <a href="#">Health &amp; Fitness Smartwatch</a>
+                    </h3>
+                    <div class="d-flex justify-content-between">
+                      <div class="product-price text-accent">
+                        $118.<small>00</small>
+                      </div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Product-->
+              <div
+                aria-hidden="true"
+                class="tns-item"
+                id="tns1-item4"
+                tabindex="-1"
+              >
+                <div class="card product-card card-static">
+                  <button
+                    aria-label="Add to wishlist"
+                    class="btn-wishlist btn-sm"
+                    data-bs-original-title="Add to wishlist"
+                    data-bs-placement="left"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-heart"></i></button
+                  ><a class="card-img-top d-block overflow-hidden" href="#"
+                    ><img alt="Product" src="{% static 'admin/img/69.jpg' %}"
+                  /></a>
+                  <div class="card-body py-2">
+                    <a class="product-meta d-block fs-xs pb-1" href="#"
+                      >Smartwatches</a
+                    >
+                    <h3 class="product-title fs-sm">
+                      <a href="#">Heart Rate &amp; Activity Tracker</a>
+                    </h3>
+                    <div class="d-flex justify-content-between">
+                      <div class="product-price text-accent">
+                        $25.<small>00</small>
+                      </div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i class="star-rating-icon ci-star-half active"></i
+                        ><i class="star-rating-icon ci-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="tns-item tns-slide-cloned"
+                tabindex="-1"
+              >
+                <div class="card product-card card-static">
+                  <button
+                    aria-label="Add to wishlist"
+                    class="btn-wishlist btn-sm"
+                    data-bs-original-title="Add to wishlist"
+                    data-bs-placement="left"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-heart"></i></button
+                  ><a class="card-img-top d-block overflow-hidden" href="#"
+                    ><img alt="Product" src="{% static 'admin/img/66.jpg' %}"
+                  /></a>
+                  <div class="card-body py-2">
+                    <a class="product-meta d-block fs-xs pb-1" href="#"
+                      >Smartwatches</a
+                    >
+                    <h3 class="product-title fs-sm">
+                      <a href="#">Health &amp; Fitness Smartwatch</a>
+                    </h3>
+                    <div class="d-flex justify-content-between">
+                      <div class="product-price">
+                        <span class="text-accent"
+                          >$250.<small>00</small></span
+                        >
+                      </div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i class="star-rating-icon ci-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="tns-item tns-slide-cloned"
+                tabindex="-1"
+              >
+                <div class="card product-card card-static">
+                  <button
+                    aria-label="Add to wishlist"
+                    class="btn-wishlist btn-sm"
+                    data-bs-original-title="Add to wishlist"
+                    data-bs-placement="left"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-heart"></i></button
+                  ><a class="card-img-top d-block overflow-hidden" href="#"
+                    ><img alt="Product" src="{% static 'admin/img/67.jpg' %}"
+                  /></a>
+                  <div class="card-body py-2">
+                    <a class="product-meta d-block fs-xs pb-1" href="#"
+                      >Smartwatches</a
+                    >
+                    <h3 class="product-title fs-sm">
+                      <a href="#">Heart Rate &amp; Activity Tracker</a>
+                    </h3>
+                    <div class="d-flex justify-content-between">
+                      <div class="product-price text-accent">
+                        $26.<small>99</small>
+                      </div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i class="star-rating-icon ci-star-half active"></i
+                        ><i class="star-rating-icon ci-star"></i
+                        ><i class="star-rating-icon ci-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="tns-item tns-slide-cloned"
+                tabindex="-1"
+              >
+                <div class="card product-card card-static">
+                  <button
+                    aria-label="Add to wishlist"
+                    class="btn-wishlist btn-sm"
+                    data-bs-original-title="Add to wishlist"
+                    data-bs-placement="left"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-heart"></i></button
+                  ><a class="card-img-top d-block overflow-hidden" href="#"
+                    ><img alt="Product" src="{% static 'admin/img/64.jpg' %}"
+                  /></a>
+                  <div class="card-body py-2">
+                    <a class="product-meta d-block fs-xs pb-1" href="#"
+                      >Smartwatches</a
+                    >
+                    <h3 class="product-title fs-sm">
+                      <a href="#">Smart Watch Series 5, Aluminium</a>
+                    </h3>
+                    <div class="d-flex justify-content-between">
+                      <div class="product-price text-accent">
+                        $349.<small>99</small>
+                      </div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i class="star-rating-icon ci-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="tns-item tns-slide-cloned"
+                tabindex="-1"
+              >
+                <div class="card product-card card-static">
+                  <button
+                    aria-label="Add to wishlist"
+                    class="btn-wishlist btn-sm"
+                    data-bs-original-title="Add to wishlist"
+                    data-bs-placement="left"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-heart"></i></button
+                  ><a class="card-img-top d-block overflow-hidden" href="#"
+                    ><img alt="Product" src="{% static 'admin/img/68.jpg' %}"
+                  /></a>
+                  <div class="card-body py-2">
+                    <a class="product-meta d-block fs-xs pb-1" href="#"
+                      >Smartwatches</a
+                    >
+                    <h3 class="product-title fs-sm">
+                      <a href="#">Health &amp; Fitness Smartwatch</a>
+                    </h3>
+                    <div class="d-flex justify-content-between">
+                      <div class="product-price text-accent">
+                        $118.<small>00</small>
+                      </div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="tns-item tns-slide-cloned"
+                tabindex="-1"
+              >
+                <div class="card product-card card-static">
+                  <button
+                    aria-label="Add to wishlist"
+                    class="btn-wishlist btn-sm"
+                    data-bs-original-title="Add to wishlist"
+                    data-bs-placement="left"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-heart"></i></button
+                  ><a class="card-img-top d-block overflow-hidden" href="#"
+                    ><img alt="Product" src="{% static 'admin/img/69.jpg' %}"
+                  /></a>
+                  <div class="card-body py-2">
+                    <a class="product-meta d-block fs-xs pb-1" href="#"
+                      >Smartwatches</a
+                    >
+                    <h3 class="product-title fs-sm">
+                      <a href="#">Heart Rate &amp; Activity Tracker</a>
+                    </h3>
+                    <div class="d-flex justify-content-between">
+                      <div class="product-price text-accent">
+                        $25.<small>00</small>
+                      </div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i class="star-rating-icon ci-star-half active"></i
+                        ><i class="star-rating-icon ci-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="tns-item tns-slide-cloned"
+                tabindex="-1"
+              >
+                <div class="card product-card card-static">
+                  <button
+                    aria-label="Add to wishlist"
+                    class="btn-wishlist btn-sm"
+                    data-bs-original-title="Add to wishlist"
+                    data-bs-placement="left"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-heart"></i></button
+                  ><a class="card-img-top d-block overflow-hidden" href="#"
+                    ><img alt="Product" src="{% static 'admin/img/66.jpg' %}"
+                  /></a>
+                  <div class="card-body py-2">
+                    <a class="product-meta d-block fs-xs pb-1" href="#"
+                      >Smartwatches</a
+                    >
+                    <h3 class="product-title fs-sm">
+                      <a href="#">Health &amp; Fitness Smartwatch</a>
+                    </h3>
+                    <div class="d-flex justify-content-between">
+                      <div class="product-price">
+                        <span class="text-accent"
+                          >$250.<small>00</small></span
+                        >
+                      </div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i class="star-rating-icon ci-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="tns-item tns-slide-cloned"
+                tabindex="-1"
+              >
+                <div class="card product-card card-static">
+                  <button
+                    aria-label="Add to wishlist"
+                    class="btn-wishlist btn-sm"
+                    data-bs-original-title="Add to wishlist"
+                    data-bs-placement="left"
+                    data-bs-toggle="tooltip"
+                    type="button"
+                  >
+                    <i class="ci-heart"></i></button
+                  ><a class="card-img-top d-block overflow-hidden" href="#"
+                    ><img alt="Product" src="{% static 'admin/img/67.jpg' %}"
+                  /></a>
+                  <div class="card-body py-2">
+                    <a class="product-meta d-block fs-xs pb-1" href="#"
+                      >Smartwatches</a
+                    >
+                    <h3 class="product-title fs-sm">
+                      <a href="#">Heart Rate &amp; Activity Tracker</a>
+                    </h3>
+                    <div class="d-flex justify-content-between">
+                      <div class="product-price text-accent">
+                        $26.<small>99</small>
+                      </div>
+                      <div class="star-rating">
+                        <i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i
+                          class="star-rating-icon ci-star-filled active"
+                        ></i
+                        ><i class="star-rating-icon ci-star-half active"></i
+                        ><i class="star-rating-icon ci-star"></i
+                        ><i class="star-rating-icon ci-star"></i>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  class="tns-item tns-slide-cloned"
+                  tabindex="-1"
+                >
+                  <div class="card product-card card-static">
+                    <button
+                      aria-label="Add to wishlist"
+                      class="btn-wishlist btn-sm"
+                      data-bs-original-title="Add to wishlist"
+                      data-bs-placement="left"
+                      data-bs-toggle="tooltip"
+                      type="button"
+                    >
+                      <i class="ci-heart"></i></button
+                    ><a class="card-img-top d-block overflow-hidden" href="#"
+                      ><img alt="Product" src="{% static 'admin/img/64.jpg' %}"
+                    /></a>
+                    <div class="card-body py-2">
+                      <a class="product-meta d-block fs-xs pb-1" href="#"
+                        >Smartwatches</a
+                      >
+                      <h3 class="product-title fs-sm">
+                        <a href="#">Smart Watch Series 5, Aluminium</a>
+                      </h3>
+                      <div class="d-flex justify-content-between">
+                        <div class="product-price text-accent">
+                          $349.<small>99</small>
+                        </div>
+                        <div class="star-rating">
+                          <i
+                            class="star-rating-icon ci-star-filled active"
+                          ></i
+                          ><i
+                            class="star-rating-icon ci-star-filled active"
+                          ></i
+                          ><i
+                            class="star-rating-icon ci-star-filled active"
+                          ></i
+                          ><i
+                            class="star-rating-icon ci-star-filled active"
+                          ></i
+                          ><i class="star-rating-icon ci-star"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Product bundles carousel (Cheaper together)-->
+    <div class="container pt-lg-1 pb-5 mb-md-3">
+      <div class="card card-body pt-5">
+        <h2 class="h3 text-center pb-4">Cheaper together</h2>
+        <div class="tns-carousel">
+          <div class="tns-outer" id="tns2-ow">
+            <div
+              aria-atomic="true"
+              aria-live="polite"
+              class="tns-liveregion tns-visually-hidden"
+            >
+              slide <span class="current">3</span> of 2
+            </div>
+            <div class="tns-ovh" id="tns2-mw">
+              <div class="tns-inner" id="tns2-iw">
+                <div
+                  class="tns-carousel-inner tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal"
+                  data-carousel-options='{"items": 1, "controls": false, "nav": true}'
+                  id="tns2"
+                  style="
+                    transition-duration: 0s;
+                    transform: translate3d(-33.3333%, 0px, 0px);
+                  "
+                >
+                  <div
+                    aria-hidden="true"
+                    class="tns-item tns-slide-cloned"
+                    tabindex="-1"
+                  >
+                    <div class="row align-items-center">
+                      <div class="col-md-3 col-sm-5">
+                        <div
+                          class="card product-card card-static text-center mx-auto"
+                          style="max-width: 20rem"
+                        >
+                          <a
+                            class="card-img-top d-block overflow-hidden"
+                            href="#"
+                            ><img alt="Product" src="{% static 'admin/img/70.jpg' %}"  
+                          /></a>
+                          <div class="card-body py-2">
+                            <span
+                              class="d-inline-block bg-secondary fs-ms rounded-1 py-1 px-2 mb-3"
+                              >Your product</span
+                            >
+                            <h3 class="product-title fs-sm">
+                              <a href="#">Smartwatch Youth Edition</a>
+                            </h3>
+                            <div class="product-price text-accent">
+                              $124.<small>99</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-1 col-sm-2 text-center">
+                        <div class="display-4 fw-light text-muted px-4">
+                          +
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-sm-5">
+                        <div
+                          class="card product-card card-static text-center mx-auto"
+                          style="max-width: 20rem"
+                        >
+                          <a
+                            class="card-img-top d-block overflow-hidden"
+                            href="#"
+                            ><img alt="Product" src="{% static 'admin/img/72.jpg' %}" 
+                          /></a>
+                          <div class="card-body py-2">
+                            <span
+                              class="d-inline-block bg-danger fs-ms text-white rounded-1 py-1 px-2 mb-3"
+                              >-20%</span
+                            >
+                            <h3 class="product-title fs-sm">
+                              <a href="#">Smartwatch Wireless Charger</a>
+                            </h3>
+                            <div class="product-price">
+                              <span class="text-accent"
+                                >$16.<small>00</small></span
+                              >
+                              <del class="fs-sm text-muted"
+                                >$20.<small>00</small></del
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-none d-md-block col-md-1 text-center">
+                        <div class="display-4 fw-light text-muted px-4">
+                          =
+                        </div>
+                      </div>
+                      <div class="col-md-4 pt-3 pt-md-0">
+                        <div
+                          class="bg-secondary p-4 rounded-3 text-center mx-auto"
+                          style="max-width: 20rem"
+                        >
+                          <div class="h3 fw-normal text-accent mb-3 me-1">
+                            $140.<small>99</small>
+                          </div>
+                          <button class="btn btn-primary" type="button">
+                            Purchase together
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    aria-hidden="true"
+                    class="tns-item tns-slide-cloned"
+                    tabindex="-1"
+                  >
+                    <div class="row align-items-center">
+                      <div class="col-md-3 col-sm-5">
+                        <div
+                          class="card product-card card-static text-center mx-auto"
+                          style="max-width: 20rem"
+                        >
+                          <a
+                            class="card-img-top d-block overflow-hidden"
+                            href="#"
+                            ><img alt="Product" src="{% static 'admin/img/70.jpg' %}"
+                          /></a>
+                          <div class="card-body py-2">
+                            <span
+                              class="d-inline-block bg-secondary fs-ms rounded-1 py-1 px-2 mb-3"
+                              >Your product</span
+                            >
+                            <h3 class="product-title fs-sm">
+                              <a href="#">Smartwatch Youth Edition</a>
+                            </h3>
+                            <div class="product-price text-accent">
+                              $124.<small>99</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-1 col-sm-2 text-center">
+                        <div class="display-4 fw-light text-muted px-4">
+                          +
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-sm-5">
+                        <div
+                          class="card product-card card-static text-center mx-auto"
+                          style="max-width: 20rem"
+                        >
+                          <a
+                            class="card-img-top d-block overflow-hidden"
+                            href="#"
+                            ><img alt="Product" src="{% static 'admin/img/71.jpg' %}"
+                          /></a>
+                          <div class="card-body py-2">
+                            <span
+                              class="d-inline-block bg-danger fs-ms text-white rounded-1 py-1 px-2 mb-3"
+                              >-15%</span
+                            >
+                            <h3 class="product-title fs-sm">
+                              <a href="#">Bluetooth Headset Air (White)</a>
+                            </h3>
+                            <div class="product-price">
+                              <span class="text-accent"
+                                >$59.<small>00</small></span
+                              >
+                              <del class="fs-sm text-muted"
+                                >$69.<small>00</small></del
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-none d-md-block col-md-1 text-center">
+                        <div class="display-4 fw-light text-muted px-4">
+                          =
+                        </div>
+                      </div>
+                      <div class="col-md-4 pt-3 pt-md-0">
+                        <div
+                          class="bg-secondary p-4 rounded-3 text-center mx-auto"
+                          style="max-width: 20rem"
+                        >
+                          <div class="h3 fw-normal text-accent mb-3 me-1">
+                            $183.<small>99</small>
+                          </div>
+                          <button class="btn btn-primary" type="button">
+                            Purchase together
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tns-item tns-slide-active" id="tns2-item0">
+                    <div class="row align-items-center">
+                      <div class="col-md-3 col-sm-5">
+                        <div
+                          class="card product-card card-static text-center mx-auto"
+                          style="max-width: 20rem"
+                        >
+                          <a
+                            class="card-img-top d-block overflow-hidden"
+                            href="#"
+                            ><img alt="Product" src="{% static 'admin/img/70.jpg' %}"
+                          /></a>
+                          <div class="card-body py-2">
+                            <span
+                              class="d-inline-block bg-secondary fs-ms rounded-1 py-1 px-2 mb-3"
+                              >Your product</span
+                            >
+                            <h3 class="product-title fs-sm">
+                              <a href="#">Smartwatch Youth Edition</a>
+                            </h3>
+                            <div class="product-price text-accent">
+                              $124.<small>99</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-1 col-sm-2 text-center">
+                        <div class="display-4 fw-light text-muted px-4">
+                          +
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-sm-5">
+                        <div
+                          class="card product-card card-static text-center mx-auto"
+                          style="max-width: 20rem"
+                        >
+                          <a
+                            class="card-img-top d-block overflow-hidden"
+                            href="#"
+                            ><img alt="Product" src="{% static 'admin/img/72.jpg' %}"
+                          /></a>
+                          <div class="card-body py-2">
+                            <span
+                              class="d-inline-block bg-danger fs-ms text-white rounded-1 py-1 px-2 mb-3"
+                              >-20%</span
+                            >
+                            <h3 class="product-title fs-sm">
+                              <a href="#">Smartwatch Wireless Charger</a>
+                            </h3>
+                            <div class="product-price">
+                              <span class="text-accent"
+                                >$16.<small>00</small></span
+                              >
+                              <del class="fs-sm text-muted"
+                                >$20.<small>00</small></del
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-none d-md-block col-md-1 text-center">
+                        <div class="display-4 fw-light text-muted px-4">
+                          =
+                        </div>
+                      </div>
+                      <div class="col-md-4 pt-3 pt-md-0">
+                        <div
+                          class="bg-secondary p-4 rounded-3 text-center mx-auto"
+                          style="max-width: 20rem"
+                        >
+                          <div class="h3 fw-normal text-accent mb-3 me-1">
+                            $140.<small>99</small>
+                          </div>
+                          <button class="btn btn-primary" type="button">
+                            Purchase together
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    aria-hidden="true"
+                    class="tns-item"
+                    id="tns2-item1"
+                    tabindex="-1"
+                  >
+                    <div class="row align-items-center">
+                      <div class="col-md-3 col-sm-5">
+                        <div
+                          class="card product-card card-static text-center mx-auto"
+                          style="max-width: 20rem"
+                        >
+                          <a
+                            class="card-img-top d-block overflow-hidden"
+                            href="#"
+                            ><img alt="Product" src="{% static 'admin/img/70.jpg' %}"
+                          /></a>
+                          <div class="card-body py-2">
+                            <span
+                              class="d-inline-block bg-secondary fs-ms rounded-1 py-1 px-2 mb-3"
+                              >Your product</span
+                            >
+                            <h3 class="product-title fs-sm">
+                              <a href="#">Smartwatch Youth Edition</a>
+                            </h3>
+                            <div class="product-price text-accent">
+                              $124.<small>99</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-1 col-sm-2 text-center">
+                        <div class="display-4 fw-light text-muted px-4">
+                          +
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-sm-5">
+                        <div
+                          class="card product-card card-static text-center mx-auto"
+                          style="max-width: 20rem"
+                        >
+                          <a
+                            class="card-img-top d-block overflow-hidden"
+                            href="#"
+                            ><img alt="Product" src="{% static 'admin/img/71.jpg' %}"
+                          /></a>
+                          <div class="card-body py-2">
+                            <span
+                              class="d-inline-block bg-danger fs-ms text-white rounded-1 py-1 px-2 mb-3"
+                              >-15%</span
+                            >
+                            <h3 class="product-title fs-sm">
+                              <a href="#">Bluetooth Headset Air (White)</a>
+                            </h3>
+                            <div class="product-price">
+                              <span class="text-accent"
+                                >$59.<small>00</small></span
+                              >
+                              <del class="fs-sm text-muted"
+                                >$69.<small>00</small></del
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-none d-md-block col-md-1 text-center">
+                        <div class="display-4 fw-light text-muted px-4">
+                          =
+                        </div>
+                      </div>
+                      <div class="col-md-4 pt-3 pt-md-0">
+                        <div
+                          class="bg-secondary p-4 rounded-3 text-center mx-auto"
+                          style="max-width: 20rem"
+                        >
+                          <div class="h3 fw-normal text-accent mb-3 me-1">
+                            $183.<small>99</small>
+                          </div>
+                          <button class="btn btn-primary" type="button">
+                            Purchase together
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    aria-hidden="true"
+                    class="tns-item tns-slide-cloned"
+                    tabindex="-1"
+                  >
+                    <div class="row align-items-center">
+                      <div class="col-md-3 col-sm-5">
+                        <div
+                          class="card product-card card-static text-center mx-auto"
+                          style="max-width: 20rem"
+                        >
+                          <a
+                            class="card-img-top d-block overflow-hidden"
+                            href="#"
+                            ><img alt="Product" src="{% static 'admin/img/70.jpg' %}"
+                          /></a>
+                          <div class="card-body py-2">
+                            <span
+                              class="d-inline-block bg-secondary fs-ms rounded-1 py-1 px-2 mb-3"
+                              >Your product</span
+                            >
+                            <h3 class="product-title fs-sm">
+                              <a href="#">Smartwatch Youth Edition</a>
+                            </h3>
+                            <div class="product-price text-accent">
+                              $124.<small>99</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-1 col-sm-2 text-center">
+                        <div class="display-4 fw-light text-muted px-4">
+                          +
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-sm-5">
+                        <div
+                          class="card product-card card-static text-center mx-auto"
+                          style="max-width: 20rem"
+                        >
+                          <a
+                            class="card-img-top d-block overflow-hidden"
+                            href="#"
+                            ><img alt="Product" src="{% static 'admin/img/72.jpg' %}"
+                          /></a>
+                          <div class="card-body py-2">
+                            <span
+                              class="d-inline-block bg-danger fs-ms text-white rounded-1 py-1 px-2 mb-3"
+                              >-20%</span
+                            >
+                            <h3 class="product-title fs-sm">
+                              <a href="#">Smartwatch Wireless Charger</a>
+                            </h3>
+                            <div class="product-price">
+                              <span class="text-accent"
+                                >$16.<small>00</small></span
+                              >
+                              <del class="fs-sm text-muted"
+                                >$20.<small>00</small></del
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-none d-md-block col-md-1 text-center">
+                        <div class="display-4 fw-light text-muted px-4">
+                          =
+                        </div>
+                      </div>
+                      <div class="col-md-4 pt-3 pt-md-0">
+                        <div
+                          class="bg-secondary p-4 rounded-3 text-center mx-auto"
+                          style="max-width: 20rem"
+                        >
+                          <div class="h3 fw-normal text-accent mb-3 me-1">
+                            $140.<small>99</small>
+                          </div>
+                          <button class="btn btn-primary" type="button">
+                            Purchase together
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    aria-hidden="true"
+                    class="tns-item tns-slide-cloned"
+                    tabindex="-1"
+                  >
+                    <div class="row align-items-center">
+                      <div class="col-md-3 col-sm-5">
+                        <div
+                          class="card product-card card-static text-center mx-auto"
+                          style="max-width: 20rem"
+                        >
+                          <a
+                            class="card-img-top d-block overflow-hidden"
+                            href="#"
+                            ><img alt="Product" src="{% static 'admin/img/70.jpg' %}"
+                          /></a>
+                          <div class="card-body py-2">
+                            <span
+                              class="d-inline-block bg-secondary fs-ms rounded-1 py-1 px-2 mb-3"
+                              >Your product</span
+                            >
+                            <h3 class="product-title fs-sm">
+                              <a href="#">Smartwatch Youth Edition</a>
+                            </h3>
+                            <div class="product-price text-accent">
+                              $124.<small>99</small>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-1 col-sm-2 text-center">
+                        <div class="display-4 fw-light text-muted px-4">
+                          +
+                        </div>
+                      </div>
+                      <div class="col-md-3 col-sm-5">
+                        <div
+                          class="card product-card card-static text-center mx-auto"
+                          style="max-width: 20rem"
+                        >
+                          <a
+                            class="card-img-top d-block overflow-hidden"
+                            href="#"
+                            ><img alt="Product" src="{% static 'admin/img/71.jpg' %}"
+                          /></a>
+                          <div class="card-body py-2">
+                            <span
+                              class="d-inline-block bg-danger fs-ms text-white rounded-1 py-1 px-2 mb-3"
+                              >-15%</span
+                            >
+                            <h3 class="product-title fs-sm">
+                              <a href="#">Bluetooth Headset Air (White)</a>
+                            </h3>
+                            <div class="product-price">
+                              <span class="text-accent"
+                                >$59.<small>00</small></span
+                              >
+                              <del class="fs-sm text-muted"
+                                >$69.<small>00</small></del
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="d-none d-md-block col-md-1 text-center">
+                        <div class="display-4 fw-light text-muted px-4">
+                          =
+                        </div>
+                      </div>
+                      <div class="col-md-4 pt-3 pt-md-0">
+                        <div
+                          class="bg-secondary p-4 rounded-3 text-center mx-auto"
+                          style="max-width: 20rem"
+                        >
+                          <div class="h3 fw-normal text-accent mb-3 me-1">
+                            $183.<small>99</small>
+                          </div>
+                          <button class="btn btn-primary" type="button">
+                            Purchase together
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div aria-label="Carousel Pagination" class="tns-nav">
+              <button
+                aria-controls="tns2"
+                aria-label="Carousel Page 1 (Current Slide)"
+                class="tns-nav-active"
+                data-nav="0"
+                style=""
+                type="button"
+              ></button
+              ><button
+                aria-controls="tns2"
+                aria-label="Carousel Page 2"
+                data-nav="1"
+                style=""
+                tabindex="-1"
+                type="button"
+              ></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>   {% endcomment %}
+
+{% endblock %}
+
+    

@@ -1,0 +1,2108 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<!-- Page Title-->
+<div class="page-title-overlap bg-dark pt-4">
+	<div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+		<div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+			<nav aria-label="breadcrumb">
+				<ol
+					class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start"
+				>
+					<li class="breadcrumb-item">
+						<a class="text-nowrap" href="index.html"
+							><i class="ci-home"></i>Home</a
+						>
+					</li>
+					<li class="breadcrumb-item text-nowrap">
+						<a href="#">Shop</a>
+					</li>
+					<li
+						aria-current="page"
+						class="breadcrumb-item text-nowrap active"
+					>
+						Grid left sidebar
+					</li>
+				</ol>
+			</nav>
+		</div>
+		<div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+			<h1 class="h3 text-light mb-0">Shop grid left sidebar</h1>
+		</div>
+	</div>
+</div>
+
+<div class="container pb-5 mb-2 mb-md-4">
+	<div class="row">
+		<!-- Sidebar-->
+		<aside class="col-lg-4">
+			<!-- Sidebar-->
+			<div
+				class="offcanvas offcanvas-collapse bg-white w-100 rounded-3 shadow-lg py-1"
+				id="shop-sidebar"
+				style="max-width: 22rem"
+			>
+				<div class="offcanvas-header align-items-center shadow-sm">
+					<h2 class="h5 mb-0">Filters</h2>
+					<button
+						aria-label="Close"
+						class="btn-close ms-auto"
+						data-bs-dismiss="offcanvas"
+						type="button"
+					></button>
+				</div>
+				<div class="offcanvas-body py-grid-gutter px-lg-grid-gutter">
+					<!-- Categories-->
+					<div class="widget widget-categories mb-4 pb-4 border-bottom">
+						<h3 class="widget-title">Categories</h3>
+						<div class="accordion mt-n1" id="shop-categories">
+							<!-- Shoes-->
+							<div class="accordion-item">
+								<h3 class="accordion-header">
+									<a
+										aria-controls="shoes"
+										aria-expanded="false"
+										class="accordion-button collapsed"
+										data-bs-toggle="collapse"
+										href="#shoes"
+										role="button"
+										>Shoes</a
+									>
+								</h3>
+								<div
+									class="accordion-collapse collapse"
+									data-bs-parent="#shop-categories"
+									id="shoes"
+								>
+									<div class="accordion-body">
+										<div class="widget widget-links widget-filter">
+											<div class="input-group input-group-sm mb-2">
+												<input
+													class="widget-filter-search form-control rounded-end"
+													placeholder="Search"
+													type="text"
+												/><i
+													class="ci-search position-absolute top-50 end-0 translate-middle-y fs-sm me-3"
+												></i>
+											</div>
+											<ul
+												class="widget-list widget-filter-list pt-1"
+												data-simplebar="init"
+												data-simplebar-auto-hide="false"
+												style="height: 12rem"
+											>
+												<div
+													class="simplebar-wrapper"
+													style="margin: -4px -16px 0px 0px"
+												>
+													<div
+														class="simplebar-height-auto-observer-wrapper"
+													>
+														<div
+															class="simplebar-height-auto-observer"
+														></div>
+													</div>
+													<div class="simplebar-mask">
+														<div
+															class="simplebar-offset"
+															style="right: 0px; bottom: 0px"
+														>
+															<div
+																aria-label="scrollable content"
+																class="simplebar-content-wrapper"
+																role="region"
+																style="height: auto; overflow: hidden"
+																tabindex="0"
+															>
+																<div
+																	class="simplebar-content"
+																	style="padding: 4px 16px 0px 0px"
+																>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>View all</span
+																			><span class="fs-xs text-muted ms-3"
+																				>1,953</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Pumps &amp; High Heels</span
+																			><span class="fs-xs text-muted ms-3"
+																				>247</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Ballerinas &amp; Flats</span
+																			><span class="fs-xs text-muted ms-3"
+																				>156</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Sandals</span
+																			><span class="fs-xs text-muted ms-3"
+																				>310</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Sneakers</span
+																			><span class="fs-xs text-muted ms-3"
+																				>402</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Boots</span
+																			><span class="fs-xs text-muted ms-3"
+																				>393</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Ankle Boots</span
+																			><span class="fs-xs text-muted ms-3"
+																				>50</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Loafers</span
+																			><span class="fs-xs text-muted ms-3"
+																				>93</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Slip-on</span
+																			><span class="fs-xs text-muted ms-3"
+																				>122</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Flip Flops</span
+																			><span class="fs-xs text-muted ms-3"
+																				>116</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Clogs &amp; Mules</span
+																			><span class="fs-xs text-muted ms-3"
+																				>24</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Athletic Shoes</span
+																			><span class="fs-xs text-muted ms-3"
+																				>31</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Oxfords</span
+																			><span class="fs-xs text-muted ms-3"
+																				>9</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Smart Shoes</span
+																			><span class="fs-xs text-muted ms-3"
+																				>18</span
+																			></a
+																		>
+																	</li>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div
+														class="simplebar-placeholder"
+														style="width: 0px; height: 0px"
+													></div>
+												</div>
+												<div
+													class="simplebar-track simplebar-horizontal"
+													style="visibility: hidden"
+												>
+													<div
+														class="simplebar-scrollbar simplebar-visible"
+														style="width: 0px; display: none"
+													></div>
+												</div>
+												<div
+													class="simplebar-track simplebar-vertical"
+													style="visibility: hidden"
+												>
+													<div
+														class="simplebar-scrollbar simplebar-visible"
+														style="height: 0px; display: none"
+													></div>
+												</div>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Clothing-->
+							<div class="accordion-item">
+								<h3 class="accordion-header">
+									<a
+										aria-controls="clothing"
+										aria-expanded="true"
+										class="accordion-button"
+										data-bs-toggle="collapse"
+										href="#clothing"
+										role="button"
+										>Clothing</a
+									>
+								</h3>
+								<div
+									class="accordion-collapse collapse show"
+									data-bs-parent="#shop-categories"
+									id="clothing"
+								>
+									<div class="accordion-body">
+										<div class="widget widget-links widget-filter">
+											<div class="input-group input-group-sm mb-2">
+												<input
+													class="widget-filter-search form-control rounded-end"
+													placeholder="Search"
+													type="text"
+												/><i
+													class="ci-search position-absolute top-50 end-0 translate-middle-y fs-sm me-3"
+												></i>
+											</div>
+											<ul
+												class="widget-list widget-filter-list pt-1"
+												data-simplebar="init"
+												data-simplebar-auto-hide="false"
+												style="height: 12rem"
+											>
+												<div
+													class="simplebar-wrapper"
+													style="margin: -4px -16px 0px 0px"
+												>
+													<div
+														class="simplebar-height-auto-observer-wrapper"
+													>
+														<div
+															class="simplebar-height-auto-observer"
+														></div>
+													</div>
+													<div class="simplebar-mask">
+														<div
+															class="simplebar-offset"
+															style="right: 0px; bottom: 0px"
+														>
+															<div
+																aria-label="scrollable content"
+																class="simplebar-content-wrapper"
+																role="region"
+																style="
+																	height: 100%;
+																	overflow: hidden scroll;
+																"
+																tabindex="0"
+															>
+																<div
+																	class="simplebar-content"
+																	style="padding: 4px 16px 0px 0px"
+																>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>View all</span
+																			><span class="fs-xs text-muted ms-3"
+																				>2,548</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Blazers &amp; Suits</span
+																			><span class="fs-xs text-muted ms-3"
+																				>235</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Blouses</span
+																			><span class="fs-xs text-muted ms-3"
+																				>410</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Cardigans &amp; Jumpers</span
+																			><span class="fs-xs text-muted ms-3"
+																				>107</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Dresses</span
+																			><span class="fs-xs text-muted ms-3"
+																				>93</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Hoodie &amp; Sweatshirts</span
+																			><span class="fs-xs text-muted ms-3"
+																				>122</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Jackets &amp; Coats</span
+																			><span class="fs-xs text-muted ms-3"
+																				>116</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Jeans</span
+																			><span class="fs-xs text-muted ms-3"
+																				>215</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Lingerie</span
+																			><span class="fs-xs text-muted ms-3"
+																				>150</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Maternity Wear</span
+																			><span class="fs-xs text-muted ms-3"
+																				>8</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Nightwear</span
+																			><span class="fs-xs text-muted ms-3"
+																				>26</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Shirts</span
+																			><span class="fs-xs text-muted ms-3"
+																				>164</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Shorts</span
+																			><span class="fs-xs text-muted ms-3"
+																				>147</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Socks &amp; Tights</span
+																			><span class="fs-xs text-muted ms-3"
+																				>139</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Sportswear</span
+																			><span class="fs-xs text-muted ms-3"
+																				>65</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Swimwear</span
+																			><span class="fs-xs text-muted ms-3"
+																				>18</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>T-shirts &amp; Vests</span
+																			><span class="fs-xs text-muted ms-3"
+																				>209</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Tops</span
+																			><span class="fs-xs text-muted ms-3"
+																				>132</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Trousers</span
+																			><span class="fs-xs text-muted ms-3"
+																				>105</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Underwear</span
+																			><span class="fs-xs text-muted ms-3"
+																				>87</span
+																			></a
+																		>
+																	</li>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div
+														class="simplebar-placeholder"
+														style="width: auto; height: 538px"
+													></div>
+												</div>
+												<div
+													class="simplebar-track simplebar-horizontal"
+													style="visibility: hidden"
+												>
+													<div
+														class="simplebar-scrollbar simplebar-visible"
+														style="width: 0px; display: none"
+													></div>
+												</div>
+												<div
+													class="simplebar-track simplebar-vertical"
+													style="visibility: visible"
+												>
+													<div
+														class="simplebar-scrollbar simplebar-visible"
+														style="
+															height: 68px;
+															transform: translate3d(0px, 0px, 0px);
+															display: block;
+														"
+													></div>
+												</div>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Bags-->
+							<div class="accordion-item">
+								<h3 class="accordion-header">
+									<a
+										aria-controls="bags"
+										aria-expanded="false"
+										class="accordion-button collapsed"
+										data-bs-toggle="collapse"
+										href="#bags"
+										role="button"
+										>Bags</a
+									>
+								</h3>
+								<div
+									class="accordion-collapse collapse"
+									data-bs-parent="#shop-categories"
+									id="bags"
+								>
+									<div class="accordion-body">
+										<div class="widget widget-links widget-filter">
+											<div class="input-group input-group-sm mb-2">
+												<input
+													class="widget-filter-search form-control rounded-end"
+													placeholder="Search"
+													type="text"
+												/><i
+													class="ci-search position-absolute top-50 end-0 translate-middle-y fs-sm me-3"
+												></i>
+											</div>
+											<ul
+												class="widget-list widget-filter-list pt-1"
+												data-simplebar="init"
+												data-simplebar-auto-hide="false"
+												style="height: 12rem"
+											>
+												<div
+													class="simplebar-wrapper"
+													style="margin: -4px -16px 0px 0px"
+												>
+													<div
+														class="simplebar-height-auto-observer-wrapper"
+													>
+														<div
+															class="simplebar-height-auto-observer"
+														></div>
+													</div>
+													<div class="simplebar-mask">
+														<div
+															class="simplebar-offset"
+															style="right: 0px; bottom: 0px"
+														>
+															<div
+																aria-label="scrollable content"
+																class="simplebar-content-wrapper"
+																role="region"
+																style="height: auto; overflow: hidden"
+																tabindex="0"
+															>
+																<div
+																	class="simplebar-content"
+																	style="padding: 4px 16px 0px 0px"
+																>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>View all</span
+																			><span class="fs-xs text-muted ms-3"
+																				>801</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Handbags</span
+																			><span class="fs-xs text-muted ms-3"
+																				>238</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Backpacks</span
+																			><span class="fs-xs text-muted ms-3"
+																				>116</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Wallets</span
+																			><span class="fs-xs text-muted ms-3"
+																				>104</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Luggage</span
+																			><span class="fs-xs text-muted ms-3"
+																				>115</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Lumbar Packs</span
+																			><span class="fs-xs text-muted ms-3"
+																				>17</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Duffle Bags</span
+																			><span class="fs-xs text-muted ms-3"
+																				>9</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Bag / Travel Accessories</span
+																			><span class="fs-xs text-muted ms-3"
+																				>93</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Diaper Bags</span
+																			><span class="fs-xs text-muted ms-3"
+																				>5</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Lunch Bags</span
+																			><span class="fs-xs text-muted ms-3"
+																				>8</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Messenger Bags</span
+																			><span class="fs-xs text-muted ms-3"
+																				>2</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Laptop Bags</span
+																			><span class="fs-xs text-muted ms-3"
+																				>31</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Briefcases</span
+																			><span class="fs-xs text-muted ms-3"
+																				>45</span
+																			></a
+																		>
+																	</li>
+																	<li
+																		class="widget-list-item widget-filter-item"
+																	>
+																		<a
+																			class="widget-list-link d-flex justify-content-between align-items-center"
+																			href="#"
+																			><span
+																				class="widget-filter-item-text"
+																				>Sport Bags</span
+																			><span class="fs-xs text-muted ms-3"
+																				>18</span
+																			></a
+																		>
+																	</li>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div
+														class="simplebar-placeholder"
+														style="width: 0px; height: 0px"
+													></div>
+												</div>
+												<div
+													class="simplebar-track simplebar-horizontal"
+													style="visibility: hidden"
+												>
+													<div
+														class="simplebar-scrollbar simplebar-visible"
+														style="width: 0px; display: none"
+													></div>
+												</div>
+												<div
+													class="simplebar-track simplebar-vertical"
+													style="visibility: hidden"
+												>
+													<div
+														class="simplebar-scrollbar simplebar-visible"
+														style="height: 0px; display: none"
+													></div>
+												</div>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Sunglasses-->
+							<div class="accordion-item">
+								<h3 class="accordion-header">
+									<a
+										aria-controls="sunglasses"
+										aria-expanded="false"
+										class="accordion-button collapsed"
+										data-bs-toggle="collapse"
+										href="#sunglasses"
+										role="button"
+										>Sunglasses</a
+									>
+								</h3>
+								<div
+									class="collapse"
+									data-bs-parent="#shop-categories"
+									id="sunglasses"
+								>
+									<div class="accordion-body">
+										<div class="widget widget-links">
+											<ul class="widget-list">
+												<li class="widget-list-item">
+													<a
+														class="widget-list-link d-flex justify-content-between align-items-center"
+														href="#"
+														><span>View all</span
+														><span class="fs-xs text-muted ms-3"
+															>1,842</span
+														></a
+													>
+												</li>
+												<li class="widget-list-item">
+													<a
+														class="widget-list-link d-flex justify-content-between align-items-center"
+														href="#"
+														><span>Fashion Sunglasses</span
+														><span class="fs-xs text-muted ms-3"
+															>953</span
+														></a
+													>
+												</li>
+												<li class="widget-list-item">
+													<a
+														class="widget-list-link d-flex justify-content-between align-items-center"
+														href="#"
+														><span>Sport Sunglasses</span
+														><span class="fs-xs text-muted ms-3"
+															>589</span
+														></a
+													>
+												</li>
+												<li class="widget-list-item">
+													<a
+														class="widget-list-link d-flex justify-content-between align-items-center"
+														href="#"
+														><span>Classic Sunglasses</span
+														><span class="fs-xs text-muted ms-3"
+															>300</span
+														></a
+													>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Watches-->
+							<div class="accordion-item">
+								<h3 class="accordion-header">
+									<a
+										aria-controls="watches"
+										aria-expanded="false"
+										class="accordion-button collapsed"
+										data-bs-toggle="collapse"
+										href="#watches"
+										role="button"
+										>Watches</a
+									>
+								</h3>
+								<div
+									class="accordion-collapse collapse"
+									data-bs-parent="#shop-categories"
+									id="watches"
+								>
+									<div class="accordion-body">
+										<div class="widget widget-links">
+											<ul class="widget-list">
+												<li class="widget-list-item">
+													<a
+														class="widget-list-link d-flex justify-content-between align-items-center"
+														href="#"
+														><span>View all</span
+														><span class="fs-xs text-muted ms-3"
+															>734</span
+														></a
+													>
+												</li>
+												<li class="widget-list-item">
+													<a
+														class="widget-list-link d-flex justify-content-between align-items-center"
+														href="#"
+														><span>Fashion Watches</span
+														><span class="fs-xs text-muted ms-3"
+															>572</span
+														></a
+													>
+												</li>
+												<li class="widget-list-item">
+													<a
+														class="widget-list-link d-flex justify-content-between align-items-center"
+														href="#"
+														><span>Casual Watches</span
+														><span class="fs-xs text-muted ms-3"
+															>110</span
+														></a
+													>
+												</li>
+												<li class="widget-list-item">
+													<a
+														class="widget-list-link d-flex justify-content-between align-items-center"
+														href="#"
+														><span>Luxury Watches</span
+														><span class="fs-xs text-muted ms-3"
+															>34</span
+														></a
+													>
+												</li>
+												<li class="widget-list-item">
+													<a
+														class="widget-list-link d-flex justify-content-between align-items-center"
+														href="#"
+														><span>Sport Watches</span
+														><span class="fs-xs text-muted ms-3"
+															>18</span
+														></a
+													>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Accessories-->
+							<div class="accordion-item">
+								<h3 class="accordion-header">
+									<a
+										aria-controls="accessories"
+										aria-expanded="false"
+										class="accordion-button collapsed"
+										data-bs-toggle="collapse"
+										href="#accessories"
+										role="button"
+										>Accessories</a
+									>
+								</h3>
+								<div
+									class="accordion-collapse collapse"
+									data-bs-parent="#shop-categories"
+									id="accessories"
+								>
+									<div class="accordion-body">
+										<div class="widget widget-links">
+											<ul class="widget-list">
+												<li class="widget-list-item">
+													<a
+														class="widget-list-link d-flex justify-content-between align-items-center"
+														href="#"
+														><span>View all</span
+														><span class="fs-xs text-muted ms-3"
+															>920</span
+														></a
+													>
+												</li>
+												<li class="widget-list-item">
+													<a
+														class="widget-list-link d-flex justify-content-between align-items-center"
+														href="#"
+														><span>Belts</span
+														><span class="fs-xs text-muted ms-3"
+															>364</span
+														></a
+													>
+												</li>
+												<li class="widget-list-item">
+													<a
+														class="widget-list-link d-flex justify-content-between align-items-center"
+														href="#"
+														><span>Hats</span
+														><span class="fs-xs text-muted ms-3"
+															>405</span
+														></a
+													>
+												</li>
+												<li class="widget-list-item">
+													<a
+														class="widget-list-link d-flex justify-content-between align-items-center"
+														href="#"
+														><span>Jewelry</span
+														><span class="fs-xs text-muted ms-3"
+															>131</span
+														></a
+													>
+												</li>
+												<li class="widget-list-item">
+													<a
+														class="widget-list-link d-flex justify-content-between align-items-center"
+														href="#"
+														><span>Cosmetics</span
+														><span class="fs-xs text-muted ms-3"
+															>20</span
+														></a
+													>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Price range-->
+					{% comment %} <div class="widget mb-4 pb-4 border-bottom">
+						<h3 class="widget-title">Price</h3>
+						<div
+							class="range-slider"
+							data-max="1000"
+							data-min="0"
+							data-start-max="680"
+							data-start-min="250"
+							data-step="1"
+						>
+							<div
+								class="range-slider-ui noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr"
+							>
+								<div class="noUi-base">
+									<div class="noUi-connects">
+										<div
+											class="noUi-connect"
+											style="
+												transform: translate(25%, 0px) scale(0.43, 1);
+											"
+										></div>
+									</div>
+									<div
+										class="noUi-origin"
+										style="transform: translate(-75%, 0px); z-index: 5"
+									>
+										<div
+											aria-orientation="horizontal"
+											aria-valuemax="680.0"
+											aria-valuemin="0.0"
+											aria-valuenow="250.0"
+											aria-valuetext="$250"
+											class="noUi-handle noUi-handle-lower"
+											data-handle="0"
+											role="slider"
+											tabindex="0"
+										>
+											<div class="noUi-touch-area"></div>
+											<div class="noUi-tooltip">$250</div>
+										</div>
+									</div>
+									<div
+										class="noUi-origin"
+										style="transform: translate(-32%, 0px); z-index: 4"
+									>
+										<div
+											aria-orientation="horizontal"
+											aria-valuemax="1000.0"
+											aria-valuemin="250.0"
+											aria-valuenow="680.0"
+											aria-valuetext="$680"
+											class="noUi-handle noUi-handle-upper"
+											data-handle="1"
+											role="slider"
+											tabindex="0"
+										>
+											<div class="noUi-touch-area"></div>
+											<div class="noUi-tooltip">$680</div>
+										</div>
+									</div>
+								</div>
+								<div class="noUi-pips noUi-pips-horizontal">
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-large"
+										style="left: 0%"
+									></div>
+									<div
+										class="noUi-value noUi-value-horizontal noUi-value-large"
+										data-value="0"
+										style="left: 0%"
+									>
+										0
+									</div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 1%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 2%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 3%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 4%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 5%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 6%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 7%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 8%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 9%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 10%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 11%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 12%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 13%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 14%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 15%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 16%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 17%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 18%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 19%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 20%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 21%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 22%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 23%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 24%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-large"
+										style="left: 25%"
+									></div>
+									<div
+										class="noUi-value noUi-value-horizontal noUi-value-large"
+										data-value="250"
+										style="left: 25%"
+									>
+										250
+									</div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 26%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 27%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 28%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 29%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 30%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 31%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 32%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 33%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 34%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 35%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 36%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 37%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 38%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 39%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 40%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 41%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 42%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 43%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 44%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 45%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 46%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 47%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 48%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 49%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-large"
+										style="left: 50%"
+									></div>
+									<div
+										class="noUi-value noUi-value-horizontal noUi-value-large"
+										data-value="500"
+										style="left: 50%"
+									>
+										500
+									</div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 51%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 52%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 53%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 54%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 55%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 56%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 57%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 58%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 59%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 60%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 61%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 62%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 63%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 64%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 65%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 66%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 67%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 68%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 69%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 70%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 71%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 72%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 73%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 74%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-large"
+										style="left: 75%"
+									></div>
+									<div
+										class="noUi-value noUi-value-horizontal noUi-value-large"
+										data-value="750"
+										style="left: 75%"
+									>
+										750
+									</div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 76%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 77%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 78%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 79%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 80%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 81%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 82%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 83%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 84%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 85%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 86%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 87%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 88%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 89%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 90%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 91%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 92%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 93%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 94%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 95%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 96%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 97%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 98%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
+										style="left: 99%"
+									></div>
+									<div
+										class="noUi-marker noUi-marker-horizontal noUi-marker-large"
+										style="left: 100%"
+									></div>
+									<div
+										class="noUi-value noUi-value-horizontal noUi-value-large"
+										data-value="1000"
+										style="left: 100%"
+									>
+										1000
+									</div>
+								</div>
+							</div>
+							<div class="d-flex pb-1">
+								<div class="w-50 pe-2 me-2">
+									<div class="input-group input-group-sm">
+										<span class="input-group-text">$</span>
+										<input
+											class="form-control range-slider-value-min"
+											type="text"
+										/>
+									</div>
+								</div>
+								<div class="w-50 ps-2">
+									<div class="input-group input-group-sm">
+										<span class="input-group-text">$</span>
+										<input
+											class="form-control range-slider-value-max"
+											type="text"
+										/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> {% endcomment %}
+
+					
+
+				</div>
+			</div>
+		</aside>
+		<!-- Content  -->
+		<section class="col-lg-8">
+			<!-- Toolbar-->
+			<div class="d-flex justify-content-center justify-content-sm-between align-items-center pt-2 pb-4 pb-sm-5">
+				<div class="d-flex flex-wrap">
+					<div class="d-flex align-items-center flex-nowrap me-3 me-sm-4 pb-3">
+						<label
+							class="text-light opacity-75 text-nowrap fs-sm me-2 d-none d-sm-block"
+							for="sorting"
+							>Sort by:</label
+						>
+						<select class="form-select" id="sorting">
+							<option>Popularity</option>
+							<option>Low - Hight Price</option>
+							<option>High - Low Price</option>
+							<option>Average Rating</option>
+							<option>A - Z Order</option>
+							<option>Z - A Order</option></select
+						><span
+							class="fs-sm text-light opacity-75 text-nowrap ms-2 d-none d-md-block"
+							>of 287 products</span
+						>
+					</div>
+				</div>
+				<div class="d-flex pb-3">
+					<a class="nav-link-style nav-link-light me-3" href="#"
+						><i class="ci-arrow-left"></i></a
+					><span class="fs-md text-light">1 / 5</span
+					><a class="nav-link-style nav-link-light ms-3" href="#"
+						><i class="ci-arrow-right"></i
+					></a>
+				</div>
+				<div class="d-none d-sm-flex pb-3">
+					<a
+						class="btn btn-icon nav-link-style bg-light text-dark disabled opacity-100 me-2"
+						href="#"
+						><i class="ci-view-grid"></i></a
+					><a
+						class="btn btn-icon nav-link-style nav-link-light"
+						href="shop-list-ls.html"
+						><i class="ci-view-list"></i
+					></a>
+				</div>
+			</div>
+
+			<!-- Products grid-->
+			<div class="row mx-n2">
+				{% for book in books_before %}
+				<!-- Product-->
+				<div class="col-md-4 col-sm-6 px-2 mb-4">
+					<div class="card product-card">
+						<button
+							aria-label="Add to wishlist"
+							class="btn-wishlist btn-sm"
+							data-bs-original-title="Add to wishlist"
+							data-bs-placement="left"
+							data-bs-toggle="tooltip"
+							type="button"
+						>
+						<i class="fa fa-heart fa-2x" aria-hidden="false"></i></button
+						>
+                        {% if book.image %}
+						<a
+							class="card-img-top d-block overflow-hidden"
+							href="/book/{{ book.slug }}/"
+							><img alt="{{ book.title }}" src="{{ book.image.url }}"
+						/></a> 
+						{% endif %}
+
+
+
+						<div class="card-body py-2">
+							<a class="product-meta d-block fs-xs pb-1" href="#"
+								>Sneakers &amp; Keds</a
+							>
+							<h3 class="product-title fs-sm">
+								<a href="shop-single-v1.html"
+									>{{ book.title }}</a
+								>
+							</h3>
+							<p><small>Book by: {{ book.author }}</small></P>
+
+
+							<div class="d-flex justify-content-between">
+								<div class="product-price">
+									<span class="text-accent">${{ book.price }}.<small></small></span>
+								</div>
+								<div class="star-rating">
+									<i class="star-rating-icon ci-star-filled active"></i
+									><i class="star-rating-icon ci-star-filled active"></i
+									><i class="star-rating-icon ci-star-filled active"></i
+									><i class="star-rating-icon ci-star-filled active"></i
+									><i class="star-rating-icon ci-star"></i>
+								</div>
+							</div>
+						</div>
+						<div class="card-body card-body-hidden">
+							<button
+								class="btn btn-primary btn-sm d-block w-100 mb-2"
+								type="button"
+							>
+								<i class="ci-cart fs-sm me-1"></i>Add to Cart
+							</button>
+
+							<div class="text-center">
+								<a class="nav-link-style fs-ms" data-bs-toggle="modal" href="#quick-view"
+								   data-title="{{ book.title }}"
+								   data-image="{{ book.image.url }}"
+								   data-price="{{ book.price }}"
+								   data-author="{{ book.author }}"
+								   {% comment %} data-description="#"> {% endcomment %}
+									<i class="ci-eye align-middle me-1"></i>Quick view
+								</a>
+							</div>
+							<script>
+								document.addEventListener('DOMContentLoaded', function () {
+									const quickViewLinks = document.querySelectorAll('a[data-bs-toggle="modal"]');
+								
+									quickViewLinks.forEach(link => {
+										link.addEventListener('click', function () {
+											const title = this.getAttribute('data-title');
+											const image = this.getAttribute('data-image');
+											const  author = this.getAttribute('data-author');
+											const price = this.getAttribute('data-price');
+											const description = this.getAttribute('data-description');
+								
+											document.getElementById('modal-book-title').innerText = title;
+											const modalImage = document.getElementById('modal-book-image');
+											modalImage.src = image;
+											modalImage.style.width = '40%'; // or set a specific width like '300px'
+											modalImage.style.height = 'auto'; // maintain aspect ratio
+								
+											document.getElementById('modal-book-price').innerText = `$${price}`;
+											document.getElementById('modal-book-description').innerText = description;
+										});
+									});
+								});
+							</script>
+								
+
+						
+								
+
+
+						</div>
+					</div>
+					<hr class="d-sm-none" />
+				</div>
+				{% endfor %}
+			</div>
+
+			<!-- Banner-->
+			<div class="py-sm-2">
+				<div
+					class="d-sm-flex justify-content-between align-items-center bg-secondary overflow-hidden mb-4 rounded-3"
+				>
+					<div
+						class="py-4 my-2 my-md-0 py-md-5 px-4 ms-md-3 text-center text-sm-start"
+					>
+						<h4 class="fs-lg fw-light mb-2">Improve your vision</h4>
+						<h3 class="mb-4">Make Your Day more comfortble by reading books</h3>
+						<a class="btn btn-primary btn-shadow btn-sm" href="#"
+							>Shop Now</a
+						>
+					</div>
+					<img
+						alt="Shop Converse"
+						class="d-block ms-auto"
+						src=" {% static 'admin/img/book.jpeg' %}"
+					/>    
+				</div>
+			</div>
+
+			<!-- Products grid-->
+			<div class="row mx-n2">
+				{% for book in books_after %}
+				<!-- Product-->
+				<div class="col-md-4 col-sm-6 px-2 mb-4">
+					<div class="card product-card">
+						<button
+							aria-label="Add to wishlist"
+							class="btn-wishlist btn-sm"
+							data-bs-original-title="Add to wishlist"
+							data-bs-placement="left"
+							data-bs-toggle="tooltip"
+							type="button"
+						>
+						<i class="fa fa-heart fa-2x" aria-hidden="false"></i></button
+						>
+                        {% if book.image %}
+						<a
+							class="card-img-top d-block overflow-hidden"
+							href="/book/{{ book.slug }}/"
+							><img alt="{{ book.title }}" src="{{ book.image.url }}"
+						/></a> 
+						{% endif %}
+						<div class="card-body py-2">
+							<a class="product-meta d-block fs-xs pb-1" href="#"
+								>Sneakers &amp; Keds</a
+							>
+							<h3 class="product-title fs-sm">
+								<a href="shop-single-v1.html"
+									>{{ book.title }}</a
+								>
+							</h3>
+							<p><small>Book by: {{ book.author }}</small></P>
+
+
+							<div class="d-flex justify-content-between">
+								<div class="product-price">
+									<span class="text-accent">${{ book.price }}.<small></small></span>
+								</div>
+								<div class="star-rating">
+									<i class="star-rating-icon ci-star-filled active"></i
+									><i class="star-rating-icon ci-star-filled active"></i
+									><i class="star-rating-icon ci-star-filled active"></i
+									><i class="star-rating-icon ci-star-filled active"></i
+									><i class="star-rating-icon ci-star"></i>
+								</div>
+							</div>
+						</div>
+						<div class="card-body card-body-hidden">
+							
+
+
+
+							<button
+								class="btn btn-primary btn-sm d-block w-100 mb-2"
+								type="button"
+								
+							>
+								<i class="ci-cart fs-sm me-1"></i>Add to Cart
+							</button>
+
+							
+
+							<div class="text-center">
+								<a class="nav-link-style fs-ms" data-bs-toggle="modal" href="#quick-view"
+								   data-title="{{ book.title }}"
+								   data-image="{{ book.image.url }}"
+								   data-price="{{ book.price }}"
+								   data-author="{{ book.author }}"
+								   {% comment %} data-description="#"> {% endcomment %}
+									<i class="ci-eye align-middle me-1"></i>Quick view
+								</a>
+							</div>
+							<script>
+								document.addEventListener('DOMContentLoaded', function () {
+									const quickViewLinks = document.querySelectorAll('a[data-bs-toggle="modal"]');
+								
+									quickViewLinks.forEach(link => {
+										link.addEventListener('click', function () {
+											const title = this.getAttribute('data-title');
+											const image = this.getAttribute('data-image');
+											const  author = this.getAttribute('data-author');
+											const price = this.getAttribute('data-price');
+											const description = this.getAttribute('data-description');
+								
+											document.getElementById('modal-book-title').innerText = title;
+											const modalImage = document.getElementById('modal-book-image');
+											modalImage.src = image;
+											modalImage.style.width = '40%'; // or set a specific width like '300px'
+											modalImage.style.height = 'auto'; // maintain aspect ratio
+								
+											document.getElementById('modal-book-price').innerText = `$${price}`;
+											document.getElementById('modal-book-description').innerText = description;
+										});
+									});
+								});
+							</script>
+								
+
+						
+								
+
+
+						</div>
+					</div>
+					<hr class="d-sm-none" />
+				</div>
+				{% endfor %}
+			</div>
+			<hr class="my-3" />
+
+			<!-- Pagination-->
+			<nav
+				aria-label="Page navigation"
+				class="d-flex justify-content-between pt-2"
+			>
+				<ul class="pagination">
+					<li class="page-item">
+						<a class="page-link" href="#"
+							><i class="ci-arrow-left me-2"></i>Prev</a
+						>
+					</li>
+				</ul>
+				<ul class="pagination">
+					<li class="page-item d-sm-none">
+						<span class="page-link page-link-static">1 / 5</span>
+					</li>
+					<li
+						aria-current="page"
+						class="page-item active d-none d-sm-block"
+					>
+						<span class="page-link"
+							>1<span class="visually-hidden">(current)</span></span
+						>
+					</li>
+					<li class="page-item d-none d-sm-block">
+						<a class="page-link" href="#">2</a>
+					</li>
+					<li class="page-item d-none d-sm-block">
+						<a class="page-link" href="#">3</a>
+					</li>
+					<li class="page-item d-none d-sm-block">
+						<a class="page-link" href="#">4</a>
+					</li>
+					<li class="page-item d-none d-sm-block">
+						<a class="page-link" href="#">5</a>
+					</li>
+				</ul>
+				<ul class="pagination">
+					<li class="page-item">
+						<a aria-label="Next" class="page-link" href="#"
+							>Next<i class="ci-arrow-right ms-2"></i
+						></a>
+					</li>
+				</ul>
+			</nav>
+		</section>
+	</div>
+</div>
+
+{% endblock %}

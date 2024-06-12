@@ -1,0 +1,248 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+  <!-- Page Title-->
+  <div class="page-title-overlap bg-dark pt-4">
+    <div class="container d-lg-flex justify-content-between py-2 py-lg-3">
+      <div class="order-lg-2 mb-3 mb-lg-0 pt-lg-2">
+        <nav aria-label="breadcrumb">
+          <ol
+            class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start"
+          >
+            <li class="breadcrumb-item">
+              <a class="text-nowrap" href="index.html"
+                ><i class="ci-home"></i>Home</a
+              >
+            </li>
+            <li class="breadcrumb-item text-nowrap">
+              <a href="shop-grid-ls.html">Shop</a>
+            </li>
+            <li
+              aria-current="page"
+              class="breadcrumb-item text-nowrap active"
+            >
+              Checkout
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <div class="order-lg-1 pe-lg-4 text-center text-lg-start">
+        <h1 class="h3 text-light mb-0">Checkout</h1>
+      </div>
+    </div>
+  </div>
+  <div class="container pb-5 mb-2 mb-md-4">
+    <div class="row">
+      <section class="col-lg-8">
+        <!-- Steps-->
+        <div class="steps steps-light pt-2 pb-3 mb-5">
+          <a class="step-item active" href="shop-cart.html">
+            <div class="step-progress">
+              <span class="step-count">1</span>
+            </div>
+            <div class="step-label"><i class="ci-cart"></i>Cart</div></a
+          ><a class="step-item active" href="checkout-details.html">
+            <div class="step-progress">
+              <span class="step-count">2</span>
+            </div>
+            <div class="step-label">
+              <i class="ci-user-circle"></i>Details
+            </div></a
+          ><a class="step-item active" href="checkout-shipping.html">
+            <div class="step-progress">
+              <span class="step-count">3</span>
+            </div>
+            <div class="step-label">
+              <i class="ci-package"></i>Shipping
+            </div></a
+          ><a class="step-item active current" href="checkout-payment.html">
+            <div class="step-progress">
+              <span class="step-count">4</span>
+            </div>
+            <div class="step-label"><i class="ci-card"></i>Payment</div></a
+          ><a class="step-item" href="checkout-review.html">
+            <div class="step-progress">
+              <span class="step-count">5</span>
+            </div>
+            <div class="step-label">
+              <i class="ci-check-circle"></i>Review
+            </div></a
+          >
+        </div>
+        <!-- Payment methods accordion-->
+        <h2 class="h6 pb-3 mb-2">Choose payment method</h2>
+
+      
+          <!-- Set up a container element for the button   {{ cart.get_total_cost }}-->
+          <div id="paypal-button-container"></div>
+          <script src="https://www.paypal.com/sdk/js?client-id=AcdAefkYAVdoXc0z1TxJkN6SeWUJxbL14MW6O7ktkA9KvTi_aAVY4fUVG7-GIMlc9GqfmClXr4QZrmk4&currency=USD"></script>
+          <script>
+                        
+            paypal.Buttons({
+              async createOrder() {
+                  const response = await fetch("/my-server/create-paypal-order", {
+                      method: "POST",
+                      headers: {
+                          "Content-Type": "application/json",
+                      },
+                      body: JSON.stringify({
+                          cart: [
+                              {
+                                  sku: "YOUR_PRODUCT_STOCK_KEEPING_UNIT",
+                                  quantity: "{{ cart.get_total_cost }}",
+                              },
+                          ],
+                      }),
+                  });
+
+                  const data = await response.json();
+
+                  return data.id;
+              },
+              async onApprove(data) {
+                  // Capture the funds from the transaction.
+                  const response = await fetch("/my-server/capture-paypal-order", {
+                    method: "POST",
+                    body: JSON.stringify({
+                      orderID: data.orderID
+                    })
+                  })
+
+                  const details = await response.json();
+
+                  // Show success message to buyer
+                  alert(`Transaction completed by ${details.payer.name.given_name}`);
+              }
+            }).render('#paypal-button-container');
+
+          </script>
+      
+
+
+
+     
+    
+        <!-- Navigation (desktop)-->
+        <div class="d-none d-lg-flex pt-4">
+          <div class="w-50 pe-3">
+            <a
+              class="btn btn-secondary d-block w-100"
+              href="/checkout"
+              ><i class="ci-arrow-left mt-sm-0 me-1"></i
+              ><span class="d-none d-sm-inline">Back to checkout</span
+              ><span class="d-inline d-sm-none">Back</span></a
+            >
+          </div>
+          <div class="w-50 ps-2">
+            <a
+              class="btn btn-primary d-block w-100"
+              href="checkout-review.html"
+              ><span class="d-none d-sm-inline">Review your order</span
+              ><span class="d-inline d-sm-none">Review order</span
+              ><i class="ci-arrow-right mt-sm-0 ms-1"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+    <!-- Sidebar-->
+    <aside class="col-lg-4 pt-4 pt-lg-0 ps-xl-5">
+      <div class="bg-white rounded-3 shadow-lg p-4 ms-lg-auto">
+        <div class="py-2 px-xl-2">
+
+
+          <div class="widget mb-3">
+            <h2 class="widget-title text-center">Order summary</h2>
+            {% for item in cart %}
+            <div class="d-flex align-items-center pb-2 border-bottom">
+              {% if item.book.image %}
+              <a class="d-block flex-shrink-0" href="shop-single-v1.html"
+                ><img alt="{{ item.book.title }}" src="{{ item.book.image.url }}" width="64"  
+              /></a>
+              {% endif %}
+
+              <div class="ps-2">
+                <h6 class="widget-product-title">
+                  <a href="shop-single-v1.html"
+                    >{{ item.book.title }}</a
+                  >
+                </h6>
+                <div class="widget-product-meta">
+                  <span class="text-accent me-2"
+                    >${{ item.book.price }}<small></small></span
+                  ><span class="text-muted">x 1</span>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            
+          </div>
+
+
+
+          <ul class="list-unstyled fs-sm pb-2 border-bottom">
+            <li class="d-flex justify-content-between align-items-center">
+              <span class="me-2">Subtotal:</span
+              ><span class="text-end">${{ cart.get_total_cost }}<small></small></span>
+            </li>
+          </ul>
+
+          <h3 class="fw-normal text-center my-4">
+            ${{ cart.get_total_cost }}<small></small>
+          </h3>
+
+          <form class="needs-validation" method="post" novalidate="">
+            <div class="mb-3">
+              <input
+                class="form-control"
+                placeholder="Promo code"
+                required=""
+                type="text"
+              />
+              <div class="invalid-feedback">
+                Please provide promo code.
+              </div>
+            </div>
+            <button
+              class="btn btn-outline-primary d-block w-100"
+              type="submit"
+            >
+              Apply promo code
+            </button>
+          </form>
+        </div>
+      </div>
+    </aside>
+    </div>
+    <!-- Navigation (mobile)-->
+    <div class="row d-lg-none">
+      <div class="col-lg-8">
+        <div class="d-flex pt-4 mt-3">
+          <div class="w-50 pe-3">
+            <a
+              class="btn btn-secondary d-block w-100"
+              href="checkout-shipping.html"
+              ><i class="ci-arrow-left mt-sm-0 me-1"></i
+              ><span class="d-none d-sm-inline">Back to Shipping</span
+              ><span class="d-inline d-sm-none">Back</span></a
+            >
+          </div>
+          <div class="w-50 ps-2">
+            <a
+              class="btn btn-primary d-block w-100"
+              href="checkout-review.html"
+              ><span class="d-none d-sm-inline">Review your order</span
+              ><span class="d-inline d-sm-none">Review order</span
+              ><i class="ci-arrow-right mt-sm-0 ms-1"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}         
+
+    
