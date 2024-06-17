@@ -1,9 +1,11 @@
-<a
-    id= "menu-cart-button"
-	class="navbar-tool-icon-box bg-secondary dropdown-toggle"
-	href="#"
-	><span class="navbar-tool-label">{{ cart|length }}</span
-	><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></a
-><a class="navbar-tool-text" href=""
-	><small>My Cart</small></a
+{% load static %}
+
+<a  id= "menu-cart-button" class="navbar-tool-icon-box bg-secondary dropdown-toggle" href="#">
+	<span class="navbar-tool-label">{{ cart|length }}</span>
+	
+		<img src="{% static 'admin/img/gis/trolley.png' %}" alt="Add to wishlist" style="width: 35px; height: 35px;"  aria-hidden="true">
+
+		
+	</i></a
 >
+<a class="navbar-tool-text" href=""><small>My Cart</small></a>

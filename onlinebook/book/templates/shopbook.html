@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block content %}
 
 
@@ -13,18 +12,18 @@
 					class="breadcrumb breadcrumb-light flex-lg-nowrap justify-content-center justify-content-lg-start"
 				>
 					<li class="breadcrumb-item">
-						<a class="text-nowrap" href="index.html"
+						<a class="text-nowrap" href="/"
 							><i class="ci-home"></i>Home</a
 						>
 					</li>
 					<li class="breadcrumb-item text-nowrap">
-						<a href="#">Shop</a>
+						<a href="/shop">Shop</a>
 					</li>
 					<li
 						aria-current="page"
 						class="breadcrumb-item text-nowrap active"
 					>
-						Grid left sidebar
+						
 					</li>
 				</ol>
 			</nav>
@@ -40,11 +39,8 @@
 		<!-- Sidebar-->
 		<aside class="col-lg-4">
 			<!-- Sidebar-->
-			<div
-				class="offcanvas offcanvas-collapse bg-white w-100 rounded-3 shadow-lg py-1"
-				id="shop-sidebar"
-				style="max-width: 22rem"
-			>
+			<div class="offcanvas offcanvas-collapse bg-white w-100 rounded-3 shadow-lg py-1" id="shop-sidebar" style="max-width: 22rem">
+				
 				<div class="offcanvas-header align-items-center shadow-sm">
 					<h2 class="h5 mb-0">Filters</h2>
 					<button
@@ -62,31 +58,18 @@
 							<!-- Shoes-->
 							<div class="accordion-item">
 								<h3 class="accordion-header">
-									<a
-										aria-controls="shoes"
-										aria-expanded="false"
-										class="accordion-button collapsed"
-										data-bs-toggle="collapse"
-										href="#shoes"
-										role="button"
-										>Shoes</a
-									>
+									<a aria-controls="shoes" aria-expanded="false" class="accordion-button collapsed" data-bs-toggle="collapse" href="#shoes" 
+										role="button">Shoes</a>
+									
 								</h3>
-								<div
-									class="accordion-collapse collapse"
-									data-bs-parent="#shop-categories"
-									id="shoes"
-								>
+								<div class="accordion-collapse collapse" data-bs-parent="#shop-categories" id="shoes">
+									
 									<div class="accordion-body">
 										<div class="widget widget-links widget-filter">
 											<div class="input-group input-group-sm mb-2">
-												<input
-													class="widget-filter-search form-control rounded-end"
-													placeholder="Search"
-													type="text"
-												/><i
-													class="ci-search position-absolute top-50 end-0 translate-middle-y fs-sm me-3"
-												></i>
+												<input 	class="widget-filter-search form-control rounded-end" placeholder="Search" type="text"/>
+												<i class="ci-search position-absolute top-50 end-0 translate-middle-y fs-sm me-3"></i>	
+			
 											</div>
 											<ul
 												class="widget-list widget-filter-list pt-1"
@@ -94,39 +77,25 @@
 												data-simplebar-auto-hide="false"
 												style="height: 12rem"
 											>
-												<div
-													class="simplebar-wrapper"
-													style="margin: -4px -16px 0px 0px"
-												>
-													<div
-														class="simplebar-height-auto-observer-wrapper"
-													>
-														<div
-															class="simplebar-height-auto-observer"
-														></div>
-													</div>
+												<div class="simplebar-wrapper" 	style="margin: -4px -16px 0px 0px">
+
+													<div class="simplebar-height-auto-observer-wrapper">
+														<div class="simplebar-height-auto-observer"></div>
+													</div>	
+													
 													<div class="simplebar-mask">
-														<div
-															class="simplebar-offset"
-															style="right: 0px; bottom: 0px"
-														>
-															<div
-																aria-label="scrollable content"
-																class="simplebar-content-wrapper"
-																role="region"
-																style="height: auto; overflow: hidden"
-																tabindex="0"
-															>
-																<div
-																	class="simplebar-content"
-																	style="padding: 4px 16px 0px 0px"
-																>
-																	<li
-																		class="widget-list-item widget-filter-item"
-																	>
-																		<a
-																			class="widget-list-link d-flex justify-content-between align-items-center"
-																			href="#"
+														<div class="simplebar-offset" style="right: 0px; bottom: 0px">
+															
+															
+														
+															<div aria-label="scrollable content" class="simplebar-content-wrapper"role="region" style="height: auto; overflow: hidden"tabindex="0">
+																
+																<div class="simplebar-content" 	style="padding: 4px 16px 0px 0px">
+																	
+																	<li class="widget-list-item widget-filter-item">
+																		
+																	
+																		<a class="widget-list-link d-flex justify-content-between align-items-center" 	href="/shop"
 																			><span
 																				class="widget-filter-item-text"
 																				>View all</span
@@ -1240,535 +1209,7 @@
 							</div>
 						</div>
 					</div>
-					<!-- Price range-->
-					{% comment %} <div class="widget mb-4 pb-4 border-bottom">
-						<h3 class="widget-title">Price</h3>
-						<div
-							class="range-slider"
-							data-max="1000"
-							data-min="0"
-							data-start-max="680"
-							data-start-min="250"
-							data-step="1"
-						>
-							<div
-								class="range-slider-ui noUi-target noUi-ltr noUi-horizontal noUi-txt-dir-ltr"
-							>
-								<div class="noUi-base">
-									<div class="noUi-connects">
-										<div
-											class="noUi-connect"
-											style="
-												transform: translate(25%, 0px) scale(0.43, 1);
-											"
-										></div>
-									</div>
-									<div
-										class="noUi-origin"
-										style="transform: translate(-75%, 0px); z-index: 5"
-									>
-										<div
-											aria-orientation="horizontal"
-											aria-valuemax="680.0"
-											aria-valuemin="0.0"
-											aria-valuenow="250.0"
-											aria-valuetext="$250"
-											class="noUi-handle noUi-handle-lower"
-											data-handle="0"
-											role="slider"
-											tabindex="0"
-										>
-											<div class="noUi-touch-area"></div>
-											<div class="noUi-tooltip">$250</div>
-										</div>
-									</div>
-									<div
-										class="noUi-origin"
-										style="transform: translate(-32%, 0px); z-index: 4"
-									>
-										<div
-											aria-orientation="horizontal"
-											aria-valuemax="1000.0"
-											aria-valuemin="250.0"
-											aria-valuenow="680.0"
-											aria-valuetext="$680"
-											class="noUi-handle noUi-handle-upper"
-											data-handle="1"
-											role="slider"
-											tabindex="0"
-										>
-											<div class="noUi-touch-area"></div>
-											<div class="noUi-tooltip">$680</div>
-										</div>
-									</div>
-								</div>
-								<div class="noUi-pips noUi-pips-horizontal">
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-large"
-										style="left: 0%"
-									></div>
-									<div
-										class="noUi-value noUi-value-horizontal noUi-value-large"
-										data-value="0"
-										style="left: 0%"
-									>
-										0
-									</div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 1%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 2%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 3%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 4%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 5%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 6%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 7%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 8%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 9%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 10%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 11%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 12%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 13%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 14%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 15%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 16%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 17%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 18%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 19%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 20%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 21%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 22%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 23%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 24%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-large"
-										style="left: 25%"
-									></div>
-									<div
-										class="noUi-value noUi-value-horizontal noUi-value-large"
-										data-value="250"
-										style="left: 25%"
-									>
-										250
-									</div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 26%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 27%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 28%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 29%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 30%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 31%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 32%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 33%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 34%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 35%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 36%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 37%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 38%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 39%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 40%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 41%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 42%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 43%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 44%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 45%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 46%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 47%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 48%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 49%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-large"
-										style="left: 50%"
-									></div>
-									<div
-										class="noUi-value noUi-value-horizontal noUi-value-large"
-										data-value="500"
-										style="left: 50%"
-									>
-										500
-									</div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 51%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 52%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 53%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 54%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 55%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 56%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 57%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 58%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 59%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 60%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 61%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 62%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 63%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 64%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 65%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 66%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 67%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 68%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 69%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 70%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 71%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 72%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 73%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 74%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-large"
-										style="left: 75%"
-									></div>
-									<div
-										class="noUi-value noUi-value-horizontal noUi-value-large"
-										data-value="750"
-										style="left: 75%"
-									>
-										750
-									</div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 76%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 77%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 78%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 79%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 80%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 81%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 82%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 83%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 84%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 85%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 86%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 87%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 88%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 89%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 90%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 91%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 92%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 93%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 94%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 95%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 96%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 97%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 98%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-normal"
-										style="left: 99%"
-									></div>
-									<div
-										class="noUi-marker noUi-marker-horizontal noUi-marker-large"
-										style="left: 100%"
-									></div>
-									<div
-										class="noUi-value noUi-value-horizontal noUi-value-large"
-										data-value="1000"
-										style="left: 100%"
-									>
-										1000
-									</div>
-								</div>
-							</div>
-							<div class="d-flex pb-1">
-								<div class="w-50 pe-2 me-2">
-									<div class="input-group input-group-sm">
-										<span class="input-group-text">$</span>
-										<input
-											class="form-control range-slider-value-min"
-											type="text"
-										/>
-									</div>
-								</div>
-								<div class="w-50 ps-2">
-									<div class="input-group input-group-sm">
-										<span class="input-group-text">$</span>
-										<input
-											class="form-control range-slider-value-max"
-											type="text"
-										/>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div> {% endcomment %}
-
 					
-
 				</div>
 			</div>
 		</aside>
@@ -1819,7 +1260,8 @@
 
 			<!-- Products grid-->
 			<div class="row mx-n2">
-				{% for book in books_before %}
+				{% if page_obj.object_list %}
+				{% for book in page_obj.object_list|slice:":6" %}
 				<!-- Product-->
 				<div class="col-md-4 col-sm-6 px-2 mb-4">
 					<div class="card product-card">
@@ -1831,7 +1273,8 @@
 							data-bs-toggle="tooltip"
 							type="button"
 						>
-						<i class="fa fa-heart fa-2x" aria-hidden="false"></i></button
+						<img src="{% static 'admin/img/gis/heart.png' %}" alt="Add to wishlist" style="width: 23px; height: 23px;" aria-hidden="false">
+						</button
 						>
                         {% if book.image %}
 						<a
@@ -1921,6 +1364,9 @@
 					<hr class="d-sm-none" />
 				</div>
 				{% endfor %}
+				{% else %}
+				<p>No bood found.</p>
+				{% endif %}
 			</div>
 
 			<!-- Banner-->
@@ -1947,7 +1393,8 @@
 
 			<!-- Products grid-->
 			<div class="row mx-n2">
-				{% for book in books_after %}
+				{% if page_obj.object_list %}
+				{% for book in page_obj.object_list|slice:"6:" %}
 				<!-- Product-->
 				<div class="col-md-4 col-sm-6 px-2 mb-4">
 					<div class="card product-card">
@@ -1959,7 +1406,8 @@
 							data-bs-toggle="tooltip"
 							type="button"
 						>
-						<i class="fa fa-heart fa-2x" aria-hidden="false"></i></button
+						<img src="{% static 'admin/img/gis/heart.png' %}" alt="Add to wishlist" style="width: 23px; height: 23px;" aria-hidden="false">
+						</button
 						>
                         {% if book.image %}
 						<a
@@ -2053,54 +1501,58 @@
 					<hr class="d-sm-none" />
 				</div>
 				{% endfor %}
+				{% else %}
+				<p>No books found.</p>
+			{% endif %}
 			</div>
 			<hr class="my-3" />
 
-			<!-- Pagination-->
-			<nav
-				aria-label="Page navigation"
-				class="d-flex justify-content-between pt-2"
-			>
+			   <!-- Pagination -->
+			   <nav aria-label="Page navigation" class="d-flex justify-content-between pt-2">
 				<ul class="pagination">
-					<li class="page-item">
-						<a class="page-link" href="#"
-							><i class="ci-arrow-left me-2"></i>Prev</a
-						>
-					</li>
+					{% if page_obj.has_previous %}
+						<li class="page-item">
+							<a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+								<i class="ci-arrow-left me-2"></i>Prev
+							</a>
+						</li>
+					{% else %}
+						<li class="page-item disabled">
+							<span class="page-link"><i class="ci-arrow-left me-2"></i>Prev</span>
+						</li>
+					{% endif %}
 				</ul>
 				<ul class="pagination">
 					<li class="page-item d-sm-none">
-						<span class="page-link page-link-static">1 / 5</span>
+						<span class="page-link page-link-static">{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</span>
 					</li>
-					<li
-						aria-current="page"
-						class="page-item active d-none d-sm-block"
-					>
-						<span class="page-link"
-							>1<span class="visually-hidden">(current)</span></span
-						>
-					</li>
-					<li class="page-item d-none d-sm-block">
-						<a class="page-link" href="#">2</a>
-					</li>
-					<li class="page-item d-none d-sm-block">
-						<a class="page-link" href="#">3</a>
-					</li>
-					<li class="page-item d-none d-sm-block">
-						<a class="page-link" href="#">4</a>
-					</li>
-					<li class="page-item d-none d-sm-block">
-						<a class="page-link" href="#">5</a>
-					</li>
+					{% for num in page_obj.paginator.page_range %}
+						{% if page_obj.number == num %}
+							<li aria-current="page" class="page-item active d-none d-sm-block">
+								<span class="page-link">{{ num }}<span class="visually-hidden">(current)</span></span>
+							</li>
+						{% else %}
+							<li class="page-item d-none d-sm-block">
+								<a class="page-link" href="?page={{ num }}">{{ num }}</a>
+							</li>
+						{% endif %}
+					{% endfor %}
 				</ul>
 				<ul class="pagination">
-					<li class="page-item">
-						<a aria-label="Next" class="page-link" href="#"
-							>Next<i class="ci-arrow-right ms-2"></i
-						></a>
-					</li>
+					{% if page_obj.has_next %}
+						<li class="page-item">
+							<a aria-label="Next" class="page-link" href="?page={{ page_obj.next_page_number }}">
+								Next<i class="ci-arrow-right ms-2"></i>
+							</a>
+						</li>
+					{% else %}
+						<li class="page-item disabled">
+							<span class="page-link">Next<i class="ci-arrow-right ms-2"></i></span>
+						</li>
+					{% endif %}
 				</ul>
 			</nav>
+			
 		</section>
 	</div>
 </div>

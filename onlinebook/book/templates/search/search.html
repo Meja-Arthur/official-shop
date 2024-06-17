@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+ 
+
+    <section class="container pt-md-3 pb-5 mb-md-3">
+      <h2 class="h3 text-center"> You searched for:{{ query }}</h2>
+      <div class="row pt-4 mx-n2">
+    
+        <!-- Product-->
+        {% for book in page.object_list %}
+
+        <div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
+          <div class="card product-card">
+            <button aria-label="Add to wishlist" class="btn-wishlist btn-sm" data-bs-original-title="Add to wishlist" data-bs-placement="left"
+              data-bs-toggle="tooltip" type="button" ><i class="ci-heart"></i></button>
+
+              {% if book.object.image %}
+              <a class="card-img-top d-block overflow-hidden" href="/book/{{ book.object.slug }}/" >
+              <img alt="{{ book.object.title }}" src="{{ book.object.image.url }}" 
+              {% endif %}
+            /></a>
+    
+            <div class="card-body py-2">
+              <a class="product-meta d-block fs-xs pb-1" href="#"
+                >{{ book.object.category }} &amp;</a
+              >
+              <h3 class="product-title fs-sm">
+                <a href="/book/{{ book.object.slug }}/">{{ book.object.title }}</a>
+              </h3>
+              <p><small>Book by: {{ book.object.author }}</small></P>
+              <div class="d-flex justify-content-between">
+                <div class="product-price">
+                  <span class="text-accent">${{ book.object.price }}.<small></small></span>
+                </div>
+                <div class="star-rating">
+                  <i class="star-rating-icon ci-star-filled active"></i
+                  ><i class="star-rating-icon ci-star-filled active"></i
+                  ><i class="star-rating-icon ci-star-filled active"></i
+                  ><i class="star-rating-icon ci-star-half active"></i
+                  ><i class="star-rating-icon ci-star"></i>
+                </div>
+              </div>
+            </div>
+            <div class="card-body card-body-hidden">
+    
+              
+    
+    
+              <button class="btn btn-primary btn-sm d-block w-100 mb-2" type="button">
+                <i class="ci-cart fs-sm me-1"></i>Add to Cart
+              </button>
+              
+              <div class="text-center">
+                <a class="nav-link-style fs-ms" data-bs-toggle="modal" href="#quick-view"
+                  data-title="{{ book.object.title }}"
+                  data-image="{{ book.object.image.url }}"
+                  data-price="{{ book.object.price }}"
+                  data-author="{{ book.object.author }}"
+                  {% comment %} data-description="#"> {% endcomment %}
+                  <i class="ci-eye align-middle me-1"></i>Quick view
+                </a>
+              </div>
+              <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                  const quickViewLinks = document.querySelectorAll('a[data-bs-toggle="modal"]');
+                
+                  quickViewLinks.forEach(link => {
+                    link.addEventListener('click', function () {
+                      const title = this.getAttribute('data-title');
+                      const image = this.getAttribute('data-image');
+                      const  author = this.getAttribute('data-author');
+                      const price = this.getAttribute('data-price');
+                      const description = this.getAttribute('data-description');
+                
+                      document.getElementById('modal-book-title').innerText = title;
+                      const modalImage = document.getElementById('modal-book-image');
+                      modalImage.src = image;
+                      modalImage.style.width = '40%'; // or set a specific width like '300px'
+                      modalImage.style.height = 'auto'; // maintain aspect ratio
+                
+                      document.getElementById('modal-book-price').innerText = `$${price}`;
+                      document.getElementById('modal-book-description').innerText = description;
+                    });
+                  });
+                });
+              </script>
+            </div>
+          </div>
+          <hr class="d-sm-none" />
+        </div>
+        {% empty %}
+        <li>No results found. </li>
+        {% endfor %}
+    
+      </div>
+    
+    
+      <div class="text-center pt-3">
+        <a class="btn btn-outline-accent" href="/shop"
+          >More Books<i class="ci-arrow-right ms-1"></i
+        ></a>
+      </div>
+    </section>
+
+
+{% endblock %}

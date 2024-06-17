@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block content %}
 
 <!-- Products grid (Trending products)-->
@@ -13,9 +12,13 @@
 		<div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
 			<div class="card product-card">
 				<button aria-label="Add to wishlist" class="btn-wishlist btn-sm" data-bs-original-title="Add to wishlist" data-bs-placement="left"
-					data-bs-toggle="tooltip" type="button" ><i class="ci-heart"></i></button>
+					data-bs-toggle="tooltip" type="button" >
+					
+					<img src="{% static 'admin/img/gis/heart.png' %}" alt="Add to wishlist" style="width: 25px; height: 25px;"  aria-hidden="true">
+
+					</i></button>
 					{% if book.image %}
-					<a class="card-img-top d-block overflow-hidden" href="shop-single-v1.html">
+					<a class="card-img-top d-block overflow-hidden" href="/book/{{ book.slug }}/">
 					<img alt="{{ book.title }}" src="{{ book.image.url }}" 
 					{% endif %}
 				/></a>
@@ -25,8 +28,9 @@
 						>Sneakers &amp; Keds</a
 					>
 					<h3 class="product-title fs-sm">
-						<a href="shop-single-v1.html">{{ book.title }}</a>
+						<a href="/book/{{ book.slug }}/">{{ book.title }}</a>
 					</h3>
+					<p><small>Book by: {{ book.author }}</small></P>
 					<div class="d-flex justify-content-between">
 						<div class="product-price">
 							<span class="text-accent">${{ book.price }}.<small></small></span>
@@ -90,7 +94,6 @@
 		{% endfor %}
 
 	</div>
-
 
 	<div class="text-center pt-3">
 		<a class="btn btn-outline-accent" href="/shop"
@@ -165,7 +168,7 @@
 					</div>
 				</div>
 				<a class="d-none d-md-block mt-auto" href="shop-grid-ls.html">
-					<img alt="For Women" class="d-block w-100" src="{% static 'admin/img/vide12.png' %}" />
+					<img alt="For Women" class="d-block w-100" src="{% static 'admin/img/recommendedbook.jpeg' %}" />
 				</a>
 			</div>
 		</div>
@@ -179,484 +182,242 @@
 					</div>
 					<div class="tns-ovh">
 						<div class="tns-inner">
+							
 							<div class="tns-carousel-inner tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal" data-carousel-options='{"nav": false, "controlsContainer": "#hoodie-day"}' id="tns3">
-								
-								
 								<!-- Add your product items here -->
-								{% for book in recommended_books_1 %}
-								<div aria-hidden="true" class="tns-item tns-slide-cloned" tabindex="-1">						
-									<div class="row mx-n2">
-										<div class="col-lg-4 col-6 px-0 px-sm-2 mb-sm-4">
-											<div class="card product-card card-static">
-												<button
-													aria-label="Add to wishlist"
-													class="btn-wishlist btn-sm"
-													data-bs-original-title="Add to wishlist"
-													data-bs-placement="left"
-													data-bs-toggle="tooltip"
-													type="button"
-												>
-													<i class="ci-heart"></i></button
-												>
-												{% if book.image %}
-												<a
-													class="card-img-top d-block overflow-hidden"
-													href="shop-single-v1.html"
-													><img alt="{{ book.title }}" src="{{ book.image.url }}"
+						
+								{% for book in recommended_books %}
+										<div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
+											<div class="card product-card">
+												<button aria-label="Add to wishlist" class="btn-wishlist btn-sm" data-bs-original-title="Add to wishlist" data-bs-placement="left"
+													data-bs-toggle="tooltip" type="button" >
+													<i class="ci-heart">
+														<img src="{% static 'admin/img/gis/heart.png' %}" alt="Add to wishlist" style="width: 18px; height: 21px;">
+													</i></button>
+													{% if book.image %}
+													<a class="card-img-top d-block overflow-hidden" href="/book/{{ book.slug }}/">
+													<img alt="{{ book.title }}" src="{{ book.image.url }}" 
+													{% endif %}
 												/></a>
-												{% endif%}
 
-												<div class="card-body py-2"> 
-													<a
-														class="product-meta d-block fs-xs pb-1"
-														href="#"
-														>Hoodies &amp; Sweatshirts</a
+												<div class="card-body py-2">
+													<a class="product-meta d-block fs-xs pb-1" href="#"
+														>Sneakers &amp; Keds</a
 													>
 													<h3 class="product-title fs-sm">
-														<a href="shop-single-v1.html"
-															>{{  book.title }}</a
-														>
+														<a href="/book/{{ book.slug }}/">{{ book.title }}</a>
 													</h3>
+													<p><small>Book by: {{ book.author }}</small></P>
 													<div class="d-flex justify-content-between">
 														<div class="product-price">
-															<span class="text-accent"
-																>${{ book.price }}.<small></small></span
-															>
+															<span class="text-accent">${{ book.price }}.<small></small></span>
 														</div>
 														<div class="star-rating">
-															<i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i
-																class="star-rating-icon ci-star-filled active"
-															></i
+															<i class="star-rating-icon ci-star-filled active"></i
+															><i class="star-rating-icon ci-star-filled active"></i
+															><i class="star-rating-icon ci-star-filled active"></i
+															><i class="star-rating-icon ci-star-half active"></i
 															><i class="star-rating-icon ci-star"></i>
 														</div>
 													</div>
 												</div>
-											</div>
-										</div>
-									
-									</div>
-								</div>
-								{% endfor %}
-								
-								{% for book in recommended_books_2 %}
-								<!-- Carousel item-->
-								<div class="tns-item tns-slide-active" id="tns3-item0">
-									<div class="row mx-n2">
-										<div class="col-lg-4 col-6 px-0 px-sm-2 mb-sm-4">
-											<div class="card product-card card-static">
-												<button
-													aria-label="Add to wishlist"
-													class="btn-wishlist btn-sm"
-													data-bs-original-title="Add to wishlist"
-													data-bs-placement="left"
-													data-bs-toggle="tooltip"
-													type="button"
-												>
-													<i class="ci-heart"></i></button
-												>
-												{% if book.image %}
-												<a
-													class="card-img-top d-block overflow-hidden"
-													href="shop-single-v1.html"
-													><img alt="{{ book.title }}" src="{{ book.image.url }}"
-												/></a>
-												{% endif %}
+												<div class="card-body card-body-hidden">
 
-												
+													
 
 
-
-
-												<div class="card-body py-2">
-													<a
-														class="product-meta d-block fs-xs pb-1"
-														href="#"
-														> &amp; </a
-													>
-													<h3 class="product-title fs-sm">
-														<a href="shop-single-v1.html"
-															>{{ book.title }}</a
-														>
-													</h3>
-													<div class="d-flex justify-content-between">
-														<div class="product-price">
-															<span class="text-accent"
-																>${{ book.price }}.<small></small></span
-															>
-														</div>
-														<div class="star-rating">
-															<i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i class="star-rating-icon ci-star"></i>
-														</div>
+													<button class="btn btn-primary btn-sm d-block w-100 mb-2" type="button">
+														<i class="ci-cart fs-sm me-1"></i>Add to Cart
+													</button>
+													
+													<div class="text-center">
+														<a class="nav-link-style fs-ms" data-bs-toggle="modal" href="#quick-view"
+															data-title="{{ book.title }}"
+															data-image="{{ book.image.url }}"
+															data-price="{{ book.price }}"
+															data-author="{{ book.author }}"
+															{% comment %} data-description="#"> {% endcomment %}
+															<i class="ci-eye align-middle me-1"></i>Quick view
+														</a>
 													</div>
+													<script>
+														document.addEventListener('DOMContentLoaded', function () {
+															const quickViewLinks = document.querySelectorAll('a[data-bs-toggle="modal"]');
+														
+															quickViewLinks.forEach(link => {
+																link.addEventListener('click', function () {
+																	const title = this.getAttribute('data-title');
+																	const image = this.getAttribute('data-image');
+																	const  author = this.getAttribute('data-author');
+																	const price = this.getAttribute('data-price');
+																	const description = this.getAttribute('data-description');
+														
+																	document.getElementById('modal-book-title').innerText = title;
+																	const modalImage = document.getElementById('modal-book-image');
+																	modalImage.src = image;
+																	modalImage.style.width = '40%'; // or set a specific width like '300px'
+																	modalImage.style.height = 'auto'; // maintain aspect ratio
+														
+																	document.getElementById('modal-book-price').innerText = `$${price}`;
+																	document.getElementById('modal-book-description').innerText = description;
+																});
+															});
+														});
+													</script>
 												</div>
 											</div>
+											<hr class="d-sm-none" />
 										</div>
-									
-									</div>
-								</div>
 								{% endfor %}
-
-
-
-								{% for book in recommended_books_3 %}
-								<!-- Car ousel item-->
-								<div aria-hidden="true" class="tns-item" id="tns3-item1" tabindex="-1">
-									<div class="row mx-n2">
-										<div class="col-lg-4 col-6 px-0 px-sm-2 mb-sm-4 d-none d-lg-block">
-											<div class="card product-card card-static">
-												<button
-													aria-label="Add to wishlist"
-													class="btn-wishlist btn-sm"
-													data-bs-original-title="Add to wishlist"
-													data-bs-placement="left"
-													data-bs-toggle="tooltip"
-													type="button"
-												>
-													<i class="ci-heart"></i></button
-												>
-												{% if book.image %}
-												<a
-													class="card-img-top d-block overflow-hidden"
-													href="shop-single-v1.html"
-													><img alt="{{ book.title }}" src="{{ book.image.url }}"
-												/></a>
-												{% endif %}
-												<div class="card-body py-2">
-													<a
-														class="product-meta d-block fs-xs pb-1"
-														href="#"
-														> &amp;</a
-													>
-													<h3 class="product-title fs-sm">
-														<a href="shop-single-v1.html"
-															>{{ book.title }}</a
-														>
-													</h3>
-													<div class="d-flex justify-content-between">
-														<div class="product-price">
-															<span class="text-accent"
-																>${{ book.price }}.<small></small></span
-															>
-														</div>
-														<div class="star-rating">
-															<i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i
-																class="star-rating-icon ci-star-half active"
-															></i>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										
-									</div>
-								</div>
-								{% endfor %}
-								
-
+							
 							</div>
+							
+							
+							
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-
-<section class="container mb-4 pb-3 pb-sm-0 mb-sm-5">
-	<div class="row">
-		<!-- Product grid (carousel)-->
-		<div class="col-md-7 pt-4 pt-md-0">
-			<div class="tns-carousel">
-				<div class="tns-outer">
-					<div aria-atomic="true" aria-live="polite" class="tns-liveregion tns-visually-hidden">
-						slide <span class="current">1</span> of 3
-					</div>
-					<div class="tns-ovh">
-						<div class="tns-inner">
-							<div class="tns-carousel-inner tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal" data-carousel-options='{"nav": false, "controlsContainer": "#hoodie-day"}' id="tns3">
-								
-								
-								<!-- Add your product items here -->
-								{% for book in must_read_1 %}
-								<div aria-hidden="true" class="tns-item tns-slide-cloned" tabindex="-1">						
-									<div class="row mx-n2">
-										<div class="col-lg-4 col-6 px-0 px-sm-2 mb-sm-4">
-											<div class="card product-card card-static">
-												<button
-													aria-label="Add to wishlist"
-													class="btn-wishlist btn-sm"
-													data-bs-original-title="Add to wishlist"
-													data-bs-placement="left"
-													data-bs-toggle="tooltip"
-													type="button"
-												>
-													<i class="ci-heart"></i></button
-												>
-												{% if book.image %}
-												<a
-													class="card-img-top d-block overflow-hidden"
-													href="shop-single-v1.html"
-													><img alt="{{ book.title }}" src="{{ book.image.url }}"
-												/></a>
-												{% endif%}
-
-												<div class="card-body py-2"> 
-													<a
-														class="product-meta d-block fs-xs pb-1"
-														href="#"
-														>Hoodies &amp; Sweatshirts</a
-													>
-													<h3 class="product-title fs-sm">
-														<a href="shop-single-v1.html"
-															>{{  book.title }}</a
-														>
-													</h3>
-													<div class="d-flex justify-content-between">
-														<div class="product-price">
-															<span class="text-accent"
-																>${{ book.price }}.<small></small></span
-															>
-														</div>
-														<div class="star-rating">
-															<i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i class="star-rating-icon ci-star"></i>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									
-									</div>
-								</div>
-								{% endfor %}
-									
-								{% for book in must_read_2 %}
-								<!-- Carousel item-->
-								<div class="tns-item tns-slide-active" id="tns3-item0">
-									<div class="row mx-n2">
-										<div class="col-lg-4 col-6 px-0 px-sm-2 mb-sm-4">
-											<div class="card product-card card-static">
-												<button
-													aria-label="Add to wishlist"
-													class="btn-wishlist btn-sm"
-													data-bs-original-title="Add to wishlist"
-													data-bs-placement="left"
-													data-bs-toggle="tooltip"
-													type="button"
-												>
-													<i class="ci-heart"></i></button
-												>
-												{% if book.image %}
-												<a
-													class="card-img-top d-block overflow-hidden"
-													href="shop-single-v1.html"
-													><img alt="{{ book.title }}" src="{{ book.image.url }}"
-												/></a>
-												{% endif %}
-
-												
-
-
-
-
-												<div class="card-body py-2">
-													<a
-														class="product-meta d-block fs-xs pb-1"
-														href="#"
-														> &amp; </a
-													>
-													<h3 class="product-title fs-sm">
-														<a href="shop-single-v1.html"
-															>{{ book.title }}</a
-														>
-													</h3>
-													<div class="d-flex justify-content-between">
-														<div class="product-price">
-															<span class="text-accent"
-																>${{ book.price }}.<small></small></span
-															>
-														</div>
-														<div class="star-rating">
-															<i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i class="star-rating-icon ci-star"></i>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									
-									</div>
-								</div>
-								{% endfor %}
-
-
-
-								{% for book in must_read_3 %}
-								<!-- Car ousel item-->
-								<div aria-hidden="true" class="tns-item" id="tns3-item1" tabindex="-1">
-									<div class="row mx-n2">
-										<div class="col-lg-4 col-6 px-0 px-sm-2 mb-sm-4 d-none d-lg-block">
-											<div class="card product-card card-static">
-												<button
-													aria-label="Add to wishlist"
-													class="btn-wishlist btn-sm"
-													data-bs-original-title="Add to wishlist"
-													data-bs-placement="left"
-													data-bs-toggle="tooltip"
-													type="button"
-												>
-													<i class="ci-heart"></i></button
-												>
-												{% if book.image %}
-												<a
-													class="card-img-top d-block overflow-hidden"
-													href="shop-single-v1.html"
-													><img alt="{{ book.title }}" src="{{ book.image.url }}"
-												/></a>
-												{% endif %}
-												<div class="card-body py-2">
-													<a
-														class="product-meta d-block fs-xs pb-1"
-														href="#"
-														> &amp;</a
-													>
-													<h3 class="product-title fs-sm">
-														<a href="shop-single-v1.html"
-															>{{ book.title }}</a
-														>
-													</h3>
-													<div class="d-flex justify-content-between">
-														<div class="product-price">
-															<span class="text-accent"
-																>${{ book.price }}.<small></small></span
-															>
-														</div>
-														<div class="star-rating">
-															<i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i
-																class="star-rating-icon ci-star-filled active"
-															></i
-															><i
-																class="star-rating-icon ci-star-half active"
-															></i>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										
-									</div>
-								</div>
-								{% endfor %}
-								
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Banner with controls-->
-		<div class="col-md-5">
-			<div class="d-flex flex-column h-100 overflow-hidden rounded-3" style="background-color: #e2e9ef">
-				<div class="d-flex justify-content-between px-grid-gutter py-grid-gutter">
-					<div>
-						<h3 class="mb-1">Must read books </h3>
-						<a class="fs-md" href="shop-grid-ls.html"> From All the category <i class="ci-arrow-right fs-xs align-middle ms-1"></i></a>
-					</div>
-					<div aria-label="Carousel Navigation" class="tns-carousel-controls" id="hoodie-day" tabindex="0">
-						<button aria-controls="tns3" data-controls="prev" tabindex="-1" type="button">
-							<i class="fa fa-chevron-circle-left" aria-hidden="true" style="font-size: 25px;"></i>
-						</button>
-						<button aria-controls="tns3" data-controls="next" tabindex="-1" type="button">
-							<i class="fa fa-chevron-circle-right" aria-hidden="true" style="font-size: 25px;"></i>
-						</button>
-					</div>
-				</div>
-				<a class="d-none d-md-block mt-auto" href="shop-grid-ls.html">
-					<img alt="For Women" class="d-block w-100" src="{% static 'admin/img/read34.avif' %}" />
-				</a>
 			</div>
 		</div>
 	</div>
 </section>
 
 <script>
-	document.addEventListener('DOMContentLoaded', function () {
-		var slider = tns({
-			container: '#tns3',
-			items: 1,
-			slideBy: 'page',
-			controlsContainer: '#hoodie-day',
-			nav: false,
-			autoplay: true,
-			autoplayButtonOutput: false
-		});
-	});
+    document.addEventListener('DOMContentLoaded', function () {
+        var slider = tns({
+            container: '#tns3',
+            items: 1,  // Show 1 group of 6 items at a time
+            slideBy: 'page',  // Move by 1 group of 6 items at a time
+            controlsContainer: '#hoodie-day',
+            nav: false,
+            autoplay: true,
+            autoplayButtonOutput: false,
+            responsive: {
+                0: {
+                    items: 1,  // For small screens, show 1 item at a time
+                },
+                768: {
+                    items: 2,  // For medium screens, show 2 items at a time
+                },
+                992: {
+                    items: 3,  // For large screens, show 3 items at a time
+                }
+            }
+        });
+    });
+</script>
+
+<section class="container mb-4 pb-3 pb-sm-0 mb-sm-5">
+    <div class="row">
+        <!-- Product grid (carousel)-->
+        <div class="col-md-7">
+            <div class="tns-carousel">
+                <div class="tns-outer">
+                    <div aria-atomic="true" aria-live="polite" class="tns-liveregion tns-visually-hidden">
+                        slide <span class="current">1</span> of 3
+                    </div>
+                    <div class="tns-ovh">
+                        <div class="tns-inner">
+                            <div class="tns-carousel-inner tns-slider tns-carousel tns-subpixel tns-calc tns-horizontal" data-carousel-options='{"nav": false, "controlsContainer": "#new-hoodie-day"}' id="tns4">
+                                <!-- Add your product items here -->
+                                {% for book in  must_read %}
+                                    <div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
+                                        <div class="card product-card">
+											
+                                            <button aria-label="Add to wishlist" class="btn-wishlist btn-sm" data-bs-original-title="Add to wishlist" data-bs-placement="left" data-bs-toggle="tooltip" type="button">
+												<img src="{% static 'admin/img/gis/heart.png' %}" alt="Add to wishlist" style="width: 21px; height: 21px;">
+											</button>
+                                            {% if book.image %}
+                                                <a class="card-img-top d-block overflow-hidden" href="/book/{{ book.slug }}/">
+                                                    <img alt="{{ book.title }}" src="{{ book.image.url }}" />
+                                                </a>
+                                            {% endif %}
+                                            <div class="card-body py-2">
+                                                <a class="product-meta d-block fs-xs pb-1" href="#">Sneakers &amp; Keds</a>
+                                                <h3 class="product-title fs-sm"><a href="/book/{{ book.slug }}/">{{ book.title }}</a></h3>
+                                                <p><small>Book by: {{ book.author }}</small></p>
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="product-price"><span class="text-accent">${{ book.price }}.<small></small></span></div>
+                                                    <div class="star-rating">
+                                                        <i class="star-rating-icon ci-star-filled active"></i>
+                                                        <i class="star-rating-icon ci-star-filled active"></i>
+                                                        <i class="star-rating-icon ci-star-filled active"></i>
+                                                        <i class="star-rating-icon ci-star-half active"></i>
+                                                        <i class="star-rating-icon ci-star"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body card-body-hidden">
+                                                <button class="btn btn-primary btn-sm d-block w-100 mb-2" type="button"><i class="ci-cart fs-sm me-1"></i>Add to Cart</button>
+                                                <div class="text-center">
+                                                    <a class="nav-link-style fs-ms" data-bs-toggle="modal" href="#quick-view"
+                                                       data-title="{{ book.title }}"
+                                                       data-image="{{ book.image.url }}"
+                                                       data-price="{{ book.price }}"
+                                                       data-author="{{ book.author }}">
+                                                        <i class="ci-eye align-middle me-1"></i>Quick view
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr class="d-sm-none" />
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Banner with controls-->
+        <div class="col-md-5 pt-4 pt-md-0">
+            <div class="d-flex flex-column h-100 overflow-hidden rounded-3" style="background-color: #e2e9ef">
+                <div class="d-flex justify-content-between px-grid-gutter py-grid-gutter">
+                    <div>
+                        <h3 class="mb-1">Must Read Books</h3>
+                        <a class="fs-md" href="shop-grid-ls.html">All categories <i class="ci-arrow-right fs-xs align-middle ms-1"></i></a>
+                    </div>
+                    <div aria-label="Carousel Navigation" class="tns-carousel-controls" id="new-hoodie-day" tabindex="0">
+                        <button aria-controls="tns4" data-controls="prev" tabindex="-1" type="button">
+                            <i class="fa fa-chevron-circle-left" aria-hidden="true" style="font-size: 25px;"></i>
+                        </button>
+                        <button aria-controls="tns4" data-controls="next" tabindex="-1" type="button">
+                            <i class="fa fa-chevron-circle-right" aria-hidden="true" style="font-size: 25px;"></i>
+                        </button>
+                    </div>
+                </div>
+                <a class="d-none d-md-block mt-auto" href="shop-grid-ls.html">
+                    <img alt="For Women" class="d-block w-100" src="{% static 'admin/img/mustreadbook.jpeg' %}" />
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var slider = tns({
+            container: '#tns4',
+            items: 1,
+            slideBy: 'page',
+            controlsContainer: '#new-hoodie-day',
+            nav: false,
+            autoplay: true,
+            autoplayButtonOutput: false,
+            responsive: {
+                0: {
+                    items: 1,
+                },
+                768: {
+                    items: 2,
+                },
+                992: {
+                    items: 3,
+                }
+            }
+        });
+    });
 </script>
 
 <section class="row g-0">

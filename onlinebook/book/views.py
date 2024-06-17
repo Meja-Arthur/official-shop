@@ -19,6 +19,7 @@ from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required
 
 from .models import Book
+from django.core.paginator import Paginator
 
 def registerUser(request): 
     form = CreateUserForm()
@@ -57,30 +58,11 @@ def home(request):
     recommended_books = Book.get_recommended_books()
     must_read = Book.get_must_read_books()
     
-    #split must_read books into three parts 
-    part_size = (len(must_read) + 2) // 3
-    must_read_1 = must_read[:part_size]
-    must_read_2 = must_read[part_size:part_size*2]
-    must_read_3 = must_read[part_size*2:]
-    
-    
-    #split recommended_books into three parts
-    part_size = (len(recommended_books) + 2) // 3
-    recommended_books_1 = recommended_books[:part_size]
-    recommended_books_2 = recommended_books[part_size:part_size*2]
-    recommended_books_3 = recommended_books[part_size*2:]
-    
     context = {
+        
         'trending_books': trending_books,
-        
-        
-        'recommended_books_1': recommended_books_1,
-        'recommended_books_2': recommended_books_2,
-        'recommended_books_3': recommended_books_3,
-        
-        'must_read_1': must_read_1,
-        'must_read_2': must_read_2,
-        'must_read_3': must_read_3,
+        'recommended_books': recommended_books,
+        'must_read': must_read,   
     }
     return render(request, 'home.html', context)
 
@@ -88,17 +70,18 @@ def home(request):
 
 def shop(request):
     books = Book.objects.all()
-    halfway_index = len(books) // 2
-    books_before = books[:halfway_index]
-    books_after = books[halfway_index:]
-    
-    context = {
-        'books_before': books_before,
-        'books_after': books_after,
-    }
-    
-    return render(request, 'shopbook.html', context)
+    paginator = Paginator(books, 12)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
 
+    print(f"Total books: {len(books)}")
+    print(f"Page number: {page_number}")
+    print(f"Page object: {page_obj}")
+
+    context = {
+        'page_obj': page_obj,
+    }
+    return render(request, 'shopbook.html', context)
     
 def bookdetails(request, slug):
     try:

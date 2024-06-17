@@ -532,30 +532,40 @@
 				<div class="navbar-sticky bg-light">
 					<div class="navbar navbar-expand-lg navbar-light">
 						<div class="container">
+							<a 	class="navbar-brand d-none d-sm-block flex-shrink-0" href="/">
+								<img alt="Cartzilla" src="{% static 'admin/img/logo-dark.png' %}"  width="142" /></a>									
 							<a
-								class="navbar-brand d-none d-sm-block flex-shrink-0"
-								href="index.html"
-								><img
-									alt="Cartzilla"
-									src="{% static 'admin/img/logo-dark.png' %}" 
-									width="142" /></a
-							><a
 								class="navbar-brand d-sm-none flex-shrink-0 me-2"
 								href="index.html"
 								><img alt="Cartzilla" src="{% static 'admin/img/logo-icon.png' %}" width="74" 
 							/></a>
-							<div class="input-group d-none d-lg-flex mx-4">
-								<input
-									class="form-control rounded-end pe-5"
-									placeholder="Search for products"
-									type="text"
-								/><i
-									class="ci-search position-absolute top-50 end-0 translate-middle-y text-muted fs-base me-3"
-								></i>
+
+
+
+							<div class="input-group d-none d-lg-flex mx-4" style="position: relative; width: 900px;">
+								<form action="/haystack_search" method="get" style="width: 100%;">
+									<input
+										name="q"
+										class="form-control rounded-end pe-5"
+										placeholder="Search for books"
+										type="text"
+										style="padding-right: 40px;"
+									/>
+									<button
+										type="submit"
+										class="fa fa-search position-absolute top-50 translate-middle-y text-muted fs-base me-3"
+										style="border: none; background: none; cursor: pointer; right: 0px; margin-top: 0px;" >
+									
+										
+									</button>
+								</form>
 							</div>
-							<div
-								class="navbar-toolbar d-flex flex-shrink-0 align-items-center"
-							>
+							
+
+
+							<div class="navbar-toolbar d-flex flex-shrink-0 align-items-center">
+								
+							
 								<button
 									class="navbar-toggler"
 									data-bs-target="#navbarCollapse"
@@ -572,7 +582,7 @@
 									href="/wishlist"
 									><span class="navbar-tool-tooltip">Wishlist</span> 
 									<div class="navbar-tool-icon-box">
-										<i class="fa fa-heart fa-2x" aria-hidden="false">
+										<img src="{% static 'admin/img/gis/heart.png' %}" alt="Add to wishlist" style="width: 29px; height: 29px;"  aria-hidden="false">
 										</i></i></div></a
 										
 								><a
@@ -581,14 +591,16 @@
 									href="#signin-modal"
 								>
 									<div class="navbar-tool-icon-box">
-										<i class="fa fa-user fa-2x" aria-hidden="true"></i></i>
+										
+										<img src="{% static 'admin/img/gis/profile.png' %}" alt="Add to wishlist" style="width: 35px; height: 35px;"  aria-hidden="true">
+										</i></i>
 									</div>
 									<div class="navbar-tool-text ms-n3">
 										<small>Hello, Sign in</small>My Account
 									</div></a
 								>
 								<div class="navbar-tool dropdown ms-3">
-
+									
 									{% include 'cart/menu_cart.html' %}
 
 									<!-- Cart dropdown-->
