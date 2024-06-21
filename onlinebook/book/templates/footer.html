@@ -3,57 +3,27 @@
 <!-- Footer-->
 <footer class="footer bg-dark pt-5">
     <div class="container">
+
         <div class="row pb-2">
+
             <div class="col-md-4 col-sm-6">
                 <div class="widget widget-links widget-light pb-2 mb-4">
-                    <h3 class="widget-title text-light">Shop departments</h3>
+                    <h3 class="widget-title text-light">Shop categories</h3>
                     <ul class="widget-list">
+
+                        {% for category in categories %}
                         <li class="widget-list-item">
-                            <a class="widget-list-link" href="#"
-                                >Sneakers &amp; Athletic</a
-                            >
+                            <a class="widget-list-link" href="/category/{{ category.id }}/"> {{ category.name }}	</a>
                         </li>
-                        <li class="widget-list-item">
-                            <a class="widget-list-link" href="#">Athletic Apparel</a>
-                        </li>
-                        <li class="widget-list-item">
-                            <a class="widget-list-link" href="#">Sandals</a>
-                        </li>
-                        <li class="widget-list-item">
-                            <a class="widget-list-link" href="#">Jeans</a>
-                        </li>
-                        <li class="widget-list-item">
-                            <a class="widget-list-link" href="#">Shirts &amp; Tops</a>
-                        </li>
-                        <li class="widget-list-item">
-                            <a class="widget-list-link" href="#">Shorts</a>
-                        </li>
-                        <li class="widget-list-item">
-                            <a class="widget-list-link" href="#">T-Shirts</a>
-                        </li>
-                        <li class="widget-list-item">
-                            <a class="widget-list-link" href="#">Swimwear</a>
-                        </li>
-                        <li class="widget-list-item">
-                            <a class="widget-list-link" href="#">Clogs &amp; Mules</a>
-                        </li>
-                        <li class="widget-list-item">
-                            <a class="widget-list-link" href="#">Bags &amp; Wallets</a>
-                        </li>
-                        <li class="widget-list-item">
-                            <a class="widget-list-link" href="#">Accessories</a>
-                        </li>
-                        <li class="widget-list-item">
-                            <a class="widget-list-link" href="#"
-                                >Sunglasses &amp; Eyewear</a
-                            >
-                        </li>
-                        <li class="widget-list-item">
-                            <a class="widget-list-link" href="#">Watches</a>
-                        </li>
+                        {% endfor %}
+                       
+                       
                     </ul>
                 </div>
             </div>
+
+
+
             <div class="col-md-4 col-sm-6">
                 <div class="widget widget-links widget-light pb-2 mb-4">
                     <h3 class="widget-title text-light">
@@ -360,8 +330,10 @@
     <div class="d-table table-layout-fixed w-100">
         <a
             class="d-table-cell handheld-toolbar-item"
-            href="account-wishlist.html"
-            ><span class="handheld-toolbar-icon"><i class="ci-heart"></i></span
+            href="/wishlist"
+            ><span class="handheld-toolbar-icon">
+                <img src="{% static 'admin/img/gis/heart.png' %}" alt="Add to wishlist" style="width: 15px; height: 15px;" aria-hidden="false">
+                </span
             ><span class="handheld-toolbar-label">Wishlist</span></a
         ><a
             class="d-table-cell handheld-toolbar-item"
@@ -371,10 +343,12 @@
             onclick="window.scrollTo(0, 0)"
             ><span class="handheld-toolbar-icon"><i class="ci-menu"></i></span
             ><span class="handheld-toolbar-label">Menu</span></a
-        ><a class="d-table-cell handheld-toolbar-item" href="shop-cart.html"
-            ><span class="handheld-toolbar-icon"
-                ><i class="ci-cart"></i
-                ><span class="badge bg-primary rounded-pill ms-1">4</span></span
+        >
+        <a class="d-table-cell handheld-toolbar-item" href="/cart">
+          <span class="handheld-toolbar-icon">
+               
+                <img src="{% static 'admin/img/gis/trolley.png' %}" alt="Add to wishlist" style="width: 16px; height: 16px;"  aria-hidden="true">
+                <span class="badge bg-primary rounded-pill ms-1">4</span></span
             ><span class="handheld-toolbar-label">$265.00</span></a
         >
     </div>

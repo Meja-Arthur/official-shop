@@ -51,8 +51,6 @@ def loginUser(request):
     else:
         return render(request, 'login.html')
 
-
-
 def home(request):
     trending_books = Book.get_trending_books()
     recommended_books = Book.get_recommended_books()
@@ -69,6 +67,8 @@ def home(request):
 
 
 def shop(request):
+    
+    categories = BooksCategory.objects.all() 
     books = Book.objects.all()
     paginator = Paginator(books, 12)
     page_number = request.GET.get('page')
@@ -77,11 +77,34 @@ def shop(request):
     print(f"Total books: {len(books)}")
     print(f"Page number: {page_number}")
     print(f"Page object: {page_obj}")
+    
+ 
 
+    context = {
+
+        'page_obj': page_obj,
+        'categories': categories,
+        
+    }
+    return render(request, 'shopbook.html', context)
+    
+def categorydetails(request, category_id):
+    category = get_object_or_404(BooksCategory, id=category_id)
+    books = Book.objects.filter(category=category)
+    paginator = Paginator(books, 12)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+  
     context = {
         'page_obj': page_obj,
     }
-    return render(request, 'shopbook.html', context)
+    return render(request,'category.html', context)   
+
+
+    
+    
+    
     
 def bookdetails(request, slug):
     try:

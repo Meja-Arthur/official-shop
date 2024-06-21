@@ -1,7 +1,7 @@
+
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-
 
 <!-- Page Title-->
 <div class="page-title-overlap bg-dark pt-4">
@@ -17,7 +17,7 @@
 						>
 					</li>
 					<li class="breadcrumb-item text-nowrap">
-						<a href="/shop">Shop</a>
+						<a href="/shop">shop</a>
 					</li>
 					<li
 						aria-current="page"
@@ -29,13 +29,14 @@
 			</nav>
 		</div>
 		<div class="order-lg-1 pe-lg-4 text-center text-lg-start">
-			<h1 class="h3 text-light mb-0">Shop grid left sidebar</h1>
+			<h1 class="h3 text-light mb-0"></h1>
 		</div>
 	</div>
 </div>
 
 <div class="container pb-5 mb-2 mb-md-4">
 	<div class="row">
+		
 		<!-- Sidebar-->
 		<aside class="col-lg-4">
 			<!-- Sidebar-->
@@ -57,23 +58,14 @@
 						<h3 class="widget-title">Categories</h3>						
 						<div class="accordion mt-n1" id="shop-categories">
 							<!-- Shoes-->
-							{% for category in categories %}
+							
 							<div class="accordion-item">
-								
 								<h3 class="accordion-header">
-									<a 
-									    href="/category/{{ category.id }}/" 
-										aria-controls="shoes" 
-										aria-expanded="false" 
-										class="accordion-button collapsed" 
-										role="button"> 
-										
-										{{ category.name }}	
-									</a>									
-								</h3>
-							   							
+									<a aria-controls="shoes" aria-expanded="false" class="accordion-button collapsed" data-bs-toggle="collapse" href="#shoes" 
+										role="button">category section</a>									
+								</h3>								
 							</div>
-							{% endfor %}
+							
 						</div>
 					</div>
 
@@ -184,12 +176,9 @@
 							<button
 								class="btn btn-primary btn-sm d-block w-100 mb-2"
 								type="button"
-								onclick="location.href='/add_to_cart/{{ book.slug }}/';"
 							>
 								<i class="ci-cart fs-sm me-1"></i>Add to Cart
 							</button>
-
-							
 
 							<div class="text-center">
 								<a class="nav-link-style fs-ms" data-bs-toggle="modal" href="#quick-view"
@@ -321,7 +310,7 @@
 							<button
 								class="btn btn-primary btn-sm d-block w-100 mb-2"
 								type="button"
-								onclick="location.href='/add_to_cart/{{ book.slug }}/';"
+								
 							>
 								<i class="ci-cart fs-sm me-1"></i>Add to Cart
 							</button>
@@ -426,7 +415,7 @@
 			</nav>
 			
 		</section>
-
+		
 	</div>
 </div>
 

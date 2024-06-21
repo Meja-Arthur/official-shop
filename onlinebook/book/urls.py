@@ -16,13 +16,14 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('shop/', views.shop,  name='shop'),
     path('book/<slug:slug>/', views.bookdetails, name='book-details'),
+    path('category/<int:category_id>/', views.categorydetails, name='category'),
     
     
     path('cart/', cartpage, name='cart'),
     path('add_to_cart/<slug:book_slug>/', add_to_cart, name='add_to_cart'),
     path('checkout/', checkoutpage, name='checkout'),
     
-    
+   
     
     path('payment/', paymentpage, name='payment'),
     path('review/', review, name='review'),
