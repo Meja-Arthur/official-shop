@@ -181,13 +181,30 @@
 							</div>
 						</div>
 						<div class="card-body card-body-hidden">
+							
 							<button
 								class="btn btn-primary btn-sm d-block w-100 mb-2"
 								type="button"
-								onclick="location.href='/add_to_cart/{{ book.slug }}/';"
+								onclick="addToCart('{{ book.slug }}');"
 							>
 								<i class="ci-cart fs-sm me-1"></i>Add to Cart
 							</button>
+
+
+							<script>
+								function addToCart(bookSlug) {
+									var xhr = new XMLHttpRequest();
+									xhr.open("GET", "/add_to_cart/" + bookSlug + "/", true);
+									xhr.onreadystatechange = function () {
+										if (xhr.readyState === 4 && xhr.status === 200) {
+											var cartCount = xhr.responseText;
+											document.getElementById("cart-count").innerText = cartCount;
+										}
+									};
+									xhr.send();
+								}
+							</script>
+							
 
 							
 
@@ -319,12 +336,12 @@
 
 
 							<button
-								class="btn btn-primary btn-sm d-block w-100 mb-2"
-								type="button"
-								onclick="location.href='/add_to_cart/{{ book.slug }}/';"
-							>
-								<i class="ci-cart fs-sm me-1"></i>Add to Cart
-							</button>
+							class="btn btn-primary btn-sm d-block w-100 mb-2"
+							type="button"
+							onclick="addToCart('{{ book.slug }}');"
+						>
+							<i class="ci-cart fs-sm me-1"></i>Add to Cart
+						</button>
 
 							
 

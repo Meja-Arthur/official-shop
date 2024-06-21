@@ -245,16 +245,14 @@
 
                     
 
-                    <a
-                        class="btn btn-primary btn-shadow me-2"
-                        href="/add_to_cart/{{ book.slug }}/">
-                        
-                        <i class="ci-cart fs-lg me-sm-2"></i>
-                        <span class="d-none d-sm-inline">Add to Cart</span>
-                  </a>
-
-
-
+                    <button
+                      class="btn btn-primary btn-sm d-block w-100 mb-2"
+                      type="button"
+                      onclick="addToCart('{{ book.slug }}');"
+                    >
+                      <i class="ci-cart fs-sm me-1"></i>Add to Cart
+                    </button>
+    
                   </div>
 
 

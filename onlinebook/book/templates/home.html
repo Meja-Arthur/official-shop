@@ -46,14 +46,10 @@
 				</div>
 				<div class="card-body card-body-hidden">
 
-					
-
-
-					
 					<button
 						class="btn btn-primary btn-sm d-block w-100 mb-2"
 						type="button"
-						onclick="location.href='/add_to_cart/{{ book.slug }}/';"
+						onclick="addToCart('{{ book.slug }}');"
 					>
 						<i class="ci-cart fs-sm me-1"></i>Add to Cart
 					</button>
@@ -234,7 +230,7 @@
 													<button
 														class="btn btn-primary btn-sm d-block w-100 mb-2"
 														type="button"
-														onclick="location.href='/add_to_cart/{{ book.slug }}/';"
+														onclick="addToCart('{{ book.slug }}');"
 													>
 														<i class="ci-cart fs-sm me-1"></i>Add to Cart
 													</button>
@@ -357,13 +353,18 @@
                                                 </div>
                                             </div>
                                             <div class="card-body card-body-hidden">
-                                                <button
+
+												<button
 													class="btn btn-primary btn-sm d-block w-100 mb-2"
 													type="button"
-													onclick="location.href='/add_to_cart/{{ book.slug }}/';"
+													onclick="addToCart('{{ book.slug }}');"
 												>
 													<i class="ci-cart fs-sm me-1"></i>Add to Cart
 												</button>
+
+
+
+
                                                 <div class="text-center">
                                                     <a class="nav-link-style fs-ms" data-bs-toggle="modal" href="#quick-view"
                                                        data-title="{{ book.title }}"

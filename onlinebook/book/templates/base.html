@@ -614,10 +614,9 @@
 										<small>Hello, Sign in</small>My Account
 									</div></a
 								>
-								<div class="navbar-tool dropdown ms-3">
-									
-									{% include 'cart/menu_cart.html' %}
 
+								<div class="navbar-tool dropdown ms-3">
+									{% include 'cart/menu_cart.html' %}
 									<!-- Cart dropdown-->
 									<div class="dropdown-menu dropdown-menu-end">
 										<div class="widget widget-cart px-3 pt-2 pb-3" style="width: 20rem">
@@ -716,8 +715,9 @@
 											>
 										</div>
 									</div>
-
 								</div>
+
+
 							</div>
 						</div>
 					</div>
@@ -1347,8 +1347,29 @@
 
 		{% include 'scripts.js' %}
 
+		<!-- Your other HTML content -->
+		 
+		<script>
+			function addToCart(bookSlug) {
+				var xhr = new XMLHttpRequest();
+				xhr.open("GET", "/add_to_cart/" + bookSlug + "/", true);
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState === 4 && xhr.status === 200) {
+						var cartCount = xhr.responseText;
+						document.getElementById("cart-count").innerText = cartCount;
+					}
+				};
+				xhr.send();
+			}
+		</script>
+
+		
 
 
-    </body>    
+
+</body>
+</html>
+
+   
 
 

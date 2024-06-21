@@ -348,8 +348,8 @@
           <span class="handheld-toolbar-icon">
                
                 <img src="{% static 'admin/img/gis/trolley.png' %}" alt="Add to wishlist" style="width: 16px; height: 16px;"  aria-hidden="true">
-                <span class="badge bg-primary rounded-pill ms-1">4</span></span
-            ><span class="handheld-toolbar-label">$265.00</span></a
+                <span class="badge bg-primary rounded-pill ms-1">{{ cart|length }}</span></span
+            ><span class="handheld-toolbar-label">${{ cart.get_total_cost }}</span></a
         >
     </div>
 </div>

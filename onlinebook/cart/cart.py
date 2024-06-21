@@ -48,10 +48,13 @@ class Cart(object):
         self.save()
         
     def remove(self, book_slug):
-        if book_slug in self.cart:
-            del self.cart[book_slug]
-            self.save()    
-            
+            print("Current cart contents before removal:", self.cart)  # Debugging
+            if book_slug in self.cart:
+                del self.cart[book_slug]
+                self.save()
+                print("Book removed successfully. Updated cart contents:", self.cart)  # Debugging
+            else:
+                print(f"Book with slug '{book_slug}' not found in cart.")  # Debugging
             
     def get_total_cost(self):
         return sum(item['quantity'] * item['book'].price  for item in self.cart.values())                
