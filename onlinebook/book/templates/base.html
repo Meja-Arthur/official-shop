@@ -634,10 +634,13 @@
 													             {% for item in cart %}
 																	<div class="widget-cart-item pb-2 border-bottom"	>
 															
-																		<button aria-label="Remove" class="btn-close text-danger" type="button">
+																		<button aria-label="Remove" class="btn-close text-danger" type="button" onclick="removeFromCart('{{ item.book.slug }}')">
 																			<span aria-hidden="true">×</span>
-																			
 																		</button>
+
+
+																		
+
 																		<div class="d-flex align-items-center">
 
 																			{% if item.book.image %}
@@ -1362,6 +1365,27 @@
 				xhr.send();
 			}
 		</script>
+		<script>
+			function removeFromCart(bookSlug) {
+				var xhr = new XMLHttpRequest();
+				xhr.open("POST", "/remove_from_cart/" + bookSlug + "/", true);
+				xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+				xhr.setRequestHeader("X-CSRFToken", '{{ csrf_token }}');
+				
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState === 4 && xhr.status === 200) {
+						var response = JSON.parse(xhr.responseText);
+						document.getElementById("cart-item-" + bookSlug).remove();
+						document.getElementById("cart-count").innerText = response.cart_count;
+					}
+				};
+				
+				xhr.send(JSON.stringify({}));
+			}
+		</script>
+		
+		
+
 
 		
 
