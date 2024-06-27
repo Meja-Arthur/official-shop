@@ -16,7 +16,7 @@ urlpatterns = [
     path('book/', include('django.contrib.auth.urls')),
     path('haystack_search/', SearchView(), name='haystack_search'), 
     
-    
+    path('', include('paypal.standard.ipn.urls')),
 ]
 
 # Only serve media files during development

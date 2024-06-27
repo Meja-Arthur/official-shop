@@ -76,49 +76,7 @@
         <h2 class="h6 pb-3 mb-2">Choose payment method</h2>
 
       
-          <!-- Set up a container element for the button   {{ cart.get_total_cost }}-->
-          <div id="paypal-button-container"></div>
-          <script src="https://www.paypal.com/sdk/js?client-id=AcdAefkYAVdoXc0z1TxJkN6SeWUJxbL14MW6O7ktkA9KvTi_aAVY4fUVG7-GIMlc9GqfmClXr4QZrmk4&currency=USD"></script>
-          <script>
-                        
-            paypal.Buttons({
-              async createOrder() {
-                  const response = await fetch("/my-server/create-paypal-order", {
-                      method: "POST",
-                      headers: {
-                          "Content-Type": "application/json",
-                      },
-                      body: JSON.stringify({
-                          cart: [
-                              {
-                                  sku: "YOUR_PRODUCT_STOCK_KEEPING_UNIT",
-                                  quantity: "{{ cart.get_total_cost }}",
-                              },
-                          ],
-                      }),
-                  });
-
-                  const data = await response.json();
-
-                  return data.id;
-              },
-              async onApprove(data) {
-                  // Capture the funds from the transaction.
-                  const response = await fetch("/my-server/capture-paypal-order", {
-                    method: "POST",
-                    body: JSON.stringify({
-                      orderID: data.orderID
-                    })
-                  })
-
-                  const details = await response.json();
-
-                  // Show success message to buyer
-                  alert(`Transaction completed by ${details.payer.name.given_name}`);
-              }
-            }).render('#paypal-button-container');
-
-          </script>
+     
       
 
 

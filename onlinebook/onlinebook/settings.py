@@ -21,6 +21,9 @@ LOGIN_REDIRECT_URL = '/'
 SESSION_COOKIE_AGE = 86400
 CART_SESSION_ID = 'cart'
 
+SESSION_COOKIE_SECURE = True  # Change to True if using HTTPS in production
+CSRF_COOKIE_SECURE = True
+
 
 
 
@@ -37,6 +40,7 @@ INSTALLED_APPS = [
     'haystack',
     'cart',
     'book',
+    'paypal.standard.ipn',
 ]
 
 MIDDLEWARE = [
@@ -140,3 +144,11 @@ LOGIN_URL = '/login'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+PAYPAL_RECEIVER_EMAIL = 'sb-b299d31069349@business.example.com'
+PAYPAL_TEST = True
+
+
+CSRF_TRUSTED_ORIGINS = ['https://4055-102-215-77-202.ngrok-free.app']
+

@@ -116,23 +116,7 @@
 
                   </div>
 
-                  <div class="product-gallery-thumblist order-sm-1">
-                    <a
-                      class="product-gallery-thumblist-item active"
-                      href="#first"
-                      ><img alt="Product thumb" src="{{ book.image.url }}" /></a
-                    >
-
-                    <a
-                      class="product-gallery-thumblist-item video-item"
-                      data-lg-id="9737530d-fdc3-49ab-be2e-54de6b699bd6"
-                      href="#"
-                    >
-                      <div class="product-gallery-thumblist-item-text">
-                        <i class="ci-video"></i>Video
-                      </div></a
-                    >
-                  </div>
+                 
 
                 </div>
               </div>
@@ -234,26 +218,32 @@
                       <i class="ci-security-check"></i>Product available
                     </div>
                   </div>
-                  <div class="d-flex align-items-center pt-2 pb-4">
-                    <select class="form-select me-3" style="width: 5rem">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
+                  <div class="d-flex flex-column align-items-center pt-2 pb-4">
+                    <select class="form-select me-3 mb-2" style="width: 5rem">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                     </select>
+                
+                    <button 
+                        class="btn btn-primary btn-sm d-block w-100 mb-2" 
+                        type="button"  
+                        onclick="addToCart('{{ book.slug }}');"
+                    >
+                        <i class="ci-cart fs-sm me-1"></i>Add to Cart
+                    </button>
+                
+                 
 
                     
-
-                    <button
-                      class="btn btn-primary btn-sm d-block w-100 mb-2"
-                      type="button"
-                      onclick="addToCart('{{ book.slug }}');"
-                    >
-                      <i class="ci-cart fs-sm me-1"></i>Add to Cart
-                    </button>
-    
-                  </div>
+                    
+                      {{ paypal.render }}
+                    
+                    
+                </div>
+                
 
 
                   <div class="d-flex mb-4">

@@ -22,6 +22,9 @@ def remove_from_cart(request, book_slug):
     return JsonResponse({'cart_count': cart_length})
     
 
+
+
+
 def cartpage(request):
     return render(request, 'cart/shop-cart.html',)
 

@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+
+  <!-- Page content -->
+  <main class="content-wrapper">
+    <div class="row row-cols-1 row-cols-lg-2 g-0 mx-auto" style="max-width: 1920px">
+
+
+      <!-- Tank you content column -->
+      <div class="col d-flex flex-column justify-content-center py-5 px-xl-4 px-xxl-5">
+        <div
+          class="w-100 pt-sm-2 pt-md-3 pt-lg-4 pb-lg-4 pb-xl-5 px-3 px-sm-4 pe-lg-0 ps-lg-5 mx-auto ms-lg-auto me-lg-4"
+          style="max-width: 740px">
+          <div class="d-flex align-items-sm-center border-bottom pb-4 pb-md-5">
+            <div
+              class="d-flex align-items-center justify-content-center bg-success text-white rounded-circle flex-shrink-0"
+              style="width: 3rem; height: 3rem; margin-top: -.125rem">
+              <i class="ci-check fs-4"></i>
+            </div>
+            <div class="w-100 ps-3">
+              <div class="fs-sm mb-1">Order #{{ book.id }}</div>
+              <div class="d-sm-flex align-items-center">
+                <h1 class="h4 mb-0 me-3">Thank you for your order!</h1>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-100 ps-3">
+            <div class="d-sm-flex align-items-center">
+                <div class="card product-card">
+                    <button aria-label="Add to wishlist" class="btn-wishlist btn-sm" data-bs-original-title="Add to wishlist" data-bs-placement="left"
+                        data-bs-toggle="tooltip" type="button" >
+                        </i></button>
+                        {% if book.image %}
+                        <a class="card-img-top d-block overflow-hidden" href="/book/{{ book.slug }}/">
+                        <img alt="{{ book.title }}" src="{{ book.image.url }}" 
+                        {% endif %}
+                    /></a>
+    
+                    <div class="card-body py-2">
+                        <a class="product-meta d-block fs-xs pb-1" href="#"
+                            >{{ book.category }} &amp;</a
+                        >
+                        <h3 class="product-title fs-sm">
+                            <a href="#">{{ book.title }}</a>
+                        </h3>
+                        <p><small>Book by: {{ book.author }}</small></P>
+                        <div class="d-flex justify-content-between">
+                            <div class="product-price">
+                                <span class="text-accent">${{ book.price }}.<small></small></span>
+                            </div>
+                            <div class="star-rating">
+                                <i class="star-rating-icon ci-star-filled active"></i
+                                ><i class="star-rating-icon ci-star-filled active"></i
+                                ><i class="star-rating-icon ci-star-filled active"></i
+                                ><i class="star-rating-icon ci-star-half active"></i
+                                ><i class="star-rating-icon ci-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body card-body-hidden">
+                    </div>
+                </div>
+
+                <div class="nav mt-2 mt-sm-0 ms-auto">
+                  
+                  <div style="margin-top: 10px;">
+                      <a class="nav-link text-decoration-underline p-0" href="/download_book/{{ book.slug }}/" style="display: flex; align-items: center;">
+                          <img src="{% static 'admin/img/gis/download.png' %}" alt="Download Icon" style="width: 30px; height: 30px; vertical-align: middle;"/>
+                          <span style="margin-left: 5px;">Download Book</span>
+                      </a>
+                  </div>
+              </div>
+              
+
+
+                <hr class="d-sm-none" />
+            </div>
+         </div>
+
+
+         
+
+
+          
+          <div class="bg-success rounded px-4 py-4" style="--cz-bg-opacity: .2">
+            <div class="py-3">
+              <h2 class="h4 text-center pb-2 mb-1">
+                🎉 Congratulations! 30% off your new purchase!
+              </h2>
+              <p class="fs-sm text-center mb-4">
+                Use the coupon now or look for it in your personal account.
+              </p>
+              <div class="d-flex gap-2 mx-auto" style="max-width: 500px">
+                <input class="form-control border-white border-opacity-10 w-100" id="couponCode" readonly="" type="text"
+                  value="" />
+                <button class="btn btn-dark" data-copy-text-from="#couponCode" type="button">Copy coupon</button>
+              </div>
+            </div>
+          </div>
+          <p class="fs-sm pt-4 pt-md-5 mt-2 mt-sm-3 mt-md-0 mb-0">Need help?<a class="fw-medium ms-2" href="/contact">Contact
+              us</a></p>
+        </div>
+      </div>
+
+
+
+
+
+      <!-- Related products -->
+      <div class="col pt-sm-3 p-md-5 ps-lg-5 py-lg-4 pe-lg-4 p-xxl-5">
+        <div class="position-relative d-flex align-items-center h-100 py-5 px-3 px-sm-4 px-xl-5">
+          <span class="position-absolute top-0 start-0 w-100 h-100 bg-body-tertiary rounded-5 d-none d-md-block"></span>
+          <span class="position-absolute top-0 start-0 w-100 h-100 bg-body-tertiary d-md-none"></span>
+          <div class="position-relative w-100 z-2 mx-auto pb-2 pb-sm-3 pb-md-0" style="max-width: 636px">
+            <h2 class="h4 text-center pb-3">You may also like</h2>
+
+            
+            <div class="row row-cols-2 g-3 g-sm-4 mb-4">
+              <!-- Item -->
+              {% for book in trending_books %}
+              <div class="col">
+                <div class="product-card animate-underline hover-effect-opacity bg-body rounded shadow-none">
+                  <div class="position-relative">
+                    
+                   
+                    <a class="d-block rounded-top overflow-hidden p-3 p-sm-4"
+                      href="">
+                      <span
+                        class="badge bg-danger position-absolute top-0 start-0 mt-2 ms-2 mt-lg-3 ms-lg-3">-21%</span>
+
+                        {% if book.image %}
+                        <div class="ratio" style="--cz-aspect-ratio: calc(240 / 258 * 100%)">
+                          <img alt="VR Glasses" src="{{ book.image.url }}" />
+                        </div>
+                        {% endif %}
+
+
+                    </a>
+                  </div>
+                  <div class="w-100 min-w-0 px-2 pb-2 px-sm-3 pb-sm-3">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                      <div class="d-flex gap-1 fs-xs">
+                        <i class="ci-star-filled text-warning"></i>
+                        <i class="ci-star-filled text-warning"></i>
+                        <i class="ci-star-filled text-warning"></i>
+                        <i class="ci-star-filled text-warning"></i>
+                        <i class="ci-star text-body-tertiary opacity-75"></i>
+                      </div>
+                      <span class="text-body-tertiary fs-xs"></span>
+                    </div>
+                    <h3 class="pb-1 mb-2">
+                      <a class="d-block fs-sm fw-medium text-truncate" href="shop-product-general-electronics.html">
+                        <span class="animate-target">{{ book.title }}</span>
+                      </a>
+                    </h3>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="h5 lh-1 mb-0">${{ book.price }} <del class="text-body-tertiary fs-sm fw-normal">$430.00</del>
+                      </div>
+                      <button aria-label="Add to Cart"
+                          class="product-card-button btn btn-icon btn-secondary animate-slide-end ms-2" 
+                          type="button"
+                          onclick="addToCart('{{ book.slug }}');">
+                        <img src="{% static 'admin/img/gis/trolley.png' %}" 
+                              alt="Add to wishlist" style="width: 20px; height: 20px;"  aria-hidden="true">
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+           
+
+
+            <a class="btn btn-lg btn-primary w-100" href="/shop">
+              Continue shopping
+              <i class="ci-chevron-right fs-lg ms-1 me-n1"></i>
+            </a>
+
+
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </main>
+
+{% endblock %}

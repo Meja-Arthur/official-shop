@@ -16,6 +16,15 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('shop/', views.shop,  name='shop'),
     path('book/<slug:slug>/', views.bookdetails, name='book-details'),
+    path('download_book/<slug:slug>/', views.download_book, name='download_book'),
+    path('payment-success/<slug:slug>/', views.PaymentSuccessful, name='payment-success'),
+    path('payment-failed/<slug:slug>/', views.paymentFailed, name='payment-failed'),
+    
+    
+    
+    
+    
+    
     path('category/<int:category_id>/', views.categorydetails, name='category'),
     
     
