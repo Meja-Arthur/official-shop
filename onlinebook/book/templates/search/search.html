@@ -35,12 +35,13 @@
                   <span class="text-accent">${{ book.object.price }}.<small></small></span>
                 </div>
                 <div class="star-rating">
-                  <i class="star-rating-icon ci-star-filled active"></i
-                  ><i class="star-rating-icon ci-star-filled active"></i
-                  ><i class="star-rating-icon ci-star-filled active"></i
-                  ><i class="star-rating-icon ci-star-half active"></i
-                  ><i class="star-rating-icon ci-star"></i>
-                </div>
+									<img src="{% static 'admin/img/gis/star.png' %}" style="width: 18px; height: 18px;" class="active" alt="Star Icon" />
+									<img src="{% static 'admin/img/gis/star.png' %}" style="width: 18px; height: 18px;" class="active" alt="Star Icon" />
+									<img src="{% static 'admin/img/gis/star.png' %}" style="width: 18px; height: 18px;" class="active" alt="Star Icon" />
+									<img src="{% static 'admin/img/gis/star.png' %}" style="width: 18px; height: 18px;" class="active" alt="Half Star Icon" />
+									<img src="{% static 'admin/img/gis/star.png' %}" style="width: 18px; height: 18px; opacity: 0.5;" alt="Empty Star Icon" />
+								</div>
+
               </div>
             </div>
             <div class="card-body card-body-hidden">
@@ -48,9 +49,14 @@
               
     
     
-              <button class="btn btn-primary btn-sm d-block w-100 mb-2" type="button">
-                <i class="ci-cart fs-sm me-1"></i>Add to Cart
-              </button>
+             <button
+							class="btn btn-primary btn-sm d-block w-100 mb-2"
+							type="button"
+							style="background-color: #0096FF"
+							onclick="addToCart('{{ book.object.slug }}');"
+						  >
+							<i class="ci-cart fs-sm me-1"></i>Add to Cart
+						</button>
               
               <div class="text-center">
                 <a class="nav-link-style fs-ms" data-bs-toggle="modal" href="#quick-view"

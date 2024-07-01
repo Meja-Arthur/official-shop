@@ -3,31 +3,28 @@
 <!-- Footer-->
 <footer class="footer bg-dark pt-5">
     <div class="container">
-
         <div class="row pb-2">
 
             <div class="col-md-4 col-sm-6">
                 <div class="widget widget-links widget-light pb-2 mb-4">
-                    <h3 class="widget-title text-light">Shop categories</h3>
-                    <ul class="widget-list">
-
-                        {% for category in categories %}
-                        <li class="widget-list-item">
-                            <a class="widget-list-link" href="/category/{{ category.id }}/"> {{ category.name }}	</a>
-                        </li>
-                        {% endfor %}
-                       
-                       
-                    </ul>
+                  <h3 class="widget-title text-light">Shop categories</h3>
+                  <ul class="widget-list" style="columns: 2; -webkit-columns: 2; -moz-columns: 2;">
+                    {% for category in categories %}
+                    <li class="widget-list-item" style="break-inside: avoid; list-style: none;">
+                      <a class="widget-list-link" href="/category/{{ category.id }}/">{{ category.name }}</a>
+                    </li>
+                    {% endfor %}
+                  </ul>
                 </div>
             </div>
+              
 
 
 
             <div class="col-md-4 col-sm-6">
                 <div class="widget widget-links widget-light pb-2 mb-4">
                     <h3 class="widget-title text-light">
-                        Account &amp; shipping info
+                        Account &amp;
                     </h3>
                     <ul class="widget-list">
                         <li class="widget-list-item">
@@ -152,10 +149,10 @@
                         ></i>
                         <div class="ps-3">
                             <h6 class="fs-base text-light mb-1">
-                                Fast and free delivery
+                                Fast download
                             </h6>
                             <p class="mb-0 fs-ms text-light opacity-50">
-                                Free delivery for all orders over $200
+                                
                             </p>
                         </div>
                     </div>
@@ -220,7 +217,7 @@
                                 <img
                                     alt="English"
                                     class="me-2"
-                                    src="{% static 'admin/img/en.png' %}"  
+                                    src="{% static 'admin/img/gis/flag.png' %}"  
                                     width="20"
                                 />Eng / $
                             </button>
@@ -289,19 +286,38 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-center text-md-end mb-4">
+
                     <div class="mb-3">
-                        <a class="btn-social bs-light bs-twitter ms-2 mb-2" href="#"
-                            ><i class="ci-twitter"></i></a
-                        ><a class="btn-social bs-light bs-facebook ms-2 mb-2" href="#"
-                            ><i class="ci-facebook"></i></a
-                        ><a class="btn-social bs-light bs-instagram ms-2 mb-2" href="#"
-                            ><i class="ci-instagram"></i></a
-                        ><a class="btn-social bs-light bs-pinterest ms-2 mb-2" href="#"
-                            ><i class="ci-pinterest"></i></a
-                        ><a class="btn-social bs-light bs-youtube ms-2 mb-2" href="#"
-                            ><i class="ci-youtube"></i
-                        ></a>
+
+                       <a class="btn-social bs-light bs-twitter ms-2 mb-2" href="#">
+                        <img src="{% static 'admin/img/gis/twitter.png' %}" style="width: 32px; height: 32px; vertical-align: middle;" alt="Twitter Icon" />
+                    </i></a>
+                            
+                       <a class="btn-social bs-light bs-facebook ms-2 mb-2" href="#">
+                        <img src="{% static 'admin/img/gis/facebook.png' %}" style="width: 32px; height: 32px; vertical-align: middle;" alt="Twitter Icon" />
+                       </i></a>
+                           
+                        <a class="btn-social bs-light bs-instagram ms-2 mb-2" href="#">
+                            <img src="{% static 'admin/img/gis/instagram.png' %}" style="width: 32px; height: 32px; vertical-align: middle;" alt="Twitter Icon" />
+                        </i></a>        
+                           
+                       <a class="btn-social bs-light bs-pinterest ms-2 mb-2" href="#">
+                        <img src="{% static 'admin/img/gis/social.png' %}" style="width: 32px; height: 32px; vertical-align: middle;" alt="Twitter Icon" />
+
+                        </i></a>
+                           
+                       <a class="btn-social bs-light bs-youtube ms-2 mb-2" href="#">
+                        <img src="{% static 'admin/img/gis/youtube.png' %}" style="width: 32px; height: 32px; vertical-align: middle;" alt="Twitter Icon" />
+
+                        </i></a>
+                            
+                       
                     </div>
+
+
+
+
+
                     <img
                         alt="Payment methods"
                         class="d-inline-block"
@@ -319,7 +335,7 @@
                     href="https://createx.studio/"
                     rel="noopener"
                     target="_blank"
-                    >Createx Studio</a
+                    >Arthur._.kings</a
                 >
             </div>
         </div>

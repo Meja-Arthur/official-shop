@@ -146,8 +146,8 @@ LOGIN_URL = '/login'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-PAYPAL_RECEIVER_EMAIL = 'sb-b299d31069349@business.example.com'
-PAYPAL_TEST = True
+PAYPAL_RECEIVER_EMAIL = 'greatreadslibrary254@gmail.com'
+PAYPAL_TEST = False
 
 
 CSRF_TRUSTED_ORIGINS = ['https://4055-102-215-77-202.ngrok-free.app']

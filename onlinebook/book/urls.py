@@ -21,6 +21,9 @@ urlpatterns = [
     path('payment-failed/<slug:slug>/', views.paymentFailed, name='payment-failed'),
     
     
+    path('section/', views.sections, name='sections'),#delt with later in future events 
+    
+    
     
     
     

@@ -111,11 +111,12 @@ def bookdetails(request, slug):
     try:
         book = get_object_or_404(Book, slug=slug)
         host = request.get_host()
+        price = f"{book.price:.2f}"  # Format the price to two decimal places
         paypal_checkout = {
             'business': settings.PAYPAL_RECEIVER_EMAIL,
-            'amount': book.price,
+            'amount': price,
             'item_name': book.title,
-            'invoice': uuid.uuid4(),
+            'invoice':str(uuid.uuid4()),
             'currency_code': 'USD',
             'notify_url': f"http://{host}{reverse('paypal-ipn')}",
             'return_url': f"http://{host}/payment-success/{book.slug}/",
@@ -204,3 +205,6 @@ def contact(request):
     return HttpResponse(template.render())
     
             
+def sections(request):
+    template = loader.get_template('shop-categories.html')
+    return HttpResponse(template.render())            

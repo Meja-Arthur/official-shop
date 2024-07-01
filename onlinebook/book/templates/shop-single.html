@@ -33,14 +33,18 @@
         <h1 class="h3 text-light mb-2"><small>Author: {{ book.author }}</small></h1>
         <div>
          
-          <div class="star-rating"> 
-           
-          
-            <i class="fa fa-star" aria-hidden="true"></i>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
-            <i class="star-rating-icon ci-star-filled active"></i
-            ><i class="star-rating-icon ci-star"></i>
+          <div class="star-rating">
+            <img src="{% static 'admin/img/gis/star.png' %}" style="width: 18px; height: 18px;" class="active" alt="Star Icon" />
+            <img src="{% static 'admin/img/gis/star.png' %}" style="width: 18px; height: 18px;" class="active" alt="Star Icon" />
+            <img src="{% static 'admin/img/gis/star.png' %}" style="width: 18px; height: 18px;" class="active" alt="Star Icon" />
+            <img src="{% static 'admin/img/gis/star.png' %}" style="width: 18px; height: 18px;" class="active" alt="Half Star Icon" />
+            <img src="{% static 'admin/img/gis/star.png' %}" style="width: 18px; height: 18px; opacity: 0.5;" alt="Empty Star Icon" />
           </div>
+
+
+
+
+
           <span
             class="d-inline-block fs-sm text-white opacity-70 align-middle mt-1 ms-1"
             >74 Reviews</span
@@ -227,22 +231,19 @@
                         <option value="5">5</option>
                     </select>
                 
-                    <button 
-                        class="btn btn-primary btn-sm d-block w-100 mb-2" 
-                        type="button"  
-                        onclick="addToCart('{{ book.slug }}');"
-                    >
-                        <i class="ci-cart fs-sm me-1"></i>Add to Cart
-                    </button>
+                    <button
+                    class="btn btn-primary btn-sm d-block w-100 mb-2"
+                    type="button"
+                    style="background-color: #0096FF"
+                    onclick="addToCart('{{ book.slug }}');"
+                  >
+                    <i class="ci-cart fs-sm me-1"></i>Add to Cart
+                  </button>
                 
-                 
-
-                    
-                    
                       {{ paypal.render }}
                     
                     
-                </div>
+                 </div>
                 
 
 
@@ -359,18 +360,23 @@
                     </div>
                   </div>
                   <!-- Sharing-->
-                  <label
-                    class="form-label d-inline-block align-middle my-2 me-3"
-                    >Share:</label
-                  ><a class="btn-share btn-twitter me-2 my-2" href="#"
-                    ><i class="ci-twitter"></i>Twitter</a
-                  ><a class="btn-share btn-instagram me-2 my-2" href="#"
-                    ><i class="ci-instagram"></i>Instagram</a
-                  ><a class="btn-share btn-facebook my-2" href="#"
-                    ><i class=" btn-share fa fa-facebook" aria-hidden="true"></i>
+                  <label class="form-label d-inline-block align-middle my-2 me-3">Share:</label>
 
-                    Facebook</a
-                  >
+                    <a class="btn-share btn-twitter me-2 my-2" href="#">
+                      <img src="{% static 'admin/img/gis/twitter.png' %}" style="width: 20px; height: 20px; vertical-align: middle;" alt="Twitter Icon" />
+                      Twitter
+                    </a>
+
+
+
+                    <a class="btn-share btn-instagram me-2 my-2" href="#">
+                      <img src="{% static 'admin/img/gis/instagram.png' %}" style="width: 20px; height: 20px; vertical-align: middle;" alt="Twitter Icon" />
+                    </i>Instagram</a >
+
+                    <a class="btn-share btn-facebook my-2" href="#">
+                      <img src="{% static 'admin/img/gis/facebook.png' %}" style="width: 20px; height: 20px; vertical-align: middle;" alt="Twitter Icon" />
+                    </i> Facebook</a>
+                  
                 </div>
               </div>
             </div>
@@ -438,13 +444,13 @@
             <div class="row pt-2 pb-3">
               <div class="col-lg-4 col-md-5">
                 <h2 class="h3 mb-4">74 Reviews</h2>
-                <div class="star-rating me-2">
-                  <i class="ci-star-filled fs-sm text-accent me-1"></i
-                  ><i class="ci-star-filled fs-sm text-accent me-1"></i
-                  ><i class="ci-star-filled fs-sm text-accent me-1"></i
-                  ><i class="ci-star-filled fs-sm text-accent me-1"></i
-                  ><i class="ci-star fs-sm text-muted me-1"></i>
-                </div>
+                <div class="star-rating">
+									<img src="{% static 'admin/img/gis/star.png' %}" style="width: 18px; height: 18px;" class="active" alt="Star Icon" />
+									<img src="{% static 'admin/img/gis/star.png' %}" style="width: 18px; height: 18px;" class="active" alt="Star Icon" />
+									<img src="{% static 'admin/img/gis/star.png' %}" style="width: 18px; height: 18px;" class="active" alt="Star Icon" />
+									<img src="{% static 'admin/img/gis/star.png' %}" style="width: 18px; height: 18px;" class="active" alt="Half Star Icon" />
+									<img src="{% static 'admin/img/gis/star.png' %}" style="width: 18px; height: 18px; opacity: 0.5;" alt="Empty Star Icon" />
+								  </div>
                 <span class="d-inline-block align-middle"
                   >4.1 Overall rating</span
                 >
