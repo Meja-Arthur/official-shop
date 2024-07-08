@@ -11,12 +11,39 @@
 		{% for book in trending_books %}
 		<div class="col-lg-3 col-md-4 col-sm-6 px-2 mb-4">
 			<div class="card product-card">
-				<button aria-label="Add to wishlist" class="btn-wishlist btn-sm" data-bs-original-title="Add to wishlist" data-bs-placement="left"
-					data-bs-toggle="tooltip" type="button" >
-					
-					<img src="{% static 'admin/img/gis/heart.png' %}" alt="Add to wishlist" style="width: 25px; height: 25px;"  aria-hidden="true">
 
-					</i></button>
+					<button aria-label="Add to wishlist" class="btn-wishlist btn-sm" data-bs-original-title="Add to wishlist" data-bs-placement="left"
+						data-bs-toggle="tooltip" type="button" data-slug="{{ book.slug }}" onclick="addToWishlist(this)">
+							<img src="{% static 'admin/img/gis/heart.png' %}" alt="Add to wishlist" style="width: 25px; height: 25px;" aria-hidden="true">
+					</button>
+					 <script>
+							function addToWishlist(button) {
+								var slug = button.getAttribute('data-slug');
+								
+								fetch(`/add_to_wishlist/${slug}/`, {
+									method: 'GET',
+									headers: {
+										'Content-Type': 'application/json',
+										'X-CSRFToken': '{{ csrf_token }}'
+									},
+									credentials: 'same-origin'
+								})
+								.then(response => {
+									if (response.ok) {
+										alert('Book added to wishlist!');
+									} else {
+										alert('Failed to add book to wishlist.');
+									}
+								})
+								.catch(error => {
+									console.error('Error:', error);
+									alert('Failed to add book to wishlist.');
+								});
+							}
+                      </script>
+
+					  
+
 					{% if book.image %}
 					<a class="card-img-top d-block overflow-hidden" href="/book/{{ book.slug }}/">
 					<img alt="{{ book.title }}" src="{{ book.image.url }}" 
@@ -101,6 +128,9 @@
 			<hr class="d-sm-none" />
 		</div>
 		{% endfor %}
+
+
+
 
 	</div>
 

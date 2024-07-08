@@ -3,10 +3,11 @@ from .cart import Cart
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
+from django.contrib.auth.decorators import login_required
 
 
 
-
+@login_required
 def add_to_cart(request, book_slug):
     cart = Cart(request)
     cart.add(book_slug)
@@ -24,7 +25,7 @@ def remove_from_cart(request, book_slug):
 
 
 
-
+@login_required
 def cartpage(request):
     return render(request, 'cart/shop-cart.html',)
 

@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
-from .models import Book, BooksCategory,Customer, Author
+from .models import Book, BooksCategory, Author, Profile
 
 class CustomUserAdmin(UserAdmin):
     list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff')
@@ -18,8 +18,7 @@ class BookModelAdmin(admin.ModelAdmin):
     
 admin.site.register(BooksCategory)
 admin.site.register(Author)
+admin.site.register(Profile)
 
-@admin.register(Customer)
-class CustomerModelAdmin(admin.ModelAdmin):
-    list_display = ['id', 'user', 'locality', 'city', 'state', 'zipcode']
+
 

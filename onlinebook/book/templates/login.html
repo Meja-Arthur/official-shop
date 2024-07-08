@@ -3,131 +3,129 @@
 
 {% block content %}
 
-<div class="container py-4 py-lg-5 my-4">
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <div class="card border-0 shadow">
-        <div class="card-body">
-          <div style="margin-bottom: 1rem;">
-            {% if messages %}
-              {% for message in messages %}
-                <div style="margin-bottom: 1rem;">
-                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    {{ message }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+<div class="form-content my-3 p-3">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-lg-5">
+              <div class="card shadow-lg border-0 rounded-lg mt-0 mb-3">
+                  <div class="card-header justify-content-center">
+                    <h3 class="font-weight-light my-1 text-center">Sign In</h3>
                   </div>
-                </div>
-              {% endfor %}
-            {% endif %}
-          </div>
-          <h2 class="h4 mb-1">Sign in</h2>
-          <div class="py-3">
-            <h3
-              class="d-inline-block align-middle fs-base fw-medium mb-2 me-2"
-            >
-              With social account:
-            </h3>
-            <div class="d-inline-block align-middle">
-              <a
-                aria-label="Sign in with Google"
-                class="btn-social bs-google me-2 mb-2"
-                data-bs-original-title="Sign in with Google"
-                data-bs-toggle="tooltip"
-                href="#"
-                ><i class="ci-google"></i></a
-              ><a
-                aria-label="Sign in with Facebook"
-                class="btn-social bs-facebook me-2 mb-2"
-                data-bs-original-title="Sign in with Facebook"
-                data-bs-toggle="tooltip"
-                href="#"
-                ><i class="ci-facebook"></i></a
-              ><a
-                aria-label="Sign in with Twitter"
-                class="btn-social bs-twitter me-2 mb-2"
-                data-bs-original-title="Sign in with Twitter"
-                data-bs-toggle="tooltip"
-                href="#"
-                ><i class="ci-twitter"></i
-              ></a>
-            </div>
-          </div>
-          <hr />
-          <h3 class="fs-base pt-4 pb-2">Or using form below</h3>
+                  {% if form.errors %}
+                      <div class="alert alert-danger alert-dismissible" role="alert">
+                          <div id="form_errors">
+                              {% for key, value in form.errors.items %}
+                                  <strong>{{ value }}</strong>
+                              {% endfor %}
+                          </div>
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                  {% endif %}
+                  <div class="card-body">
+                      <form method="POST">
+                          {% csrf_token %}
 
-          <form class="needs-validation" method=POST>
-            {% csrf_token %}
-            <div class="input-group mb-3">
-              <i
-                class="ci-mail position-absolute top-50 translate-middle-y text-muted fs-base ms-3"
-              ></i>
-              <input
-                class="form-control rounded-start"
-                placeholder="username"
-                required=""
-                type="text"
-                name="username"
-              />
-            </div>
-            <div class="input-group mb-3">
-              <i
-                class="ci-locked position-absolute top-50 translate-middle-y text-muted fs-base ms-3"
-              ></i>
-              <div class="password-toggle w-100">
-                <input
-                  class="form-control"
-                  placeholder="Password"
-                  required=""
-                  type="password"
-                  name="password"
-                />
-                <label
-                  aria-label="Show/hide password"
-                  class="password-toggle-btn"
-                >
-                  <input
-                    class="password-toggle-check"
-                    type="checkbox"
-                  /><span class="password-toggle-indicator"></span>
-                </label>
-              </div>
-            </div>
-            <div class="d-flex flex-wrap justify-content-between">
-              <div class="form-check">
-                <input
-                  checked=""
-                  class="form-check-input"
-                  id="remember_me"
-                  type="checkbox"
-                />
-                <label class="form-check-label" for="remember_me"
-                  >Remember me</label
-                >
-              </div>
-              <a
-                class="nav-link-inline fs-sm"
-                href="account-password-recovery.html"
-                >Forgot password?</a
-              >
-            </div>
-            <hr class="mt-4" />
-            <div class="text-end pt-4">
-              <button class="btn btn-primary" type="submit">
-                <i class="ci-sign-in me-2 ms-n21"></i>Sign In
-              </button>
-            </div>
-          </form>
+                          <div class="form-row">
+                              <div class="col-md-10 offset-md-1">
+                                  <div class="form-group">
 
-          <div class="mt-4">
-            <div class="d=flex justify-content-center links">
-              Don't have an account? <a href="/register" class="m1-2">signup</a>
-            </div>
+                                    <div class="py-3">
+                                        <h3
+                                          class="d-inline-block align-middle fs-base fw-medium mb-2 me-2"
+                                        >
+                                          With social account:
+                                        </h3>
+                                        <div class="d-inline-block align-middle">
+                                          <a
+                                            aria-label="Sign in with Google"
+                                            class="btn-social bs-google me-2 mb-2"
+                                            data-bs-original-title="Sign in with Google"
+                                            data-bs-toggle="tooltip"
+                                            href="#">
+                                            <img src="{% static 'admin/img/gis/google.png' %}" 
+                                                style="width: 32px; height: 32px; vertical-align: middle;" alt="Twitter Icon" /></i>
+                                        </a >
+                                         
+                                          
+                                          
+                                            <a
+                                                aria-label="Sign in with Facebook"
+                                                class="btn-social bs-facebook me-2 mb-2"
+                                                data-bs-original-title="Sign in with Facebook"
+                                                data-bs-toggle="tooltip"
+                                                href="#">
+                                                <img src="{% static 'admin/img/gis/github.png' %}" 
+                                                style="width: 32px; height: 32px; vertical-align: middle;" alt="Twitter Icon" /></i>
+                                            </a>
+                                          
+                                          <a aria-label="Sign in with Twitter" class="btn-social bs-twitter me-2 mb-2" data-bs-original-title="Sign in with Twitter"
+                                             data-bs-toggle="tooltip"
+                                             href="#">
+                                            
+                                                <img src="{% static 'admin/img/gis/twitter.png' %}" 
+                                                style="width: 32px; height: 32px; vertical-align: middle;" alt="Twitter Icon" /></i>
+                                          </a>
+
+                                            <a  aria-label="Sign in with Twitter" class="btn-social bs-twitter me-2 mb-2"
+                                                data-bs-original-title="Sign in with Twitter"
+                                                data-bs-toggle="tooltip"
+                                                href="#">
+
+                                                <img src="{% static 'admin/img/gis/facebook.png' %}" 
+                                                style="width: 32px; height: 32px; vertical-align: middle;" alt="Twitter Icon" /></i>
+                                           
+                                            </a>
+                                            
+                                        </div>
+                                      </div>
+                                    
+                                      <p class="text-center"><strong>OR</strong></p>
+                                      <hr>
+                                      <label class="small mb-1">Username</label>
+                                      {{ form.username }}
+                                  </div>
+                              </div>
+                          </div>
+
+
+                          <div class="form-row">
+                              <div class="col-md-10 offset-md-1">
+                                  <div class="form-group">
+                                    <label class="small mb-1">Password</label>
+                                    {{ form.password }}
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="form-row">
+                              <div class="col-md-10 offset-md-1">
+                                  <div class="form-group">
+                                      <!-- Add a Remember me functionality -->
+                                      {{ form.remember_me }}
+                                      <label> Remember me</label>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="form-row">
+                              <div class="col-md-10 offset-md-1">
+                                  <div class="form-group mt-0 mb-1">
+                                    <button name="login" class="col-md-12 btn btn-dark" id="login">Sign in</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </form>
+                  </div>
+                  <div class="card-footer text-center">
+                      <div class="small">
+                          <a href="/register">Don't have an account yet? Go to signup</a><br>
+                          <a href="/password-reset"><i>Forgot Password?</i></a>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
       </div>
-    </div>
   </div>
 </div>
-
 {% endblock %} 
 	

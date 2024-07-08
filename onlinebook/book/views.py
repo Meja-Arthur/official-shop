@@ -8,10 +8,10 @@ from django.contrib import messages
 from django.conf import settings
 
 from django.views import View
-from .models import Book, BooksCategory, Customer, Author
-from django.contrib.auth.forms import UserCreationForm
-from .forms import CreateUserForm
-from django.contrib.auth import authenticate, login,logout
+from .models import Book, BooksCategory, Author
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from .forms import RegisterForm, LoginForm
+from django.contrib.auth.views import LoginView
 
 from django.contrib import messages
 from django.urls import reverse
@@ -24,40 +24,67 @@ from django.http import FileResponse, Http404
 from django.shortcuts import get_object_or_404
 import os
 
+from django.contrib.auth.views import PasswordResetView
+from django.contrib.messages.views import SuccessMessageMixin
+from django.urls import reverse_lazy
+
 from paypal.standard.forms import PayPalPaymentsForm
 from django.conf import settings
 import uuid
 import logging
 
-def registerUser(request): 
-    form = CreateUserForm()
-    if request.method == "POST":
-        form = CreateUserForm(request.POST)
+class RegisterView(View):
+    form_class = RegisterForm
+    initial = {'key': 'value'}
+    template_name = 'register.html'
+    
+    def dispatch(self, request, *args, **kwargs):
+        # will redirect to the home page if a user tries to access the register page while logged in
+        if request.user.is_authenticated:
+            return redirect(to='/')
+
+        # else process dispatch as it otherwise normally would
+        return super(RegisterView, self).dispatch(request, *args, **kwargs)
+    
+    def get(self, request, *args, **kwargs):
+        form = self.form_class(initial=self.initial)
+        return render(request, self.template_name, {'form': form})
+    
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        
         if form.is_valid():
             form.save()
-            user = form.cleaned_data.get('username')
-            messages.success(request, 'Account created successfully for ' + user)
-            return redirect('/login')
-        
-    context = {'form':form}
-    return render(request, 'register.html', context)
-    
-def loginUser(request):
-    if request.method == "POST":
-        
-        username = request.POST["username"]
-        password = request.POST["password"]
-        user = authenticate(request, username=username, password=password)
-        
-        if user is not None:
-            login(request, user)
-            return redirect('/')
-        else:
-            messages.success(request, "There was an error please check you credential and  try again.")
-            return redirect('/login')
             
-    else:
-        return render(request, 'login.html')
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'Account created for {username}')
+            
+            return redirect(to='/')
+        return render(request, self.template_name, {'form': form})
+       
+class CustomLoginView(LoginView):   
+    form_class = LoginForm
+    def form_valid(self, form):
+        remember_me = form.cleaned_data.get('remember_me')
+        
+        if not remember_me:
+            self.request.session.set_expiry(0)
+            self.request.session.modified = True
+        
+        return super(CustomLoginView, self).form_valid(form)
+
+class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
+    template_name = 'account-password-recovery.html'
+    email_template_name = 'password_reset_email.html'
+    subject_template_name = 'password_reset_subject.txt'
+    success_message = "We've emailed you instructions for setting your password, " \
+                      "if an account exists with the email you entered. You should receive them shortly." \
+                      " If you don't receive an email, " \
+                      "please make sure you've entered the address you registered with, and check your spam folder."
+    
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        return redirect('/')
 
 def home(request):
     trending_books = Book.get_trending_books()
@@ -107,6 +134,7 @@ def categorydetails(request, category_id):
     }
     return render(request,'category.html', context)   
 
+@login_required
 def bookdetails(request, slug):
     try:
         book = get_object_or_404(Book, slug=slug)
@@ -171,10 +199,25 @@ def download_book(request, slug):
         return HttpResponseServerError("Sorry, something went wrong. Please try again later.")
  
  
+@login_required
+def profile(request):
+    return render(request, 'account-profile.html')
+   
  
+ 
+ 
+ 
+ 
+ 
+def add_to_wishlist(request, slug):
+    pass
 def wishlist(request):
-    template = loader.get_template('account-wishlist.html')
-    return HttpResponse(template.render())
+    pass
+
+
+
+
+
 
 def passwordforget(request):
     template = loader.get_template('account-password-recovery.html')

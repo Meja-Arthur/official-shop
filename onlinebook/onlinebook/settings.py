@@ -18,11 +18,17 @@ DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = 'login'
+
+
+
 SESSION_COOKIE_AGE = 86400
 CART_SESSION_ID = 'cart'
 
 SESSION_COOKIE_SECURE = True  # Change to True if using HTTPS in production
 CSRF_COOKIE_SECURE = True
+
+SESSION_COOKIE_AGE = 60 * 60 * 24 * 30
 
 
 
@@ -41,6 +47,7 @@ INSTALLED_APPS = [
     'cart',
     'book',
     'paypal.standard.ipn',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +60,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+
+# Authentication backends 
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.github.GithubOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
 
 # settings.py
 HAYSTACK_CONNECTIONS = {
@@ -80,6 +95,10 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'cart.context_processors.cart',
                 'book.context_processors.categories_processor',
+                
+                # Add the following two
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -152,3 +171,12 @@ PAYPAL_TEST = False
 
 CSRF_TRUSTED_ORIGINS = ['https://4055-102-215-77-202.ngrok-free.app']
 
+
+
+# email configs
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'arthurogembo@gmail.com'
+EMAIL_HOST_PASSWORD = 'wvse wqfk mxsm wihh'

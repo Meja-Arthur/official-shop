@@ -1,6 +1,8 @@
 from django.contrib.auth.models import User
 from django.db import models
 from django.utils.text import slugify
+from PIL import Image
+
 STATE_CHOICES = (
     ('AL', 'Alabama'),
     ('AK', 'Alaska'),
@@ -123,25 +125,24 @@ class Book(models.Model):
          """
          return cls.objects.filter(trending=True)
 
-     
 
+
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    avator = models.ImageField(
+        default='avatar.jpg',
+        upload_to='profile_avators'
+    )
+    
+    def __str__(self):
+        return self.user.username
+    
+   
+            
 
 
     
-class Customer(models.Model):
-     user = models.ForeignKey(User, on_delete=models.CASCADE)
-     name = models.CharField(max_length=255)
-     image = models.ImageField(upload_to='book_images/', blank=True, null=True)
-     locality = models.CharField(max_length=200)
-     city = models.CharField(max_length=200)
-     mobile = models.IntegerField(default=0, blank=True)
-     zipcode = models.IntegerField(default=0, blank=True)
-     state = models.CharField(choices=STATE_CHOICES, max_length=100)
-     wishlist = models.ManyToManyField(Book, related_name='wishlist_books', blank=True)
 
-
-     def __str__(self):
-         return self.name
 
 
 
